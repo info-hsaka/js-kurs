@@ -1,42 +1,50 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
+  route: string
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Part 1',
+    route: 'part-one/variables',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
+      <p>
+        Variable & Deklaration<br/>
+        Variabletypen<br/>
+        Operands
+      </p>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Part 2',
+    route: 'part-two/conditionals',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
+      <p>
+        Conditionals<br/>
+        Functions<br/>
+        Loops<br/>
+      </p>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Part 3',
+    route: 'part-three/arrays',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
+      <p>
+        Arrays<br/>
+        Built-in array methods<br/>
+        Objects
+      </p>
     ),
   },
 ];
@@ -49,19 +57,25 @@ function Feature({title, Svg, description}: FeatureItem) {
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
-        <p>{description}</p>
+        {description}
       </div>
     </div>
   );
 }
 
 export default function HomepageFeatures(): JSX.Element {
+  if (window?.location?.href?.split('/')?.slice(-1)?.[0] === 'intro') {
+    window?.localStorage?.setItem('intro','seen')
+  }
+  const introSeen = window?.localStorage?.getItem('intro') === 'seen'
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+            <Link key={idx} className={styles['outline-button']} to={`./docs/${ introSeen ? props.route : 'intro'}`}>
+              <Feature {...props} />
+            </Link>
           ))}
         </div>
       </div>
