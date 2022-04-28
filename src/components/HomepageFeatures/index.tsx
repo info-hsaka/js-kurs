@@ -1,44 +1,49 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
+  route: string
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Part 1',
+    route: 'part-one/variables',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Declaration
-        Types
-        Operands
+        <p>Variable & Deklaration</p>
+        <p>Variabletypen</p>
+        <p>Operands</p>
       </>
     ),
   },
   {
     title: 'Part 2',
+    route: 'part-two/conditionals',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Conditionals,
-        Functions
-        Loops
+        <p>Conditionals</p>
+        <p>Functions</p>
+        <p>Loops</p>
       </>
     ),
   },
   {
     title: 'Part 3',
+    route: 'part-three/arrays',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Arrays,
-        built-in array methods,
-        Objects,
+        <p>Arrays</p>
+        <p>Built-in array methods</p>
+        <p>Objects</p>
       </>
     ),
   },
@@ -62,9 +67,11 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+            <Link className={styles['outline-button']} to={`./docs/${props.route}`}>
+              <Feature key={idx} {...props} />
+            </Link>
           ))}
         </div>
       </div>
