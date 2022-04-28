@@ -64,12 +64,16 @@ function Feature({title, Svg, description}: FeatureItem) {
 }
 
 export default function HomepageFeatures(): JSX.Element {
+  if (window?.location?.href?.split('/')?.slice(-1)?.[0] === 'intro') {
+    window?.localStorage?.setItem('intro','seen')
+  }
+  const introSeen = window?.localStorage?.getItem('intro') === 'seen'
   return (
     <section className={styles.features}>
       <div className="container">
         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
           {FeatureList.map((props, idx) => (
-            <Link className={styles['outline-button']} to={`./docs/${props.route}`}>
+            <Link className={styles['outline-button']} to={`./docs/${ introSeen ? props.route : 'intro'}`}>
               <Feature key={idx} {...props} />
             </Link>
           ))}
