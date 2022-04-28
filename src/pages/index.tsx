@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import JsLogo from "../../static/img/js-logo.svg";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -28,7 +29,9 @@ export default function Home(): JSX.Element {
     <Layout>
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <BrowserOnly>
+         {() => <HomepageFeatures />}
+        </BrowserOnly>
       </main>
     </Layout>
   );

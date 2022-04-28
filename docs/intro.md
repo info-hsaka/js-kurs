@@ -51,7 +51,7 @@ Es gibt eine Reihe von websites, die es ermöglichen JavaScript schnell und unko
 Besonders für diesen Kurs bietet es euch eine einfache Möglichkeit Sachen direkt auszuprobieren ohne Programme bei euch aufsetzen zu müssen.
 
 - [js bin](https://jsbin.com/?html,js,console)
-- [playcode](`https://playcode.io/javascript)
+- [playcode](https://playcode.io/javascript)
 - [js fiddle](https://jsfiddle.net/)
 - [code Sandbox](https://codesandbox.io/s/)
 
