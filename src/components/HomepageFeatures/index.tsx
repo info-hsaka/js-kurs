@@ -16,11 +16,11 @@ const FeatureList: FeatureItem[] = [
     route: 'part-one/variables',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
-      <>
-        <p>Variable & Deklaration</p>
-        <p>Variabletypen</p>
-        <p>Operands</p>
-      </>
+      <p>
+        Variable & Deklaration<br/>
+        Variabletypen<br/>
+        Operands
+      </p>
     ),
   },
   {
@@ -28,11 +28,11 @@ const FeatureList: FeatureItem[] = [
     route: 'part-two/conditionals',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
-      <>
-        <p>Conditionals</p>
-        <p>Functions</p>
-        <p>Loops</p>
-      </>
+      <p>
+        Conditionals<br/>
+        Functions<br/>
+        Loops<br/>
+      </p>
     ),
   },
   {
@@ -40,11 +40,11 @@ const FeatureList: FeatureItem[] = [
     route: 'part-three/arrays',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
-      <>
-        <p>Arrays</p>
-        <p>Built-in array methods</p>
-        <p>Objects</p>
-      </>
+      <p>
+        Arrays<br/>
+        Built-in array methods<br/>
+        Objects
+      </p>
     ),
   },
 ];
@@ -57,7 +57,7 @@ function Feature({title, Svg, description}: FeatureItem) {
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
-        <p>{description}</p>
+        {description}
       </div>
     </div>
   );
@@ -73,8 +73,8 @@ export default function HomepageFeatures(): JSX.Element {
       <div className="container">
         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
           {FeatureList.map((props, idx) => (
-            <Link className={styles['outline-button']} to={`./docs/${ introSeen ? props.route : 'intro'}`}>
-              <Feature key={idx} {...props} />
+            <Link key={idx} className={styles['outline-button']} to={`./docs/${ introSeen ? props.route : 'intro'}`}>
+              <Feature {...props} />
             </Link>
           ))}
         </div>
