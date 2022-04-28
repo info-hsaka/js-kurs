@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Types
@@ -7,6 +7,10 @@ sidebar_position: 2
 ## Kernpunkte
 
 - Welche Variablentypen gibt es?
+- Was sind strings?
+- Was sind numbers?
+- Was sind booleans?
+- Was ist null und undefined?
 
 ## Numbers
 
