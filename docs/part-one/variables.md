@@ -65,7 +65,7 @@ let message;
 message = "Hallo"; //Wir weisen message das Wort 'Hallo' zu.
 ```
 
-`message` enthaelt nun das Wort 'Hallo' und wir können auf diese Information ebenfalls zugreifen. Hierfür nutzen wir eine
+`message` enthält nun das Wort 'Hallo' und wir können auf diese Information ebenfalls zugreifen. Hierfür nutzen wir eine
 eingebaute browserfunktion - [alert](https://www.w3schools.com/jsref/met_win_alert.asp).
 
 ```js
@@ -91,31 +91,31 @@ let user = "Alyx",
 ```
 
 :::caution Komma
-Die Kommas am Ende der Zeile verbinden die Zeilen, waere hinter `Alyx,` kein Komma, würde der danachstehende syntax
+Die Kommas am Ende der Zeile verbinden die Zeilen, wäre hinter `Alyx,` kein Komma, würde der danachstehende syntax
 nicht funktionieren und beim ausführen einen Fehler werfen.
 
-Generell ist es leicht sötwas zu überehen und laesst sich oft durch expliziten syntax (einzelne `let`'s zu schreiben) vermeiden.
+Generell ist es leicht so etwas zu übersehen und lässt sich oft durch expliziten syntax (einzelne `let`'s zu schreiben) vermeiden.
 :::
 
 ## Analogy
 
-Zur Veranschaulichung: Variablen sind 'behaelter' für daten, mit einer einzigartigen
+Zur Veranschaulichung: Variablen sind 'behälter' für daten, mit einer einzigartigen
 Beschriftung.
 In unserem Beispiel haben wir einen Karton mit dem Namen 'message' mit dem Wert 'Hallo'.
 
-![Karton mit dem namen message, der "Hallo" beinhaltet](../../static//screenshots/assign-valü.png)
+![Karton mit dem namen message, der "Hallo" beinhaltet](../../static//screenshots/assign-value.png)
 
 Wir können beliebige Werte in den Karton tun und diese auch wechseln:
 
 ```js
 let message = "Hallo";
-message = "Welt"; //Wert hat sich geaendert
+message = "Welt"; //Wert hat sich geändert
 alert(message);
 ```
 
-Wenn wir den Wert aendern(updaten), wird der alte Wert von der variable entfernt.
+Wenn wir den Wert ändern(updaten), wird der alte Wert von der variable entfernt.
 
-![Karton mit dem namen message bekommt einen neün wert, der alte wert wird weggeworfen](../../static/screenshots/swap-valüs.png)
+![Karton mit dem namen message bekommt einen neuen wert, der alte wert wird weggeworfen](../../static/screenshots/swap-values.png)
 
 Wir können ebenfalls Werte von Variablen an andere Variablen weitergeben:
 
@@ -148,7 +148,7 @@ const message = "Hallo";
 `const` deklariert 'konstante' Variablen. Im Unterschied zu `let` ist der Variablenwert
 einer `const` Variable nicht updatebar.
 
-Wenn wir uns sicher sind, dass der Wert eine Variable sich nicht veraendern wird oder _soll_ dann verwenden wir `const`
+Wenn wir uns sicher sind, dass der Wert eine Variable sich nicht verändern wird oder _soll_ dann verwenden wir `const`
 
 Der Versuch eine `const` Variable zu updaten führt zu einem Fehler:
 

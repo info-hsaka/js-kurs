@@ -7,13 +7,13 @@ sidebar_label: Namensgebung
 
 ## Kernpunkte
 
-- Welche Zeichen sind zulaessig?
+- Welche Zeichen sind zulässig?
 - Welche keywords sind reserviert?
 - Was sind best practices?
 
 ## Allgemein
 
-Es gibt zwei Einschraenkungen bei dem benennen von Variablen:
+Es gibt zwei Einschränkungen bei dem benennen von Variablen:
 
 1. Der Name darf nur Buchstaben, Zahlen oder die Symbole `$` und `_` enthalten.
 2. Der erste Buchstabe darf keine Zahl sein.
@@ -38,17 +38,17 @@ Grundsatzregeln sind:
 
 - lesbare Namen z.b. `benutzerName` oder `einkaufsWagen`.
 - Benutzt keine Abkürzungen z.b. `a, b, c`.
-- Seid möglichst deskriptiv und praezise. Namen wie `daten` oder `wert` haben generell keinen Aussage wert und sollten nur verwendet werden, wenn es sehr klar ist welche informationen sie referenzieren.
+- Seid möglichst deskriptiv und präzise. Namen wie `daten` oder `wert` haben generell keinen Aussage wert und sollten nur verwendet werden, wenn es sehr klar ist welche informationen sie referenzieren.
 - Einigt euch im Team oder selbst auf konseqünte Namensgebung, vermeidet zwischen Konzepten zu wechseln
   z.b `currentUser` vs `currentVisitor`.
 - Variablen, die einen Wert mit `trü` oder `false` enthalten können sehr gut mit Verben dargestellt werden z.b.
   `isLoading`, `hasBeenPayed`, `isSignedIn`
 
 :::tip Wiederbenutzen oder neu deklarieren?
-Anstatt Variablenwerte staendig upzudaten und sich erinnern zu müssen welche Werte zu welchen Zeitpunkt sich in der Variable befinden,
+Anstatt Variablenwerte ständig upzudaten und sich erinnern zu müssen welche Werte zu welchen Zeitpunkt sich in der Variable befinden,
 es ist generell good partice extra variablen zu deklarieren.
 
-Selbst wenn es sich nur um temporaere Werte handelt, können extra Variablen mit intuitiven Namen zur Klarheit beitragen
+Selbst wenn es sich nur um temporäre Werte handelt, können extra Variablen mit intuitiven Namen zur Klarheit beitragen
 und besonders bei der Fehlersuche sich als hilfreich erweisen.
 
 :::
