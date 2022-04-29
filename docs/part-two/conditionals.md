@@ -10,8 +10,9 @@ sidebar_position: 1
 - Was ist der Unterschied zwischen == und ===?
 - Was sind "if" statements?
 - Wie konvertiert man booleans?
-- Was ist "else"?
+- Was ist "else if" und "else"?
 - Wie funktioniert '?' als operator?
+- Was sind logical operators?
 
 ## Comparison operators
 
