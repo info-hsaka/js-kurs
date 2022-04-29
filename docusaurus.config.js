@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'HSAKA JavaScript Kurs',
   tagline: '2022',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://hakizu.xyz',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
