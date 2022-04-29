@@ -5,6 +5,18 @@
   width: 100%;
 }
 
+.linkContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .linkContainer {
+    flex-direction: column;
+  }
+}
+
+
 .outline-button {
   flex: 1;
   display: flex;

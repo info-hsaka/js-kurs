@@ -71,7 +71,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+        <div className={styles.linkContainer}>
           {FeatureList.map((props, idx) => (
             <Link key={idx} className={styles['outline-button']} to={`./docs/${ introSeen ? props.route : 'intro'}`}>
               <Feature {...props} />
