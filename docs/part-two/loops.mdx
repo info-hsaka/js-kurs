@@ -1,0 +1,210 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Loops
+
+## Kernpunkte
+
+- Was sind 'while' loops?
+- Was sind 'do while' loops?
+- Wie funktionieren 'for loops'?
+- Wie unterbreche ich loops?
+- Wie starte ich die nächste loop iteration?
+
+## The 'while' loop
+
+```js
+const condition;
+while(condition) {
+    //code
+    //this is called the "loop-body"
+}
+```
+
+Solange die `condition` `truthy` ist wird der code innerhalb des "loop-body" ausgeführt.
+
+```js
+let iteration = 0;
+while (iteration < 3) {
+  //ist zuerst 0, dann 1, dann 2
+  console.log(iteration);
+  itertation++; // this increases the variable by one
+}
+```
+
+:::info Increment by one - short hand
+`variable++` ist eine Abbkürzung des eigentlich syntaxes: `variable = variable + 1`
+
+Da es eine Abkürzung für Variablenassigment ist funktioniert dies nur mit variablen, `2++` würde beispielsweise einen Syntaxfehler werfen.
+
+Nach `i++` wird `0` züruckgegeben, weil das der `return value` von `i` vor der Erhöhung ist.
+![Beispiel in der developer console](../../static/screenshots/console-increment.png)
+
+:::
+
+Eine einfache Ausführung des loop-body wird _iteration_ genannt.
+
+Das oben genannt Beispiel macht drei iterations, bei der die `iteration` variable jedes mal um eins
+erhöht wird bis die condition `falsy` ist und damit der Loop beendet ist.
+
+Würden wir die Variable nicht jedes Mal um eins erhöhen (`iteration++`), würde der loop-body
+theoretisch undendlich oft ausgeführt, da die condition für immer `truthy` wäre.
+
+## 'do while' loop
+
+Falls wir einen gewissen Abschnitt mindestens einmal ausführen wollen - unabhängig von dem eigentlichen Loop - gibt es hierfür den `do..while` syntax:
+
+```js
+do {
+  //einmaliger loop body
+} while (condition);
+{
+  //code...
+}
+```
+
+Dieser Syntax führt einmal den code innerhalb der geschwungen Klammern(`{}`) des `do` loops aus
+und checkt dann, ob die condition für den `while` loop erfüllt sind.
+
+## 'for' loop
+
+Der `for` loop ist etwas komplexer und lässt sich in diese Schritte einteilen:
+
+```js
+for (begin; condition; step) {
+  //loop-body
+}
+```
+
+In `begin` können wir eine temporäre Variable deklarieren (die variable steht uns nur während des
+for loops zur Verfügung und nicht außerhalb, dies hängt mit ihrem scope zusammen. [Hier](https://www.w3schools.com/js/js_scope.asp) und [hier](https://javascript.info/closure) könnt ihr mehr
+darüber lesen ).
+
+Also zum Beispiel `let i = 0`, in der `condition` legen wir fest an welche Bedingung der Loop
+geknüpft werden sollt (`i < 3)` und bei `step` wie sich `i` nach jeder abgeschlossenen _iteration_ verwenden soll (`i++`)
+
+```js
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+  // zeigt 0, dann 1, dann 2
+}
+```
+
+<Tabs>
+  <TabItem value="begin" label="begin" default>
+    Variable wird deklariert beim 'betreten' des loops
+  </TabItem>
+  <TabItem value=" condition" label="condition" default>
+    Wird vor jeder loop *iteration* gechecked und stoppt den loop, falls falsy
+  </TabItem>
+  <TabItem value="loop-body" label="loop-body" default>
+    Wird ausgeführt solange die condition truthy ist.
+  </TabItem>
+  <TabItem value="step" label="step" default>
+    Wird nach jeder abgeschlossenen Ausführung des loop-body ausgeführt.
+  </TabItem>
+  <TabItem value='ablauf' label='Visueller Ablauf' default>
+
+        Iteration beginnt
+
+      → (if condition → run body and run step)
+
+      → (if condition → run body and run step)
+
+      → (if condition → run body and run step)
+
+      → ...
+
+  </TabItem>
+</Tabs>
+
+## Skipping parts - for loop
+
+Generell muss bei `begin` keine Variable initialisiert, an dieser Stelle kann
+auch eine bereits deklarierte Variable übergeben werden.
+
+```js
+let i = 0; //außerhalb des loops
+for (; i < 3; i++) {
+  console.log(i); // 0, 1, 2
+}
+```
+
+## Breaking the loop
+
+Normalerweise stoppt ein Loop, wenn seine condition nicht mehr zutrifft.
+Es gibt jedoch ebenfalls die Möglichkeit einen loop direkt zu stoppen - mit `break`
+
+```js
+let sum = 0;
+
+while (true) {
+  let value = +prompt("Enter a number", "");
+
+  if (!value) {
+    break; // breaks loop
+  }
+
+  sum = sum + value;
+}
+alert("Sum: " + sum);
+```
+
+Wir fragen einen user nach Zahlen (`prompt`), diese werden in der `value` Variable gespeichert,
+solange wir Zahleninputs erhalten, addieren wir diese zu `sum` hinzu.
+
+Dies passiert solange bis wir keinen Zahleninput mehr erhalten `if (!value)`, dort wird
+der loop abgebrochen und wir geben die Summe aller addierten Zahlen aus `alert("Sum: " sum)`
+
+## Continuing the loop
+
+Das `continue` keyword ist eine leichtere Version des `break` keywords.
+
+Anstatt einen Loop komplett zu stoppen, triggert `continue` die nächste _iteration_ des loops - `step`
+wird hierbei trotzdem ausgeführt.
+
+Dies ist sinnvoll, falls wir nicht den kompletten loop-body durchlaufen lasen möchten.
+
+Hier ein beispiel mit [remainder](../part-one/operands#mathoperands):
+
+```js
+for (let i = 0; i < 10; i++) {
+  if (i % 2 === 0) {
+    // if true, skip das console.log statement
+    continue;
+  }
+  console.log(i); // 1, 3, 5, 7, 9
+}
+```
+
+:::caution `break/continue` and `?`
+`break` und `continue` sind bestimmte keyworder in JS. Es handelt sich hier um keine expressions
+die mit dem ternary operator getriggert werden können.
+
+Solcher code wirft grundsätzlich einen syntax error:
+
+```js
+  (i > 6) ? console.log(i) : continue //continue ist hier nicht erlaubt
+```
+
+Falls ihr so etwas ausdrücken möchtet, bietet sich hier der `if` operator an.
+
+```js
+  if (i < 6) {
+    continue
+  } else {
+    console.log(i)
+  }
+```
+
+:::
+
+## Coding
+
+Falls ihr Lust habt euch mit loops auszuprobieren gibt es hier ein paar
+[Aufgaben](https://javascript.info/while-for#tasks) mit Lösungen nutzt hierfür gerne
+die genannten [playground](../intro#playgrounds)
