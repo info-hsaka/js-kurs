@@ -40,7 +40,7 @@ Grundsatzregeln sind:
 - Seid möglichst deskriptiv und präzise. Namen wie `daten` oder `wert` haben generell keinen Aussage wert und sollten nur verwendet werden, wenn es sehr klar ist welche informationen sie referenzieren.
 - Einigt euch im Team oder selbst auf konseqünte Namensgebung, vermeidet zwischen Konzepten zu wechseln
   z.b `currentUser` vs `currentVisitor`.
-- Variablen, die einen Wert mit `trü` oder `false` enthalten können sehr gut mit Verben dargestellt werden z.b.
+- Variablen, die einen Wert mit `true` oder `false` enthalten können sehr gut mit Verben dargestellt werden z.b.
   `isLoading`, `hasBeenPayed`, `isSignedIn`
 
 :::tip Wiederbenutzen oder neu deklarieren?
