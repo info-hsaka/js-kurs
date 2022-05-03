@@ -41,31 +41,6 @@ let result = 5 > 4; //kann auch bei assignment benutzt werden
 console.log(result); //true
 ```
 
-:::danger String comparison
-Es ist möglich Vergleichsoperatoren mit strings zu nutzen, jedoch ist diese Methode nicht zuverlässig. Der Grund hierfür ist, dass JavaScript die [unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters) Positionen der einzelnen Buchstaben vergleicht und daran die Unterscheidung trifft welches Wort 'später' kommt.
-
-```js
-console.log("Z" > "A"); //true
-console.log("Glow" > "Glee"); //true
-console.log("Bee" > "Be"); //true
-
-//negativ beispiel
-console.log("apple" > "Ammbulance"); //true
-// In der Unicode Tabelle werden Kleinbuchstaben nach Großbuchstaben geführt,
-// weshalb 'apple' in diesem Fall 'nach' 'Asmbulance' kommt
-
-console.log("$" > "€"); // false
-// Das '€' Symbol wird in der unicode Tabelle vor dem '$' geführt.
-
-//Spätestens mit anderen Schriftzeichen(Japanisch hier) ist es schwer nachzuvollziehen
-console.log("ちゅうい" > "きけん"); //false
-```
-
-Generell wird davon abgeraten string comparison zu nutzen, da sie
-nicht intuitiv ist und nicht immer die gewünschten Ergebnisse liefert, besonders wenn Sonderzeichen, Währungszeichen, Akzente oder andere Schriftzeichen hinzu kommen.
-
-:::
-
 ## Strict equality
 
 Da JS Operatoren datentypen konvertieren, um die Operation trotzdem ausführen zu können,
@@ -176,39 +151,6 @@ if (year < 2015) {
 //Wir checken ob die erste If Bedingung stimmt (year < 2015), wenn die falsch ist gehen wir zur nächsten condition
 //(year > 2015).
 ```
-
-:::caution if statements checken alle möglichen statements
-Während `else if` statements nur solange gechecked werden, bis ein statement zutrifft und der code darin ausgeführt wird.
-Werden `if` statements immer kontrolliert, z.b.
-
-```js
-const year = 2022;
-
-if (!year) {
-  //false
-} else if (year === 2022) {
-  //true
-  //code wird ausgeführt...
-} else if (year === 2000) {
-  // dieses statement wird nicht mehr gechecked, weil das vorherige true war
-}
-
-if (year === 2022) {
-  //true
-  //code wird ausgeführt...
-}
-if (year) {
-  //true
-  //code wird ausgeführt...
-}
-if (typeof year === "number") {
-  //true
-  //code wird ausgeführt...
-}
-//hier werden alle drei if statements gechecked, da kein else oder else if den check beenden.
-```
-
-:::
 
 ## Conditional operator '?'
 

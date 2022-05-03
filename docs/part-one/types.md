@@ -63,11 +63,15 @@ einfache matheoperationen & conditionals zu benutzen.
 Der Syntax dafür sieht so aus:
 
 ```js
-let name = "Haki";
-//eingebete variable
-console.log(`Hello ${name}`); // Hello Haki
-//
-console.log(`the result is ${1 + 2}`); // the result is 3
+let name = "Haki"; //variable wird deklariert und erhält den string "Haki" (assigned)
+
+console.log(`Hallo ${name}`);
+// console.log gibt den string innerhalb der klammern in der console aus - dabei wird der Inhalt der Variable verwendet
+// --> "Hello Haki"
+
+// Mit backticks kann innerhalb des '${}' syntaxes kleinere Gleichungen oder
+// andere Operanten ausgeführt und direkt das Ergebnis ausgegeben werden:
+console.log(`Das Ergebnis ist: ${1 + 2}`); // ausgabe in der console: "Das Ergebnis ist: 3"
 ```
 
 ## Boolean
