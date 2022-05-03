@@ -33,7 +33,7 @@ Neben den regulären Zahlen gibt es nocht besondere Zahlentypen: `Infinity`, `-I
 `NaN` steht für 'not a number' und entsteht aufgrund von fehlerhaften Rechnungen, z.B.:
 
 ```js
-alert("Hallo" / 2); //NaN, ein Wort ist nicht durch 2 teilbar
+console.log("Hallo" / 2); //NaN, ein Wort ist nicht durch 2 teilbar
 ```
 
 :::danger NaN is a number
@@ -43,13 +43,6 @@ Der Vorteil davon ist, dass unser code aufgrund einer fehlerhaften Matheoperatio
 Obwohl es für "not a number" steht, fällt `NaN` unter den typ `number`.
 
 ![Developer console mit typeof(NaN) resutliert in NaN](../../static/screenshots/typeof-nan.jpg)
-:::
-
-:::note BigInt
-Number types in JS können keine größeren Werte als (253-1) (9007199254740991), or weniger als -(253-1) anzeigen.
-Dies hängt mit einer technischen Limitierung zusammen. Um größere Zahlen angeben zu können gibt es `BigInt` ihr könnt gerne [hier](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) oder [hier](https://javascript.info/bigint) mehr dazulesen.
-
-Für die meisten Zwecke reicht jedoch der reguläre Number type, weshalb wir hier nicht weiter auf den `bigInt` type eingehen.
 :::
 
 ## Strings
@@ -77,12 +70,6 @@ console.log(`Hello ${name}`); // Hello Haki
 console.log(`the result is ${1 + 2}`); // the result is 3
 ```
 
-:::info Console.log
-[console.log](https://developer.mozilla.org/de/docs/Web/API/console/log) ist hier nur als Ersatz für alert.
-Es ändert nichts an der Funktionsweise von template strings und gibt hier lediglich den wert in der console aus.
-Oft ist es ein super simples tool um werte zu überprüfen um beim debugging von code zu helfen.
-:::
-
 ## Boolean
 
 Booleans können entweder `true`(wahr) oder `false`(falsch) sein.
@@ -101,7 +88,7 @@ In der Regel wird dieser Wert verwendet um einen Variablenwert explizit auf 'lee
 
 ```js
 let age;
-alert(age); //shows 'undefined'
+console.log(age); //shows 'undefined'
 ```
 
 `undefined` verdeutlicht, dass der Variable bisher kein Wert zugewissen wurde. Während `null` benutzt werden kann um zu zeigen, dass die Variable bewusst 'leer' gelassen wird.

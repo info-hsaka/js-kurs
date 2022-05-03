@@ -24,7 +24,7 @@ mithilfe von eines `<script>` tags eingefügt werden.
     <p>Before the script...</p>
 
     <script>
-      alert("Hello, world!");
+      console.log("Hello, world!");
     </script>
 
     <p>...After the script.</p>
@@ -48,6 +48,11 @@ dort in der console javascript befehle eingeben.
 ![open developer console example](../../static/screenshots/dev-console.jpg)
 :::
 
+:::info Console.log
+[console.log](https://developer.mozilla.org/de/docs/Web/API/console/log) gibt hier lediglich den wert in der console aus.
+Oft ist es ein super simples tool um werte zu überprüfen um beim debugging von code zu helfen.
+:::
+
 ## Let
 
 Variablen sind benannte Speicher, die mit beliebigen Informationen befüllt werden können.
@@ -66,20 +71,20 @@ message = "Hallo"; //Wir weisen message das Wort 'Hallo' zu.
 ```
 
 `message` enthält nun das Wort 'Hallo' und wir können auf diese Information ebenfalls zugreifen. Hierfür nutzen wir eine
-eingebaute browserfunktion - [alert](https://www.w3schools.com/jsref/met_win_alert.asp).
+eingebaute browserfunktion - [console.log](https://www.w3schools.com/jsref/met_console_log.asp).
 
 ```js
 let message;
 message = "Hallo";
 
-alert(message); //alert ruft den wert von message auf
+console.log(message); //console.log gbit den wert von message aus
 ```
 
 Um effizienter zu sein, können wir einer variable bereits bei ihrer Erstellung einen Wert zuweisen.
 
 ```js
 let message = "Hallo";
-alert(message); //Hallo
+console.log(message); //Hallo
 ```
 
 Wir können auch mehrere variablen auf einmal erzeugen und Werte zuweisen.
@@ -110,7 +115,7 @@ Wir können beliebige Werte in den Karton tun und diese auch wechseln:
 ```js
 let message = "Hallo";
 message = "Welt"; //Wert hat sich geändert
-alert(message);
+console.log(message);
 ```
 
 Wenn wir den Wert ändern(updaten), wird der alte Wert von der variable entfernt.
@@ -123,8 +128,8 @@ Wir können ebenfalls Werte von Variablen an andere Variablen weitergeben:
 let hello = "Hallo Welt!";
 let message;
 message = hello;
-alert(hello); //Hallo Welt!
-alert(message); //Hallo Welt!
+console.log(hello); //Hallo Welt!
+console.log(message); //Hallo Welt!
 ```
 
 :::danger Zweifache deklaration
@@ -159,11 +164,12 @@ Der Versuch eine `const` Variable zu updaten führt zu einem Fehler:
 ```
 
 :::info var
-In altem javascript code wird oft das keywoard `var` anstelle von `let` verwendet.
+In altem javascript code wird oft das keywoard `var` anstelle von `let` verwendet. Generell benutzt man heute kein `var` mehr und findet das keyword
+nur noch in outdated code, hier wird es nur der vollständigkeitshalber erwähnt.
 
 ```js
 var message = "Hallo";
 ```
 
-`var` ist _fast_ das gleiche wie `let`. Hat jedoch einige [pitfalls](https://javascript.info/var), weshalb heutzutage nahezu ausschlieslich `let` oder `const` zur Erzeugung von Variablen verwendet wird.
+`var` hat einige [pitfalls](https://javascript.info/var), weshalb heutzutage nahezu ausschlieslich `let` oder `const` zur Erzeugung von Variablen verwendet werden.
 :::

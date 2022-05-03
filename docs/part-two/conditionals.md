@@ -114,7 +114,7 @@ um einen Benutzerinput zu erfragen und dieser Benutzerinput wird in der Variable
 const year = prompt("Wann wurde JavaScript veröffentlicht?");
 
 if (year === 1996) {
-  alert("That's correct!");
+  console.log("That's correct!");
 }
 ```
 
@@ -166,11 +166,11 @@ let year = prompt(
 );
 
 if (year < 2015) {
-  alert("Too early...");
+  console.log("Too early...");
 } else if (year > 2015) {
-  alert("Too late");
+  console.log("Too late");
 } else {
-  alert("Exactly!");
+  console.log("Exactly!");
 }
 
 //Wir checken ob die erste If Bedingung stimmt (year < 2015), wenn die falsch ist gehen wir zur nächsten condition
@@ -303,7 +303,7 @@ let lastName;
 let nickName = "Haki";
 
 // shows the first defined value:
-alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Haki
+console.log(firstName ?? lastName ?? nickName ?? "Anonymous"); // Haki
 ```
 
 :::tip ?? or ||

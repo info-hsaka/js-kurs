@@ -17,7 +17,7 @@ sidebar_position: 3
 Funktionen sind Blöcke von code, der beliebig oft ausgeführt (gecalled) werden kann ohne den
 eigentlichen code erneut schreiben/wiederholen zu müssen.
 
-Wir haben bereits einige built-in functions kennengelernt `alert`, `prompt` und `console.log`.
+Wir haben bereits einige built-in functions kennengelernt `prompt` und `console.log`.
 Nun werden wir unsere eigenen Functions schreiben.
 
 Für `functions declarations` nutzen wir folgen Syntax:
@@ -412,7 +412,7 @@ function showPrimes(n) {
       if (i % j == 0) continue nextPrime;
     }
 
-    alert(i); // a prime
+    console.log(i); // a prime
   }
 }
 ```
@@ -424,7 +424,7 @@ function showPrimes(n) {
   for (let i = 2; i < n; i++) {
     if (!isPrime(i)) continue;
 
-    alert(i); // a prime
+    console.log(i); // a prime
   }
 }
 
