@@ -7,6 +7,10 @@ sidebar_position: 1
 ## Kernpunkte
 
 - Was sind Objekte?
+- Wie deklariere ich ein Objekt?
+- Wie füge/lösche ich properties?
+- Wie greife ich auf Daten zu?
+- Wie kopiere ich Objekte?
 
 ## Objects
 
@@ -173,4 +177,113 @@ for (key in user) {
 :::note Properties Reihenfolge
 Eine Besonderheit an Objects ist, dass Properties innerhalb
 des Objects nicht sortiert werden können und auch nicht sortiert sind.
+:::
+
+## Objects reference & copying
+
+Eine Besonderheit von `Objects` ist, dass sie über Referenzen gespeichert
+und kopiert werden.
+
+Anders als `primitive` variables, die den Wert an sich kopieren.
+
+Wenn wir den Variablenwert einer primitiven Variable kopieren wollen,
+dann können wir dies auf diese Weise machen:
+
+```js
+let message = "Hello!";
+let phrase = message;
+```
+
+Beide Variablen speichern unabhängig von einander das Wort "Hello!"
+![two boxes with the name message & phrase, both containing the string 'Hello!'](../../static/screenshots/two-primitives.png)
+
+`Objects` funktionieren nicht so.
+
+Eine Variable, der ein `Object` assigned wird,
+speichert nicht das `Object` selbst, sondern
+seinen _Ort/Adresse_ im [dynamischen Speicher](https://de.wikipedia.org/wiki/Dynamischer_Speicher#Unterst%C3%BCtzung_von_dynamischen_Speicheranforderungen_in_Programmiersprachen) - in anderen speichert die Variable die
+_Referenz zu dem Object_.
+
+Ein Beispiel:
+
+![a box with the name user, pointing at a cabin with the folder name](../../static/screenshots/objects-whats-stored.png)
+
+Das Object ist irgendwo im Speicher gespeichert (rechts), während `user`
+(links) die `referenz` dazu enthält.
+
+Wir können uns `user` als ein Blatt Papier vorstellen, auf dem die Position
+des Aktenschranks steht, es selbst enthält aber nicht den Schrank an sich.
+
+Wenn wir nun eine property des Objects aufrufen wollen (`user.name`),
+dann schaut die JavaScript engine an der gespeicherten Adresse nach
+und führt die Operation an dem tatsächlichen Object aus.
+
+(Für die Analogie Beispiel: Eine Person liest auf dem Blatt Papier (`user`)
+wo sich der Aktenschrank befindet (z.b. Keller), die Person geht dorthin
+holt den gewünschten Inhalt heraus, bearbeitet ihn dort und legt ihn
+wieder zurück.)
+
+Mit diesen Verständnis kommen wir zu dem Knackpunkt:
+
+**Wenn wir eine Object variable kopieren, dann kopieren wir nicht das
+Object, sondern die Referenz.** D.h. wir schreiben die Adresse des
+Aktenschranks ab.
+
+```js
+let user = { name: "John" };
+let admin = user; // kopiert die Referenz
+```
+
+Damit haben wir zwei Variablen die zu demselben Object(Aktenschrank)
+verweisen.
+![two boxes pointing at the same cabin](../../static/screenshots/objects-stored-correct.png)
+
+Dadurch können beide Variablen benutzt werden um das eigentliche Object
+zu updaten:
+
+```js
+let user = { name: "John" };
+let admin = user;
+
+admin.user = "Alyx"; //geupdated durch die 'Admin' referenz
+
+console.log(user.name); // "Alxy", durch die Veränderung von admin
+```
+
+Da wir nur ein weiteres Papier mit der Adresse des Aktenschranks
+beschrieben haben, gehen wir immer noch zum gleichen Aktenschrank.
+Geben wir dieses zweite Papier an eine andere Person, damit sie mit
+den Akten arbeiten kann, sehen wir ihre Veränderungen an den Ordnern,
+weil es sich um das gleiche Object handelt.
+
+Um tatächlich ein Object zu kopieren nutzen wir den `spread operator {...}`:
+
+```js
+let user = { name: "John" };
+let admin = { ...user }; // wir kopieren hier das OBJECT, nicht die referenz
+
+admin.user = "Alyx"; //geupdated durch die 'Admin' referenz
+
+console.log(user.name); // "John"
+console.log(admin.user); // "Alyx"
+```
+
+:::danger Object reference
+Da wir die `Referenz` eines Objects speichern, ist eine strict comparison
+`===` nur `true`, wenn die Referenz dieselbe ist.
+
+In allen anderen Fällen ist die comparison `false`, auch wenn die
+Objects die gleichen Properties besitzen.
+
+```js
+let user = { name: "John" };
+let admin = user; // kopiert referenz
+
+console.log(user === admin); //true
+
+let copiedValues = { ...user }; // kopiere hier die werte
+console.log(copiedValues); // { name: "John"}
+console.log(copiedValues === user); //false
+```
+
 :::
