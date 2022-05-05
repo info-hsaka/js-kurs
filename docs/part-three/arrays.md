@@ -1,9 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Arrays
+# Arrays & built-in methods
 
-## Callback Functions
-
-## Arrow functions
+##
