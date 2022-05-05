@@ -17,9 +17,9 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <p>
-        Variable & Deklaration<br/>
-        Variabletypen<br/>
-        Operands
+        Variables & Declaration<br/>
+        Naming<br/>
+        Types & Operands<br/>
       </p>
     ),
   },
@@ -30,20 +30,20 @@ const FeatureList: FeatureItem[] = [
     description: (
       <p>
         Conditionals<br/>
-        Functions<br/>
         Loops<br/>
+        Functions<br/>
       </p>
     ),
   },
   {
     title: 'Part 3',
-    route: 'part-three/arrays',
+    route: 'part-three/objects',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <p>
-        Arrays<br/>
-        Built-in array methods<br/>
-        Objects
+        Objects<br/>
+        Arrays & Built-in methods<br/>
+        Special functions 
       </p>
     ),
   },

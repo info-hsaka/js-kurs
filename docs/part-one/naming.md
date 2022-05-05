@@ -23,7 +23,7 @@ Hervorzuheben hierbei ist ebenfalls, dass JavaScript [case sensitive](https://de
 
 ## Reservierte keywords
 
-In JavaScript existieren reservierte keywords, beispielsweise `let, class, return` und `function`. Eine Liste dieser keywords findet ihr [hier](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords).
+In JavaScript existieren reservierte keywords, beispielsweise `let, class, return` und `function` - die nicht als Variablennamen benutzt werden können. Eine Liste dieser keywords findet ihr [hier](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords).
 
 ## Best practices
 
@@ -35,9 +35,10 @@ Intuitive Namen machen es euch leichter euch wieder im Projekt zurecht zufinden,
 
 Grundsatzregeln sind:
 
-- lesbare Namen z.b. `benutzerName` oder `einkaufsWagen`.
+- namen sind generell in englisch
+- lesbare Namen z.b. `userName` oder `shoppingCart`.
 - Benutzt keine Abkürzungen z.b. `a, b, c`.
-- Seid möglichst deskriptiv und präzise. Namen wie `daten` oder `wert` haben generell keinen Aussage wert und sollten nur verwendet werden, wenn es sehr klar ist welche informationen sie referenzieren.
+- Seid möglichst deskriptiv und präzise. Namen wie `data` oder `value` haben generell keinen Aussage wert und sollten nur verwendet werden, wenn es sehr klar ist welche informationen sie referenzieren.
 - Einigt euch im Team oder selbst auf konseqünte Namensgebung, vermeidet zwischen Konzepten zu wechseln
   z.b `currentUser` vs `currentVisitor`.
 - Variablen, die einen Wert mit `true` oder `false` enthalten können sehr gut mit Verben dargestellt werden z.b.

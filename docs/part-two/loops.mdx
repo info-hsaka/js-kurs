@@ -18,10 +18,10 @@ import TabItem from "@theme/TabItem";
 ## The 'while' loop
 
 ```js
-const condition;
-while(condition) {
-    //code
-    //this is called the "loop-body"
+let condition = true;
+while (condition) {
+  condition = false; //updaten die condition zu false und verhindern so eine loop wiederholung
+  //der bereich innerhalb der { } Klammern wird "loop-body" genannts
 }
 ```
 
@@ -32,7 +32,7 @@ let iteration = 0;
 while (iteration < 3) {
   //ist zuerst 0, dann 1, dann 2
   console.log(iteration);
-  itertation++; // this increases the variable by one
+  itertation++; // addieren hier '1' zu der variable hinzu
 }
 ```
 
@@ -61,8 +61,7 @@ Falls wir einen gewissen Abschnitt mindestens einmal ausführen wollen - unabhä
 ```js
 do {
   //einmaliger loop body
-} while (condition);
-{
+} while (condition) {
   //code...
 }
 ```
@@ -151,14 +150,14 @@ while (true) {
 
   sum = sum + value;
 }
-alert("Sum: " + sum);
+console.log("Sum: " + sum);
 ```
 
 Wir fragen einen user nach Zahlen (`prompt`), diese werden in der `value` Variable gespeichert,
 solange wir Zahleninputs erhalten, addieren wir diese zu `sum` hinzu.
 
 Dies passiert solange bis wir keinen Zahleninput mehr erhalten `if (!value)`, dort wird
-der loop abgebrochen und wir geben die Summe aller addierten Zahlen aus `alert("Sum: " sum)`
+der loop abgebrochen und wir geben die Summe aller addierten Zahlen aus `console.log("Sum: " sum)`
 
 ## Continuing the loop
 
@@ -180,28 +179,6 @@ for (let i = 0; i < 10; i++) {
   console.log(i); // 1, 3, 5, 7, 9
 }
 ```
-
-:::caution `break/continue` and `?`
-`break` und `continue` sind bestimmte keyworder in JS. Es handelt sich hier um keine expressions
-die mit dem ternary operator getriggert werden können.
-
-Solcher code wirft grundsätzlich einen syntax error:
-
-```js
-  (i > 6) ? console.log(i) : continue //continue ist hier nicht erlaubt
-```
-
-Falls ihr so etwas ausdrücken möchtet, bietet sich hier der `if` operator an.
-
-```js
-  if (i < 6) {
-    continue
-  } else {
-    console.log(i)
-  }
-```
-
-:::
 
 ## Coding
 
