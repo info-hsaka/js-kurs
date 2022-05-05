@@ -8,7 +8,9 @@ sidebar_position: 2
 
 - Was sind Arrays?
 - Was sind built-in methods?
-- Was für methdos existieren & finde ich mehr?
+- Was für methods existieren?
+- Wo finde ich eine Übersicht für methods?
+- Wie loope ich über ein Array?
 
 ## Arrays
 
