@@ -140,3 +140,13 @@ try {
   console.log(`An error occured. They name of a error was ${error.name}`); //(2) -- fehler code wird ausgeführt
 }
 ```
+
+## Congrats that's it
+
+Das war der gesamte Kurs. Feel free mit Beispielen in
+[playgrounds](../intro.md#playgrounds) rumzuspielen, falls noch etwas unklar
+ist.
+
+Wir freuen uns auf den Sommer mit euch!
+
+![Congratulations gif](https://i.pinimg.com/originals/fb/16/5e/fb165efed3349e846fca4a3f85ae816e.gif)
