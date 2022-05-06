@@ -42,7 +42,7 @@ Bei der Deklaration können wir direkt Werte übergeben:
 let fruits = ["Apple", "Orange", "Plum"];
 ```
 
-Die Positionszahlen bei Arrays fangen bei `0` an.
+**Die Positionszahlen bei Arrays fangen bei `0` an.**
 
 Wollen wir auf Daten zugreifen nutzen wir folgenden Syntax:
 
@@ -90,7 +90,11 @@ zählen:
 
 ```js
 let fruits = ["Apple", "Orange", "Plum"];
-console.log(fruits.length - 1); //Plum
+let lengthOfFruits = fruits.length; // 3
+//lengthOfFruit ist hier 3, dmait ist die Expression in den Klammern folgende:
+// [3 - 1]  was zu [2] ausgewertet wird und uns erlaubt auf das letzte
+// Element des arrays zuzugreifen
+console.log(fruits[lengthOfFruits - 1]); //Plum
 ```
 
 Würden wir `-1` nicht abziehen würde uns das Array

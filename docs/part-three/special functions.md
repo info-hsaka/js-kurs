@@ -33,21 +33,21 @@ let func = function(arg1, arg2, ..., argN) {
 Beispiel:
 
 ```js
-let sum = (a,b) . => a + b;
+let sum = (a, b) => a + b;
 /*short version of:
     let sum = function (a,b,) {
         return a + b;
     }
 */
 
-console.log(sum(1,2)); // function call - gibt 3 aus
+console.log(sum(1, 2)); // function call - gibt 3 aus
 ```
 
 Wenn wir keine Argumente übergeben bleiben die Klammern leer:
 
 ```js
 let sayHi = () => console.log("Hello!");
-console.log(sayHi); // "Hello!";
+sayHi(); // "Hello!";
 ```
 
 Um auf das vorherige Array Beispiel mit der `forEach` method zurückzugreifen:
@@ -100,7 +100,7 @@ Um das zu vermeiden, gibt es einen `try...catch` syntax.
 try {
   //code
 } catch (error) {
-  //error hadnling
+  //error handling
 }
 ```
 
