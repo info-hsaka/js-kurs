@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Kernpunkte
 
-- JavaScript ausführen?
+- Wie führe ich Javascript Code aus?
 - Wie deklariere ich eine variable?
   - `let`
   - `const`
@@ -14,8 +14,8 @@ sidebar_position: 1
 
 ## HTML
 
-JavaScript kann in die [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) Struktur eines Documents
-mithilfe von eines `<script>` tags eingefügt werden.
+JavaScript kann in ein [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) Dokument
+mithilfe von eines `<script>`-Tags eingefügt werden.
 
 ```html
 <!DOCTYPE html>
@@ -41,22 +41,22 @@ Output
 ```
 
 :::info Developer tools
-Falls ihr keinen der genannten [playgrounds](../intro#playgrounds) nutzen möchtet, könnt ihr JavaScript ebenfalls in eurem Browser ausführen.
+Falls ihr keinen der genannten [Playgrounds](../intro#playgrounds) nutzen möchtet, könnt ihr JavaScript ebenfalls in eurem Browser ausführen.
 Dazu müsst öffnet ihr die Developer Tools in eurem browser ([Anleitung für jeden browser hier](https://javascript.info/devtools)) und
-dort in der console javascript befehle eingeben.
+könnt dort in der Konsole einzelne Javascript Befehle eingeben.
 
 ![open developer console example](../../static/screenshots/dev-console.jpg)
 :::
 
 :::info Console.log
-[console.log](https://developer.mozilla.org/de/docs/Web/API/console/log) gibt hier lediglich den wert in der console aus.
-Oft ist es ein super simples tool um werte zu überprüfen um beim debugging von code zu helfen.
+[console.log()](https://developer.mozilla.org/de/docs/Web/API/console/log) gibt hier lediglich den wert in der Konsole aus.
+Oft ist es eine einfache Möglichkeit um Werte zu überprüfen um Fehler im Code zu finden.
 :::
 
-## Let
+## `let`
 
-Variablen sind benannte Speicher, die mit beliebigen Informationen befüllt werden können.
-Um eine variable zu erzeugen benutzen wir das `let` keyword.
+Variablen sind benannte Speicher, die mit beliebigen Werten befüllt werden können.
+Um eine Variable zu erzeugen benutzen wir das `let` keyword.
 
 ```js
 let message;
@@ -70,47 +70,32 @@ let message;
 message = "Hallo"; //Wir weisen message das Wort 'Hallo' zu.
 ```
 
-`message` enthält nun das Wort 'Hallo' und wir können auf diese Information ebenfalls zugreifen. Hierfür nutzen wir eine
-eingebaute browserfunktion - [console.log](https://www.w3schools.com/jsref/met_console_log.asp).
+`message` enthält nun das Wort 'Hallo' und wir können auf diese Information später wieder zugreifen - zum Beispiel um diese in der Konsole auszugeben.
+Hierfür nutzen wir eine eingebaute Browserfunktion - [console.log()](https://www.w3schools.com/jsref/met_console_log.asp).
 
 ```js
 let message;
 message = "Hallo";
 
-console.log(message); //console.log gbit den wert von message aus
+console.log(message); //console.log() gbit den wert von message aus
 ```
 
-Um effizienter zu sein, können wir einer variable bereits bei ihrer Erstellung einen Wert zuweisen.
+Wir können einer Variable bereits bei ihrer Erstellung einen Wert zuweisen.
 
 ```js
 let message = "Hallo";
 console.log(message); //Hallo
 ```
 
-Wir können auch mehrere variablen auf einmal erzeugen und Werte zuweisen.
+## Analogie
 
-```js
-let user = "Alyx",
-  age = 15,
-  message = "Hey";
-```
-
-:::caution Komma
-Die Kommas am Ende der Zeile verbinden die Zeilen, wäre hinter `Alyx,` kein Komma, würde der danachstehende syntax
-nicht funktionieren und beim ausführen einen Fehler werfen.
-
-Generell ist es leicht so etwas zu übersehen und lässt sich oft durch expliziten syntax (einzelne `let`'s zu schreiben) vermeiden.
-:::
-
-## Analogy
-
-Zur Veranschaulichung: Variablen sind 'behälter' für daten, mit einer einzigartigen
+Zur Veranschaulichung: Variablen sind 'Behälter' für Daten, mit einer einzigartigen
 Beschriftung.
-In unserem Beispiel haben wir einen Karton mit dem Namen 'message' mit dem Wert 'Hallo'.
+In unserem Beispiel haben wir einen Karton mit dem Namen 'message' welcher den Wert 'Hallo' enthält.
 
-![Karton mit dem namen message, der "Hallo" beinhaltet](../../static//screenshots/assign-value.png)
+![Karton mit dem Namen message, der "Hallo" beinhaltet](../../static//screenshots/assign-value.png)
 
-Wir können beliebige Werte in den Karton tun und diese auch wechseln:
+Wir können beliebige Werte in den Karton tun und diese auch wieder austauschen:
 
 ```js
 let message = "Hallo";
@@ -118,9 +103,9 @@ message = "Welt"; //Wert hat sich geändert
 console.log(message);
 ```
 
-Wenn wir den Wert ändern(updaten), wird der alte Wert von der variable entfernt.
+Wenn wir den Wert einer Variable ändern, wird der alte Wert verworfen.
 
-![Karton mit dem namen message bekommt einen neuen wert, der alte wert wird weggeworfen](../../static/screenshots/swap-values.png)
+![Karton mit dem Namen message bekommt einen neuen Wert, der alte Wert wird verworfen](../../static/screenshots/swap-values.png)
 
 Wir können ebenfalls Werte von Variablen an andere Variablen weitergeben:
 
@@ -132,8 +117,8 @@ console.log(hello); //Hallo Welt!
 console.log(message); //Hallo Welt!
 ```
 
-:::danger Zweifache deklaration
-Variablennamen sind einzigartig, falls der gleiche Name erneut verwendet wird, wirft dies einen Fehler.
+:::danger Zweifache Deklaration
+Variablennamen sind einzigartig, falls ihr eine neue Variable mit dem selben Namen deklarieren wollt, bekommt ihr einen Fehler.
 
 ```js
 let message = "Hallo";
@@ -142,7 +127,7 @@ let message = "Welt!"; //SyntaxError: 'message' has already been declared.
 
 :::
 
-## Const
+## `const`
 
 Eine weitere Option zur Erzeugung von Variablen ist das `const` keyword.
 
@@ -150,12 +135,12 @@ Eine weitere Option zur Erzeugung von Variablen ist das `const` keyword.
 const message = "Hallo";
 ```
 
-`const` deklariert 'konstante' Variablen. Im Unterschied zu `let` ist der Variablenwert
-einer `const` Variable nicht updatebar.
+`const` deklariert eine 'konstante' Variable. Im Unterschied zu `let` ist der Variablenwert
+einer `const` Variable nicht mehr änderbar.
 
-Wenn wir uns sicher sind, dass der Wert eine Variable sich nicht verändern wird oder _soll_ dann verwenden wir `const`
+Wenn wir den Wert eine Variable nicht mehr verändern wollen dann verwenden wir `const`
 
-Der Versuch eine `const` Variable zu updaten führt zu einem Fehler:
+Der Versuch den Inhalt einer `const` Variable zu ändern führt zu einem Fehler:
 
 ```js
   const myBirthday: '18.04.2006'
@@ -164,12 +149,9 @@ Der Versuch eine `const` Variable zu updaten führt zu einem Fehler:
 ```
 
 :::info var
-In altem javascript code wird oft das keywoard `var` anstelle von `let` verwendet. Generell benutzt man heute kein `var` mehr und findet das keyword
-nur noch in outdated code, hier wird es nur der vollständigkeitshalber erwähnt.
+In altem Javascript-Code wird oft das Keyword `var` anstelle von `let` oder `const` verwendet. Generell benutzt man `var` heute nicht mehr und findet das Keyword nur noch in altem Code, weswegen ihr es nur im Sinne der Vollständigkeit erwähnen.
 
 ```js
 var message = "Hallo";
 ```
-
-`var` hat einige [pitfalls](https://javascript.info/var), weshalb heutzutage nahezu ausschlieslich `let` oder `const` zur Erzeugung von Variablen verwendet werden.
 :::
