@@ -6,86 +6,82 @@ sidebar_position: 3
 
 ## Kernpunkte
 
-- Welche Variablentypen gibt es?
+- Welche Datentypen gibt es?
 - Was sind strings?
 - Was sind numbers?
 - Was sind booleans?
-- Was ist null & undefined?
+- Was ist `null` & `undefined`?
 
 ## Allgemein
 
 Es gibt acht verschiedene Datentypen in JS. Diese werden unterschieden in sechs
-`primitive values` und zwei `objects`.
-Innerhalb part one schauen wir uns die [primitive values](https://developer.mozilla.org/de/docs/Glossary/Primitive) an.
+primitive Typen und zwei composite Typen. Wir betrachten zunächst die
+[primitive values](https://developer.mozilla.org/de/docs/Glossary/Primitive).
 
-## Numbers
+## `number`
 
-In JS umfasst der `number` type zahlen, die integer sind (volle Zahlen) und floating point numbers(dezimalzahlen).
-Ihr könnt sie assignen:
+In JS umfasst der `number` Typ alle Arten von Zahlen - also sowohl sog. Integer (ganze Zahlen) als auch sog. Floats (rationale Zahlen).
+
+Ihr könnt `number` Werte wie folgt ausdrücken:
 
 ```js
 const hoursPerYear = 8760; //Integer
 const zeroKelvin = -273.15; //Floating point
 ```
 
-Neben den regulären Zahlen gibt es nocht besondere Zahlentypen: `Infinity`, `-Infinity` und `NaN`.
+Neben den regulären Zahlen gibt es noch drei besondere Zahlenwerte: `Infinity`, `-Infinity` und `NaN`.
 
-`NaN` steht für 'not a number' und entsteht aufgrund von fehlerhaften Rechnungen, z.B.:
+`NaN` steht für 'Not a Number' und entsteht aufgrund von fehlerhaften Rechnungen, z.B.:
 
 ```js
 console.log("Hallo" / 2); //NaN, ein Wort ist nicht durch 2 teilbar
 ```
 
-:::danger NaN is a number
-Javascript hat kein type-checking, d.h. bei Matheoperationen die fehlerhaft sind, wird JS beim coden als auch beim ausführen keinen Fehler werfen. Stattdessen wird der Wert `NaN` als Ergebnis zurückgegeben.
-Der Vorteil davon ist, dass unser code aufgrund einer fehlerhaften Matheoperation niemals einen fatalen Fehler zurückgeben wird.
+## `string`s
 
-Obwohl es für "not a number" steht, fällt `NaN` unter den typ `number`.
+Strings sind eine Folge von Zeichen, wie zB. ein Name oder ein Text. Strings werden ausgedrückt, indem ihre Zeichen mit Anführungszeichen umschlossen werden. Zum Beispiel:
 
-![Developer console mit typeof(NaN) resutliert in NaN](../../static/screenshots/typeof-nan.jpg)
-:::
+```js
+const name = "Haki";
+const greeting = "Hello dear Human";
+```
 
-## Strings
+Es gibt drei verschiedene Formen von Anführungszeichen:
 
-Strings sind Buchstaben umgeben von Anführungszeichen.
-Es gibt drei Arten von Anführungszeichen
-
-1.  Doulbe quote "Hello".
-2.  Single quote 'Hello'.
-3.  Backticks `Hello`.
+1.  Doulbe quotes "Hello".
+2.  Single quotes 'Hello'.
+3.  Backticks \`Hello\`.
 
 Zwischen und double und single quotes, gibt es keinen Unterschied. Quotes müssen mit den gleichen
 Anführungszeichen geschlossen werden, mit den sie geöffnet worden. z.B. "hello" -> 'Hello" geht nicht.
 
-Backticks haben eine erweiterte Funktionalität. Sie erlauben uns sogenannte [template strings](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals) zu erzeugen, die auf informationen von Variablen zugreifen und
-einfache matheoperationen & conditionals zu benutzen.
+Backticks haben eine erweiterte Funktionalität. Sie erlauben uns sogenannte [template strings](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals) zu erzeugen, die zB. direkt Werte aus Variablen beinhalten:
 
 Der Syntax dafür sieht so aus:
 
 ```js
-let name = "Haki"; //variable wird deklariert und erhält den string "Haki" (assigned)
+const name = "Haki"; //variable wird deklariert und erhält den string "Haki" (assigned)
 
+// Mit backticks kann innerhalb der speziellen Zeichenfolge '${}' Werte inkludiert werden
 console.log(`Hallo ${name}`);
 // console.log gibt den string innerhalb der klammern in der console aus - dabei wird der Inhalt der Variable verwendet
 // --> "Hello Haki"
-
-// Mit backticks kann innerhalb des '${}' syntaxes kleinere Gleichungen oder
-// andere Operanten ausgeführt und direkt das Ergebnis ausgegeben werden:
-console.log(`Das Ergebnis ist: ${1 + 2}`); // ausgabe in der console: "Das Ergebnis ist: 3"
 ```
 
-## Boolean
+## `boolean`
 
-Booleans können entweder `true`(wahr) oder `false`(falsch) sein.
+Es gibt genau zwei Werte vom Typ `boolean`: `true`(wahr) und `false`(falsch)
 
-Oft werden sie benutzt um weiteren code an eine Bedingung zu knüpfen, der nur
-unter bestimmten Bedingungen ausgefuhert werden soll.
+Ein `boolean` Wert gibt also an, ob etwas stimmt oder nicht. In Part 2 werden wir näher auf ihre Verwendung eingehen.
 
-In Part 2 werden wir näher auf ihre Verwendung eingehen.
+```js
+const itRains = true;
+const sunIsShining = false;
+```
 
-## Null & Undefined
+## `null` & `undefined`
 
-`null` ist ein spezieller Wert, da er 'nichts', 'leer' oder 'wert ungewiss' darstellen soll.
+`null` ist ein spezieller Wert, da er 'nichts', 'leer' oder 'wert ungewiss' bedeuten soll.
 In der Regel wird dieser Wert verwendet um einen Variablenwert explizit auf 'leer' zu setzen.
 
 `undefined` hingegen ist der default value einer Variable, die deklariert wird, der aber noch kein Wert zugewissen wurde.
@@ -97,30 +93,19 @@ console.log(age); //shows 'undefined'
 
 `undefined` verdeutlicht, dass der Variable bisher kein Wert zugewissen wurde. Während `null` benutzt werden kann um zu zeigen, dass die Variable bewusst 'leer' gelassen wird.
 
+Die parallele Existenz von `null` und `undefined` ist etwas verwirrend - wichtig ist nur sich zu merken, dass beides bedeutet, dass der Wert "leer" ist.
+
 :::tip typeof
-Der typeof operator `returned` den type des arguments, dass ihm übergeben wird. Dies ist oft hilfreich um type-checking
-zu betreiben oder Datentypen zu überprüfen.
+Der typeof operator findet den Typ des einer Variable heraus, die ihm übergeben wird. Dies kann hilfreich sein, um Datentypen zu überprüfen.
 
 ```js
 const secondsInAMinute = 60;
 
-typeof secondsInAMinute; // "number"
-
-typeof 0; // "number"
-
-typeof 10n; // "bigint"
-
-typeof "foo"; // "string"
-
-typeof true; // "boolean"
-
-typeof undefined; // "undefined"
+console.log(typeof secondsInAMinute); // "number"
+console.log(typeof 0); // "number"
+console.log(typeof 10n); // "bigint"
+console.log(typeof "foo"); // "string"
+console.log(typeof true); // "boolean"
+console.log(typeof undefined); // "undefined"
 ```
-
-:::
-
-:::note Symbols
-Symbols fallen unter dem 'primitive value' type und werden hier für Vollständigkeit genannt. Sie ermöglichen
-es einzigartige identifier für objects darzustellen. Da wir bisher `Objects` nocht nicht behandelt haben und die
-Verwendung dieses Types relativ selten ist, wird er nicht weiter ausgeführt.
 :::
