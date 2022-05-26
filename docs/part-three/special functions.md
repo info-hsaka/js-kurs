@@ -144,7 +144,7 @@ try {
 ## Congrats that's it
 
 Das war der gesamte Kurs. Feel free mit Beispielen in
-[playgrounds](../intro.md#playgrounds) rumzuspielen, falls noch etwas unklar
+[playgrounds](../intro#playgrounds) rumzuspielen, falls noch etwas unklar
 ist.
 
 Wir freuen uns auf den Sommer mit euch!
