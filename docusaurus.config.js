@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'HSAKA JavaScript Kurs',
-  tagline: '2022',
+  title: 'HSAKA JavaScript Kurs 2022',
+  tagline: 'Click here for intro',
   url: 'https://hakizu.xyz',
   baseUrl: '/',
   onBrokenLinks: 'throw',
