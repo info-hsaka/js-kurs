@@ -9,6 +9,7 @@ sidebar_position: 4
 - Was sind operatoren?
 - Welche Matheoperatoren gibt es?
 - Was ist der Unterschied zwischen == und ===?
+- Was sind Expressions?
 
 ## Mathoperands
 
@@ -85,6 +86,41 @@ let x = 2 * 2 + 1;
 ```
 
 :::
+
+## Expressions
+
+Expressions ist jeder Ausdruck von Code der sich zu einem Wert auflösen lässt.
+
+Dabei gilt es zu unterscheiden, ob die Expressions side effects haben oder nicht.
+Side effects bedeuted in diesem Sinne, dass der Wert z.b. einer Variable assigned wird.
+Ohne side effect wäre eine expression, wenn sie evaluiert und zu einem Wert ausgewertet
+werden würde.
+
+Das nachfolgende Beispiel besteht aus zwei expressions, eine mit side effect
+und eine expression ohne:
+
+```js
+let x = 8;
+```
+
+`8` ist die reguläre Expression, die nur einen Wert darstellt.
+`=` ist die side effect expression, die diesen Wert der Variable `x` assigned.
+
+Das nächste Beispiel lösen sich zu einer Expression auf, da sie keiner Variable assigned wird.
+
+```js
+console.log(3 + 4);
+```
+
+JavaScript hat für Expressions folgende Kategorien:
+
+- Arithmetisch - `3`, `3.232`
+- String - `"a"`, `"Fred"`
+- Logisch - `true` oder `false`
+- Primary expressions - basic keywords z.b. `!`, `<`, `>`
+- Left-hand-side expressions - dem Wert links wird der Endwert zugewiesen (assigment)
+
+Der Kernessenz von Expressions ist somit, dass sie sich _immer_ zu einem Wert auflösen lassen.
 
 ## Coding
 
