@@ -52,17 +52,15 @@ Es gibt drei verschiedene Formen von Anführungszeichen:
 2.  Single quotes 'Hello'.
 3.  Backticks \`Hello\`.
 
-Zwischen und double und single quotes, gibt es keinen Unterschied. Quotes müssen mit den gleichen
+Zwischen double und single quotes gibt es keinen Unterschied. Quotes müssen mit den gleichen
 Anführungszeichen geschlossen werden, mit den sie geöffnet worden. z.B. "hello" -> 'Hello" geht nicht.
 
-Backticks haben eine erweiterte Funktionalität. Sie erlauben uns sogenannte [template strings](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals) zu erzeugen, die zB. direkt Werte aus Variablen beinhalten:
-
-Der Syntax dafür sieht so aus:
+Backticks haben eine erweiterte Funktionalität. Sie erlauben uns sogenannte [template strings](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals) zu erzeugen, in die direkt Werte (z.b. aus Variablen) eingesetzt werden. Der Syntax dafür sieht so aus:
 
 ```js
 const name = "Haki"; //variable wird deklariert und erhält den string "Haki" (assigned)
 
-// Mit backticks kann innerhalb der speziellen Zeichenfolge '${}' Werte inkludiert werden
+// In Backticks kann innerhalb der speziellen Zeichenfolge '${}' ein Wert inkludiert werden
 console.log(`Hallo ${name}`);
 // console.log gibt den string innerhalb der klammern in der console aus - dabei wird der Inhalt der Variable verwendet
 // --> "Hello Haki"
