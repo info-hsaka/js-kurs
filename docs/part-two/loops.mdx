@@ -61,7 +61,8 @@ Falls wir einen gewissen Abschnitt mindestens einmal ausführen wollen - unabhä
 ```js
 do {
   //einmaliger loop body
-} while (condition) {
+} while (condition);
+{
   //code...
 }
 ```
@@ -182,6 +183,104 @@ for (let i = 0; i < 10; i++) {
 
 ## Coding
 
-Falls ihr Lust habt euch mit loops auszuprobieren gibt es hier ein paar
-[Aufgaben](https://javascript.info/while-for#tasks) mit Lösungen nutzt hierfür gerne
-die genannten [playground](../intro#playgrounds)
+Wir setzen hier das Script aus dem vorherigen Teil fort.
+
+:::note Unabhängige Aufgaben
+Falls ihr unabhängige [Aufgaben](https://javascript.info/while-for#tasks) für Loops mit
+Lösungen möchtet - nutzt hierfür gerne die genannten [playgrounds](../intro#playgrounds)
+:::
+
+### Teil 1:
+
+Anstatt den String für eine feste Inputvariable zu bekommen, sollen wir nun die Strings
+für alle Zahlen zwischen 1 bis 100 ausgeben.
+Die gleichen Conditionen gelten:
+
+- Zahlen, die durch `3` teilbar sind geben den String `Fizz` aus
+- Zahlen, die durch `5` teilbar sind geben den String `Buzz` aus
+- Falls die Zahl nicht teilbar ist, gib den Wert der Zahl aus
+
+<details>
+<summary>Mögliche Lösung Teil 1</summary>
+
+```js
+//jshint esnext:true
+
+for (let i = 1; i <= 100; i++) {
+  //loop bis 100 in 1er Schritten
+  if (i % 3 === 0) {
+    //condition 1
+    console.log("Fizz");
+    continue; //starte die nächste iteration
+  }
+  if (i % 5 === 0) {
+    //condition 2
+    console.log("Buzz");
+    continue; //starte die nächste iteration
+  }
+  console.log(i); // gib die Zahl aus
+}
+```
+
+</details>
+
+### Teil 2:
+
+Manchen ist bestimmt aufgefallen, dass manche Zahlen durch `3` und `5` teilbar sind,
+wir bei diesen bisher jedoch nur `Fizz` ausgeben.
+
+Das möchten wir ändern.
+Falls eine Zahl durch beide Zahlen (`3` und `5`) teilbar ist, soll diese `FizzBuzz` ausgeben.
+
+<details>
+<summary>Mögliche Lösung Teil 2</summary>
+
+```js
+//jshint esnext:true
+
+for (let i = 1; i <= 100; i++) {
+  //loop bis 100 in 1er Schritten
+  if (i % 3 === 0 && i % 5 === 0) {
+    // condition 3
+    console.log("FizzBuzz");
+    continue; //starte die nächste iteration
+  }
+
+  if (i % 3 === 0) {
+    //condition 1
+    console.log("Fizz");
+    continue; //starte die nächste iteration
+  }
+  if (i % 5 === 0) {
+    //condition 2
+    console.log("Buzz");
+    continue; //starte die nächste iteration
+  }
+  console.log(i); // gib die Zahl aus
+}
+```
+
+Eine weitere Lösung mit einem
+[conditional operator](../part-two/conditionals#conditional-operator-) wäre:
+
+```js
+for (let i = 1; i <= 100; i++) {
+  //loop bis 100 in 1er Schritten
+  let output = ""; // Wir deklarieren einen leeren string, der updatebar ist
+  if (i % 3 === 0) {
+    //condition 1
+    output += "Fizz";
+    // Wir updaten die output variable durch das anhängen von "Fizz"
+    // += ist dabei eine Abkürzung für: output = output + "Fizz"
+  }
+  if (i % 5 === 0) {
+    //condition 2
+    output += "Buzz"; //Wir updaten hier wieder und hängen "Buzz" an
+  }
+  console.log(output === "" ? i : output);
+  // Wir checken mit einem conditional operator, ob der string leer ist und geben
+  // je nach dem in der console entweder die Zahl(i) oder den String(output) aus
+}
+```
+
+</details>
