@@ -86,6 +86,72 @@ let sum = (a, b) => {
 console.log(sum(1, 2)); //3
 ```
 
+## Coding
+
+### Abschluss
+
+Zum Abschluss möchten wir bei FizzBuzz nur für ein Array von Zahlen ausführen anstatt eine ganze
+Zahlenreihe (1 bis 100).
+
+Das Array ist `[5,15,17,46,156,315,406,789,890]`, nutzt hierfür gerne die `forEach` method.
+Die vorherigen Bedingungen bleiben gleich - zur Erinnerung:
+
+Die alten Bedingungen:
+
+- Zahlen, die durch `3` teilbar sind geben den String `Fizz` aus
+- Zahlen, die durch `5` teilbar sind geben den String `Buzz` aus
+- Zahlen, die durch `3` und `5` teilbar sind geben den String `FizzBuzz` aus
+- Falls die Zahl nicht teilbar ist, gib den Wert der Zahl aus
+
+Die neuen Bedingungen:
+
+- Zahlen, die durch `4` teilbar sind geben den String `Fizz` aus
+- Zahlen, die durch `7` teilbar sind geben den String `Buzz` aus
+- Zahlen, die durch `4` und `7` teilbar sind geben den String `FizzBuzz` aus
+- Falls die Zahl nicht teilbar ist, gib den Wert der Zahl aus
+
+<details>
+<summary>Mögliche Lösung </summary>
+
+```js
+//jshint esnext:true
+
+function hasNoRemainder(input, a) {
+  return input % a === 0;
+}
+
+function fizzBuzz(a, b) {
+  //Wir wrapen den gesamten loop in eine function, der zwei Parameter übergeben werden kann
+  //und tauschen die vorherigen Zahlen mit diesen Parametern aus
+  const intputArray = [5, 15, 17, 46, 156, 315, 406, 789, 890];
+
+  inputArray.forEach((i) => {
+    //Wir ersetzen den loop mit `forEach` und loopen über jedes Element des Arrays
+    // i enthält dabei immer den Wert des derzeitigen Elements
+    let output = ""; // Wir deklarieren einen leeren string, der updatebar ist
+    if (hasNoRemainder(i, a)) {
+      //condition 1
+      output += "Fizz";
+      // Wir updaten die output variable durch das anhängen von "Fizz"
+      // += ist dabei eine Abkürzung für: output = output + "Fizz"
+    }
+    if (hasNoRemainder(i, b)) {
+      //condition 2
+      output += "Buzz"; //Wir updaten hier wieder und hängen "Buzz" an
+    }
+    console.log(output === "" ? i : output);
+    // Wir checken mit einem conditional operator, ob der string leer ist und geben
+    // je nach dem in der console entweder die Zahl(i) oder den String(output) aus
+  });
+}
+
+fizzBuzz(3, 5);
+fizzBuzz(4, 7);
+//Zum Schluss rufen wir diese funktion mit den gewünschten Parametern auf
+```
+
+</details>
+
 ## Try...catch
 
 Manchmal schreiben wir fehlerhaften code, haben unerwarteten input,

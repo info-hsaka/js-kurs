@@ -270,3 +270,55 @@ Der entscheidene Unterschied zwischen den beiden Operatoren ist:
 - `??` returned den ersten _defined_ value, sonst den letzten `undefined` value
 
 :::
+
+## Coding
+
+Für die nächsten Teile werden wir fortlaufendes Script schreiben,
+dass die Inhalte der Kapitel aufgreift und umgesetzt.
+
+Für die Aufgaben empfehle ich euch [JsBin](https://jsbin.com/?js,console) zu nutzen
+und `//jshint esnext:true` in die erste Zeile zu kopieren, damit ihr keine
+[linter](<https://en.wikipedia.org/wiki/Lint_(software)>) Warnungen erhaltet.
+
+### Teil 1:
+
+Wir haben eine Inputvariable die den Wert `3` enthält und möchten den String `Buzz`
+in der Console ausgeben, falls der Wert der Inputvariable durch `5` teilbar ist,
+andernfalls geben wir den Wert der Inputvariable aus.
+
+Es gibt viele Wege diese Aufgaben umzusetzen, hier sind mögliche Lösungen:
+
+<details>
+<summary>Mögliche Lösung Teil 1</summary>
+
+```js
+//jshint esnext:true
+
+const input = 3; //input variable
+
+const output = input % 5 === 0 ? "Buzz" : number; //condition und assignment
+console.log(output); // 3;
+```
+
+</details>
+
+### Teil 2:
+
+Nun möchten wir ebenfalls kontrollieren, ob der Wert der Inputvariable durch `3` teilbar ist
+und in dem Fall `Fizz` in der console ausgeben.
+
+<details>
+<summary>Mögliche Lösung Teil 2</summary>
+
+```js
+//jshint esnext:true
+
+const input = 3; //inputvariable
+let output; // wir nutzen hier `let` um den wert der variable updaten können
+
+output = input % 3 === 0 ? "Fizz" : number; //condition 1
+output = input % 5 === 0 ? "Buzz" : output; //condition 2
+console.log(output); // Fizz;
+```
+
+</details>
