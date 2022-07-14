@@ -16,10 +16,10 @@ sidebar_position: 1
 
 ## Comparison operators
 
-Ebenfalls an die Mathematik angelehnt gibt es in JS noch Vergleichsoperatoren.
+Ebenfalls an die Mathematik angelehnt gibt es in JS Vergleichsoperatoren:
 
-- Größer/Weniger als: `a > b`, `a < b`.
-- Größer/Weniger als oder gleich: `a >= b`, `a <= b`.
+- Größer/Kleiner als: `a > b`, `a < b`.
+- Größer/Kleiner als oder gleich: `a >= b`, `a <= b`.
 - Ist ungleich (in Mathe ≠): `a != b`.
 - Ist gleich: `a == b`.
 
@@ -73,7 +73,7 @@ console.log("a" !== "b"); //true
 :::tip Best practice
 Generell ist es best practice immer `===` zu verwenden.
 
-Es verhindert ungewollte datentyp Konvertierungen und bietet euch Sicherheit in dem zuerwartendem Ergebnis.
+Es verhindert ungewollte Datentypkonvertierungen und verhält sich damit "intuitiver".
 :::
 
 ## If statement
@@ -131,9 +131,10 @@ In Verbindung mit Variablen ist dies erweiterbar:
 
 Um mehrere Bedingungen in einem `if` statement zu handhaben gibt es noch zwei weitere keywords: `else if` und `else`.
 
+`else` ist optional und bietet uns die Möglichkeit, Code nur dann auszuführen, wenn die Bedingung eines `if`s `false` war. `else` wird direkt an den `if`-Block angehängt.
+
 `else if` erlaubt es uns beliebig viele weitere Bedingungen zu checken, **falls die vorherigen Bedingungen nicht zutraffen**, sonst werden diese Bedingungen nicht kontrolliert.
 
-`else` ist optional und bietet uns die Möglichkeit code unabhängig von den vorherigen conditionals auszuführen und befindet sich am ende eines if statements.
 
 ```js
 let year = prompt(
@@ -152,12 +153,12 @@ if (year < 2015) {
 //(year > 2015).
 ```
 
-## Conditional operator '?'
+## Ternary operator '?'
 
 Manchmal wollen wir den Wert einer Variable abhängig von anderen Variablen machen.
 Um dies umzusetzen gibt es den `?` (ternary) operator.
 
-Dieser Operator bekommt drei Argumente:
+Dieser Operator bekommt drei Operanden:
 
 ```js
 let result = condition ? value1 : value2;
@@ -176,7 +177,9 @@ const entranceFee = isMember ? "5$" : "10$";
 Es gibt vier logische Operatoren in JS: `||`(oder), `&&`(und), `!`(nicht), `??`(nullish coalescing).
 
 `||` konvertiert Werte in `truthy` oder `falsy` und nimmt den ersten Wert der er `truthy` ist, falls
-es keinen `truthy` Wert wird der letzte Wert aus der Operation genommen.
+es keinen `truthy` Wert wird der letzte Wert aus der Operation genommen. Falls alle Werte `boolean`s
+(also Aussagen) sind, wertet der OR-Operator also umgangssprachlich aus, ob irgendeine "a oder b oder c..."
+der Aussagen stimmt.
 
 ```js
 console.log(true || false); //true
@@ -212,16 +215,22 @@ let result = "hallo" && "welt" && "!"; // returns "!"
 let message = "hallo" && "" && "Welt"; // returns ""
 ```
 
+Der AND-Operator wertet also aus, ob alles wahr ist ("a und b und c...").
+
 ## !(NOT)
 
 `!` konvertiert den Wert zu einem `boolean` (`truthy` oder `falsy`), invertiert diesen Wert (aus `true` wird `false`, aus `false` wird `true`) und gibt diesen Wert type zurück als `boolean` zurück.
 
 ```js
-let value; //undefined
-let result = !value; //true
+const pi = 3.14;
+const piIsExactlyThree = (pi === 3);
 
-console.log(!"Hey"); //false
+if (!piIsExactlyThree) {
+    console.log("PI ist doch nicht 3 :-(");
+}
 ```
+
+Umgangssprachlich negiert er also eine Aussage ("nicht a").
 
 ## Nullish coalescing operator '??'
 
