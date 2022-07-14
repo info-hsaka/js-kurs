@@ -12,15 +12,15 @@ sidebar_position: 3
 - Wie funktioniert return?
 - Was sollte man bei Funktionsnamen beachten?
 
-## Functions Declaration
+## Function Declaration
 
-Funktionen sind Blöcke von code, der beliebig oft ausgeführt (gecalled) werden kann ohne den
-eigentlichen code erneut schreiben/wiederholen zu müssen.
+Funktionen sind Blöcke von Code, der beliebig oft ausgeführt (gecalled) werden kann ohne den
+eigentlichen Code erneut schreiben/wiederholen zu müssen.
 
 Wir haben bereits einige built-in functions kennengelernt `prompt` und `console.log`.
 Nun werden wir unsere eigenen Functions schreiben.
 
-Für `functions declarations` nutzen wir folgen Syntax:
+Um eine Funktion zu deklarieren nutzen wir folgen Syntax:
 
 ```js
 function showMessage() {
@@ -30,17 +30,17 @@ function showMessage() {
 
 Zuerst benutzen wir das `function` keyword, gefolgt vom Namen der Funktion und eine Liste von
 Parametern in den Klammern (hier erstsmal einmal leer gelassen - `()`).
-Zwischen den geschwungenen Klammern (`{}`) befindet sich der `function body`, der unsere
-Logik enthält - hier nur ein log statement.
+Zwischen den geschwungenen Klammern (`{}`) befindet sich der sogenannte body der Funktion, welcher unsere
+Logik enthält - hier nur ein simples `console.log`.
 
 ```js
-    function showMessage(parameter1, parameter2, ....moreParameter) {
-        console.log(parameter1)
-        //more code
+    function showMessage(something) {
+        console.log(something)
+        // more code
     }
 ```
 
-`parameter1` könnte hier zum beispiel eine dynamische Willkommensnachricht sein.
+`something` könnte hier zum beispiel eine dynamische Willkommensnachricht sein.
 Nach dem wir eine Funktion definiert haben, können wir diese beliebig oft aufrufen.
 
 ```js
@@ -48,7 +48,7 @@ function showMessage() {
   console.log("Hello everyone");
 }
 
-showMesssage();
+showMessage();
 showMessage();
 ```
 
@@ -67,10 +67,10 @@ Developer Console
 </details>
 
 :::tip DRY - Don't repeat yourself
-Damit zeigen wir ebenfalls den Hauptsinn von Funktionen: code wiederholung zu vermeiden.
+Damit zeigen wir ebenfalls den Hauptsinn von Funktionen: Wiederholten Code zu vermeiden.
 
-Wenn ihr merkt, dass ihr code wiederholt ist dies meist eine sehr eindeutige red flag,
-dass ihr Dinge vermutlicht in eine Funktion auslagern könntet oder Probleme auf eine
+Wenn ihr merkt, dass ihr Code wiederholt, ist das meist eine Hinweis darauf,
+dass ihr Dinge in eine Funktion auslagern, oder Probleme auf eine
 andere Art und Weisen lösen solltet.
 :::
 
@@ -101,7 +101,7 @@ verwendet werden.
 let userName = "Haki";
 
 function showMessage() {
-  let message = "Hello," + username;
+  let message = "Hello," + userName;
 
   console.log(message);
 }
@@ -113,10 +113,11 @@ Wir können den Wert von `outer` variables auch innerhalb einer Funktion updaten
 
 ```js
 let userName = "Haki";
+
 function showMessage() {
   userName = "HSAKA"; // wert geupdated
 
-  let message = "Hello, " + userName;
+  let message = `Hello, ${userName}`;
   console.log(message);
 }
 
@@ -149,11 +150,11 @@ console.log(userName); // Haki, unverändert, die funktion hat die outer variabl
 
 :::danger Mix ups
 Wir decken dieses Verhalten ab, damit ihr euch dieses Verhaltens bewusst seid.
-Generell wird das updaten von `outer` variables anhand von Funktionen.
+Generell solltet ihr es vermeiden, den Wert von outer Variablen in Funktionen zu ändern.
 
 In größeren Projekten/Files sorgt dies schnell für Verwirrung, da nicht immer klar ist,
 welchen Wert eine Variable zu einem bestimmten Zeitpunkt hat und es leicht zu Verwechselungen kommen kann,
-die besonders bei der Fehlersuche sowie Maintenance innerhalb des codes sehr frustrierend
+die besonders bei der Fehlersuche sowie Maintenance innerhalb des Codes sehr frustrierend
 sein kann.
 :::
 
@@ -164,16 +165,17 @@ Parameter erlauben es und Funktionen Werte/Daten zu übermitteln.
 ```js
 function showMessage(from, text) {
   //parameter: from, text
-  console.log(`from: ${text}`); // template strings - Part1/Types
+  console.log(`${from}: ${text}`); // template strings - Part1/Types
 }
 
 showMessage("Ann", "Hello!"); // Ann: Hello! *
 showMessage("Ann", "What's up?"); // Ann: What's up? **
 ```
 
-Die Funktion `showMessage` wird mit den `strings` gecalled und kopiert (in der Zeile mit \* und \*\*)
-den Wert der Strings in die parameter (`from` und `text` in der Reihenfolge wie sie
-der Funktion übergeben werden). Erst dann wird die Funktion ausgeführt.
+Die Funktion `showMessage` wird mit den `string`s gecalled, kopiert (in der Zeile mit \* und \*\*)
+die Werte der Strings (`from` und `text` in der Reihenfolge wie sie
+der Funktion übergeben werden) und stellt diese innerhalb der Funktion als lokale Variablen zur
+Verfügung. Erst dann wird der body ausgeführt.
 
 Hier ein weiteres Beispiel:
 
@@ -189,7 +191,7 @@ let from = "Ann";
 showMessage(from, "Hello"); // *Ann*: Hello
 
 console.log(from); //Ann
-// Der Wert von `from` ist nach wie vor der alte, da beim function call eine lokale kopie
+// Der Wert von `from` ist nach wie vor der alte, da beim function call eine lokale Kopie
 // erstellt wird - die parameter.
 ```
 
@@ -231,7 +233,7 @@ showMessage("Ann"); // "*Ann*: undefined"
 Mit der oben genannten Funktion würde der Wert `from` "Ann" übernehmen, während `text`
 leer bleiben würde:
 
-Falls wir nicht wissen, ob unsere `Argumente undefined` sein werden, können wir
+Falls wir nicht wissen, ob unsere Argumente `undefined` sein werden, können wir
 dies auf verschiedenen Formen handhaben.
 
 Wir können default werte deklarieren:
@@ -243,23 +245,15 @@ function showMessage(from, text = "text missing") {
 showMessage("Ann"); // *Ann*: text missing
 ```
 
-`text missing` wird nun jedes mal anstelle von `undefined` assigned, falls kein 2. Parameter
+`"text missing"` wird nun jedes mal anstelle von `undefined` zugewiesen, falls kein zweites Argument
 übergeben wird.
-
-Dies ist natürlich ebenfalls mit komplizierten assigments möglich:
-
-```js
-function showMessage(from, text = anotherFunction()) {
-  // anotherFunction() wird gecalled, wenn kein 2. Parameter übergeben wird
-}
-```
 
 Eine andere Möglichkeit wäre einen logischen Operator oder ein `if` statement zu verwenden:
 
 ```js
 function showMessage(text) {
   if (text === undefined) {
-    //wenn parameter fehlt
+    //wenn argument fehlt
     text = "empty message";
   }
   console.log(text);
@@ -277,7 +271,7 @@ showMessage(); //Empty message
 ```
 
 [Nullish coalescing](../part-two/conditionals#nullish-coalescing-operator-) bietet in solchen
-Fällen eine elegante Lösung für fehlende Werte zu kompensieren.
+Fällen eine elegante Lösung um Alternativen für fehlende Werte zu verwenden.
 
 ## Return values
 
@@ -290,7 +284,7 @@ Bei den oberen Funktionen haben wir keinen Rückgabewert definiert, weshalb dies
 In dem Beispiel wird zuerst die funktion gecalled und ausgeführt (`Hallo`) und gibt dann den
 return value in der console aus `undefined`
 
-Mit dem keyword `return` können wir gezielt Werte zurückgeben, beispielsweise bei Rechnungen:
+Mit dem keyword `return` können wir gezielt Werte zurückgeben, beispielsweise bei Berechnungen:
 
 ```js
 function sum(a, b) {
@@ -375,13 +369,13 @@ Weitere Beispiele:
 - `createForm(..)` - creates a form (and usually returns it)
 - `checkPermission(..)` - checks a permission, returns true/false
 
-:::tip One function = one action
+:::tip One function = One action
 Generell sollte eine Funktion nur das tun was ihr Name aussagt und nicht mehr.
 
     Um dies umzusetzen sollte eine Funktion auch nur eine Aktion umsetzen.
     Sollten mehrere Aktionen notwendig sein, so können mehre Funktionen erstellt werden.
 
-    Dies hilft automatisch dabei euren Code zu fragmentieren und damit maitenance sowie
+    Dies hilft automatisch dabei euren Code zu fragmentieren und damit maintenance sowie
     debugging einfacher zu gestalten.
 
     Bei vielen einzelnen Funktionen ist es leichter die Fehlerquelle zu isolieren oder
@@ -394,11 +388,11 @@ Generell sollte eine Funktion nur das tun was ihr Name aussagt und nicht mehr.
 Durch das aufsplitten von Aktionen über mehrere Funktionen dokumentieren wir gleichzeitig unseren
 code.
 
-Es erleichtert maitenance, spätere upgrades oder verbesserungen wenn viele einzelne Funktionen
+Es erleichtert maintenance, spätere Upgrades oder Verbesserungen wenn viele einzelne Funktionen
 zu pflegen sind statt eine große Funktion.
 
-Deskpritive Funktionsnamen helfen Personen beim ersten überfliegen des codes den groben
-Ablauf des codes besser zu verstehen und Prozesse ausmachen zu können.
+Deskpritive Funktionsnamen helfen Personen beim ersten Überfliegen des Codes den groben
+Ablauf des Codes besser zu verstehen und Prozesse ausmachen zu können.
 
 Ein Beispiel zwischen zwei Funktionen - beide printen Primzahlen bis zur number `n`.
 
