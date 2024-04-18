@@ -1,174 +1,150 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
-# Operands
+# Operators
 
-## Overview
+Euch ist vielleicht aufgefallen, dass wir bisher nicht wirklich Daten verarbeitet haben. Wir haben nur feste Daten in unser Programm geschrieben und diese ausgegeben. Das ändern wir jetzt.
 
-- Was sind operatoren?
-- Welche Matheoperatoren gibt es?
-- Was ist der Unterschied zwischen == und ===?
-- Was sind Expressions?
+## Arithmentische Operatoren
 
-## Mathoperands
-
-Folgende Matheoperatoren existieren:
-
-- Plus `+`
-- Minus `-`
-- Multiplizieren `*`
-- Teilen `/`
-- Restbestrand `%`
-- Exponenten `**`
-
-Restbestand (oder auch `remainder`) ist der Restbestand der Zahl, die nach Teilung
-übrig bleibt.
+Operatoren erlauben es, neue Werte aus anderen Werten zusammenzubauen. Das klingt sehr abstrakt und kompliziert - aber ihr benutzt sie alle jede Woche im Matheunterricht - zum Beispiel den `+` Operator, welcher zwei `number`s zu einer neuen `number` zusammenbaut, die die Summe der beiden ist:
 
 ```js
-console.log(5 % 2); //1
-console.log(8 % 3); //2
-console.log(6 % 3); //0
+const answer = 30 + 12
 ```
 
-## Stringverkettung (concatenation)
-
-Manche Operatoren lassen sich ebenfalls auf strings anwenden.
-Beispielsweise kann man strings 'addieren', um aus zwei strings einen zu machen in etwa
-so wie wenn man aus einzelnen Worten Sätze bildet.
+`answer` ist jetzt eine Variable mit dem Wert 42.
 
 ```js
-let message = "Hallo" + "Welt!";
-console.log(message); // Hallo Welt!
+const cappucinoPrice = 4.50
+const croissantPrice = 2
+const totalPrice = cappucinoPrice + croissantPrice
 ```
 
-:::danger Strings and numbers
-JS Operatoren konvertieren notfalls die Typen der Argumente, um die Operationen trotzdem
-ausführen zu können.
+`totalPrice` ist jetzt eine Variable mit dem Wer 6.5
 
-Anders als bei `NaN` konvertiert ein Additionsoperator eine number in einen string:
+Es gibt viele verschiedene Opratoren. Wir schauen uns zunächst den Rest der klassischen arithmetischen Operatoren an, die ihr bereits aus der Mathematik kennt:
+
+- `-` um Differenzen zu bilden (minus)
+- `*` um Produkte zu bilden (multiplizieren)
+- `/` um Quotienten zu bilden (dividieren)
+
+Es gibt noch zwei weitere arithmetische Operatoren die ihr so geschrieben eventuell noch nicht kennt:
+
+- `%` "Modulo", um den Rest einer Divison mit Rest zu erhalten
+- `**` um zu Potenzen zu bilden (`a ** b` ist `a` hoch `b`)
+
+#### Beispiele
 
 ```js
-console.log("Hallo" / 2); //NaN
-
-console.log(1 + "2"); //12
-console.log(2 + "1"); //21
-
-console.log(6 + 3 + 5 + "4"); //144
-//wird der Reihe nach aufgelöst
-// 6 + 3 = 9
-// 9 + 5 = 14
-// 4 + '4' = 144
-
-console.log("1" + 2 + 2); //122
-//hier wird bereits die erste operation zum string umgewandelt
-// '1' + 2 = '12'
-// '12' + 2 / = '122'
+console.log(4 + 2)
+console.log(10 - 12)
+console.log(5 * 7)
+console.log(28 / 4)
+console.log(43 % 10)
+console.log(2 ** 3)
 ```
 
-:::
+wird
 
-Operatoren folgen wie in der Mathematik (Multipliation vor Addition) einer Präzedenz(Prioritäten) Reihenfolge durch
-die bestimmt wird in welcher Reihenfolge Operationen ausgefühert werden.
+```
+6
+-2
+35
+7
+3
+8
+```
 
-Die gesamte Liste könnt ihr [hier](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#tabelle)
-einsehen.
+ausgeben.
 
-Meistens werden ihr jedoch nicht in Situation kommen und falls doch, bietet es sich an die
-Operation auf mehrere Schritter aufzuteilen, um Lesbarkeit zu gewähren und Fehler zu vermeiden.
-
-:::tip Assignemnt =
-Assignemnt `=` ist auch ein operator mit dem niedrigen Stellenwert von 2. Weshalb es möglich ist
-Matheoperatoren während eines Assignments zu nutzen, z.b.
+Mit diesen Operatoren lässt sich ein Computer bereits wie ein Taschenrechner mit Zwischenspeicher benutzen. Zum Beispiel um festzustellen, wieviele Sekunden eigentlich eine Stunde oder ein Jahr hat:
 
 ```js
-let x = 2 * 2 + 1;
+const secondsPerMinute = 60
+const minutesPerHour = 60
+const hoursPerDay = 24
+const daysPerYear = 365
+
+const secondsPerHour = secondsPerMinute * minutesPerHour
+const secondsPerYear = secondsPerHour * hoursPerDay * daysPerYear
+
+console.log(secondsPerHour)
+console.log(secondsPerYear)
 ```
 
-:::
+Gib diesen Code in euren Editor ein und führt in aus. Ihr solltet
 
-## Expressions
+```
+3600
+31536000
+```
 
-Expressions ist jeder Ausdruck von Code der sich zu einem Wert auflösen lässt.
+in der Konsole sehen - die Anzahl von Sekunden in einer Stunde und die Anzahl von Sekunden in einem Jahr.
 
-Dabei gilt es zu unterscheiden, ob die Expressions side effects haben oder nicht.
-Side effects bedeuted in diesem Sinne, dass der Wert z.b. einer Variable assigned wird.
-Ohne side effect wäre eine expression, wenn sie evaluiert und zu einem Wert ausgewertet
-werden würde.
+## Vergleichsoperatoren
 
-Das nachfolgende Beispiel besteht aus zwei expressions, eine mit side effect
-und eine expression ohne:
+Es gibt neben arithmetischen Operatoren auch sog. Vergleichsoperatoren, welche aus zwei Werten einen `boolean`(Wahrheits-)Wert zusammenbauen. Ihr kennt sie  wahrscheinlich auch bereits aus der Schule:
+
+- `>` um aus zwei `numbers` zusammenbauen, ob der linke größer als der rechte ist
+- `>=` um aus zwei `numbers` zusammenbauen, ob der linke größer oder gleich als der rechte ist
+- `<` um aus zwei `numbers` zusammenbauen, ob der linke kleiner als der rechte ist
+- `<=` um aus zwei `numbers` zusammenbauen, ob der linke kleiner gleich als der rechte ist
+- `==` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie gleich sind
+- `!=` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie ungleich sind
+
+#### Beispiele
+Das Programm
 
 ```js
-let x = 8;
+console.log(5 > 2)
+console.log(2 > 10)
+console.log(4 >= 4)
+console.log(29 >= 100)
+console.log(1 < 2)
+console.log(3 < 2)
+console.log(2 <= 2)
+console.log(5 <= 3)
+console.log("asdf" == "asdf")
+console.log("Blau" == "Grün")
+console.log(8.2 != 8)
+console.log(10 != 10)
 ```
 
-`8` ist die reguläre Expression, die nur einen Wert darstellt.
-`=` ist die side effect expression, die diesen Wert der Variable `x` assigned.
+wird
 
-Das nächste Beispiel lösen sich zu einer Expression auf, da sie keiner Variable assigned wird.
+```
+true
+false
+true
+false
+true
+false
+true
+false
+true
+false
+true
+false
+```
+
+ausgeben.
+
+## Übung
+
+Mit diesen Operatoren können wir bereits einiges ausdrücken:
 
 ```js
-console.log(3 + 4);
+const year = 2024
+const isSchaltjahr = (2024 % 4) == 0
 ```
 
-JavaScript hat für Expressions folgende Kategorien:
+`isSchaltjahr` enthält nun den Wahrheitswer der angibt, ob das Jahr in der Variable `year` ein Schaltjahr ist. Wir haben in diesem Beispiel zum ersten mal Klammern benutzt - wie in der Mathematik klammern wir etwas ein um zu verdeutlichen, dass es zuerst "berechnet" werden soll.
 
-- Arithmetisch - `3`, `3.232`
-- String - `"a"`, `"Fred"`
-- Logisch - `true` oder `false`
-- Primary expressions - basic keywords z.b. `!`, `<`, `>`
-- Left-hand-side expressions - dem Wert links wird der Endwert zugewiesen (assigment)
+Schreibe folgendes Programm:
 
-Der Kernessenz von Expressions ist somit, dass sie sich _immer_ zu einem Wert auflösen lassen.
-
-## Coding
-
-Dieser part ist optional. Falls ihr neu im programmieren seid, legen wir euch dringend nahe die übungen auszuprobieren und Dinge zu testen.
-Hierbei ist alles freiwillig & geht zum nächsten part wenn ihr euch comfortable fühlt.
-
-Nutzt hierfür die [playgrounds](../intro#intro) oder die [developer console](./variables#html) in eurem browser.
-
-Vergesst dabei nicht `console.log()`:
-
-1.  Addiere mindestens zwei Zahlen!
-2.  Printe die Lösung von: `(4 + 6 + 9) / 77`
-
-<details>
-<summary>Lösung 1 & 2</summary>
-Answer for 2. should be approximately 0.24675
-
-Solutions on jsBin
-
-![solution jsbin](../../static/solutions/js-bin-1-2.png)
-
-Solutions with developer console
-
-![solution developer console](../../static/solutions/console-1-2.png)
-
-</details>
-
-3. Deklariert `let a = 10` (returns `undefined`) und tippt dann `9 * a`
-4. Gefolgt von `let b = 7 * a` und dann `console.log(b)`
-
-:::info
-Falls ihr die developer console benutzt habt, werden ihr gemerkt haben, dass nach einer Variablendeklaration `undefined`
-zurückgegeben wird - das ist ein [return statement](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/return).
-`return` wird im nächsten Part genauer besprochen grundsätzlich, bekommt ihr auf Variablendeklaration in der Console `undefined` zurück was euch davon abhält die deklarierte Variable zu updaten.
-:::
-
-5. Deklariert eine variable `max` mit dem Wert 57. Deklariert dann `actual` mit dem Wert
-   `max - 13`, gefolgt von `percentage` mit dem Wert `actual/max`.
-   Lass euch dann das Ergebnis für `percentage` ausgeben.
-
-<details>
-<summary>Lösung 3-5</summary>
-Solutions on jsBin
-
-![solution jsbin](../../static/solutions/js-bin-4-6.png)
-
-Solutions with developer console
-
-![solution developer console](../../static/solutions/console-4-6.png)
-
-</details>
+1. Deklariere eine Variable `age` an, die dein Alter enthält
+2. Deklariere eine Variable `isAdult` die enthält, ob du volljährig bist oder nicht - abhängig von deinem Alter. Benutz dabei einen der Operatoren von oben.
+3. Deklariere eine Variable `ageInCenturies` die als Kommazahl angibt, wieviele Jahrhunderte du alt bist - abhängig von deinem Alter.
+4. Gib alle drei Variablen in der Konsole aus.
