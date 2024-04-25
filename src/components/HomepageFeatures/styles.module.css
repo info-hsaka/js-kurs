@@ -1,43 +1,42 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    width: 100%;
 }
 
 .linkContainer {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 600px) {
-  .linkContainer {
-    flex-direction: column;
-  }
+    .linkContainer {
+        flex-direction: column;
+    }
 }
 
-
 .outline-button {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  padding: 5px;
-  background-color: transparent;
-  border: none;
-  line-height: 3rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    line-height: 3rem;
 }
 
 .outline-button:hover {
-  color: rgb(34, 151, 184);
-  cursor: pointer;
+    color: rgb(34, 151, 184);
+    cursor: pointer;
 }
 
 .outline-button:active {
-  transform: translateY(2px);
+    transform: translateY(2px);
 }
 
 .featureSvg {
-  height: 200px;
-  width: 200px;
+    height: 200px;
+    width: 200px;
 }

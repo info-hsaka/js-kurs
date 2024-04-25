@@ -6,11 +6,11 @@ sidebar_position: 1
 
 ## Kernpunkte
 
-- Was sind Objekte?
-- Wie deklariere ich ein Objekt?
-- Wie füge/lösche ich properties?
-- Wie greife ich auf Daten zu?
-- Wie kopiere ich Objekte?
+-   Was sind Objekte?
+-   Wie deklariere ich ein Objekt?
+-   Wie füge/lösche ich properties?
+-   Wie greife ich auf Daten zu?
+-   Wie kopiere ich Objekte?
 
 ## Objects
 
@@ -34,9 +34,9 @@ deklariert werden:
 
 ```js
 //1
-let user = {}; // "object literal" syntax - go to method
+let user = {} // "object literal" syntax - go to method
 //2
-let user = new Object(); // "object constructor" syntax
+let user = new Object() // "object constructor" syntax
 ```
 
 ![Empty cabinet with the name user](../../static/screenshots/empty-cabinet.png)
@@ -49,9 +49,9 @@ Bei der Deklaration können wir auch gleich Informationen als
 ```js
 // object literal syntax
 let user = {
-  name: "John", // key: 'name' mit dem Wert "John"
-  age: 30, //key: 'age' mit dem Wert 30
-};
+    name: "John", // key: 'name' mit dem Wert "John"
+    age: 30, //key: 'age' mit dem Wert 30
+}
 ```
 
 Eine `property` hat immer einen `key` (als 'identifier')
@@ -75,14 +75,14 @@ wir `.`:
 
 ```js
 //gib den wert der properties aus:
-console.log(user.name); // "John"
-console.log(user.age); // 30
+console.log(user.name) // "John"
+console.log(user.age) // 30
 ```
 
 `Value` können jeder datentype sein:
 
 ```js
-user.isAdmin = true;
+user.isAdmin = true
 ```
 
 ![cabinet with a new folder: isAdmin](../../static/screenshots/add-to-cabinet.png)
@@ -91,7 +91,7 @@ Um eine property zu entfernen können wir den `delete` operator
 nutzen:
 
 ```js
-delete user.age;
+delete user.age
 ```
 
 ![cabinet with the removed isAdmin folder](../../static/screenshots/remove-from-cabinet.png)
@@ -126,8 +126,8 @@ Falls ihr einem `key` mehrere Wörter zuweisen möchtet, solltet ihr stattdessen
 
 ```js
 let user = {
-  likesBirds: true,
-};
+    likesBirds: true,
+}
 ```
 
 :::
@@ -142,8 +142,8 @@ besondere Form des `for loops` verwenden.
 
 ```js
 for (key in object) {
-  //führt den loop body für jede property
-  //innerhalb des objects aus
+    //führt den loop body für jede property
+    //innerhalb des objects aus
 }
 ```
 
@@ -151,26 +151,26 @@ Um die Werte des `user` objects auszugeben:
 
 ```js
 let user = {
-  name: "John",
-  age: 30,
-  isAdmin: true,
-};
+    name: "John",
+    age: 30,
+    isAdmin: true,
+}
 
 for (key in user) {
-  //gib den string namen der keys aus
-  console.log(key); //name, age, isAdmin
+    //gib den string namen der keys aus
+    console.log(key) //name, age, isAdmin
 
-  //gib den zugehörigen value aus
-  //Aufgrund der unterschiedlichen key namen,
-  //die wir jede iteration benötigen müssen wir
-  //diese durch die key variable angeben.
+    //gib den zugehörigen value aus
+    //Aufgrund der unterschiedlichen key namen,
+    //die wir jede iteration benötigen müssen wir
+    //diese durch die key variable angeben.
 
-  //Dafür können wir die eckigen Klammern nutzen:
-  console.log(user[key]); //John, 30, true
+    //Dafür können wir die eckigen Klammern nutzen:
+    console.log(user[key]) //John, 30, true
 
-  //1. iteration - console.log(user.name)
-  //2. iteration - console.log(user.age)
-  //3. iteration - console.log(user.isAdmin)
+    //1. iteration - console.log(user.name)
+    //2. iteration - console.log(user.age)
+    //3. iteration - console.log(user.isAdmin)
 }
 ```
 
@@ -190,8 +190,8 @@ Wenn wir den Variablenwert einer primitiven Variable kopieren wollen,
 dann können wir dies auf diese Weise machen:
 
 ```js
-let message = "Hello!";
-let phrase = message;
+let message = "Hello!"
+let phrase = message
 ```
 
 Beide Variablen speichern unabhängig von einander das Wort "Hello!"
@@ -230,8 +230,8 @@ Object, sondern die Referenz.** D.h. wir schreiben die Adresse des
 Aktenschranks ab.
 
 ```js
-let user = { name: "John" };
-let admin = user; // kopiert die Referenz
+let user = { name: "John" }
+let admin = user // kopiert die Referenz
 ```
 
 Damit haben wir zwei Variablen die zu demselben Object(Aktenschrank)
@@ -242,12 +242,12 @@ Dadurch können beide Variablen benutzt werden um das eigentliche Object
 zu updaten:
 
 ```js
-let user = { name: "John" };
-let admin = user;
+let user = { name: "John" }
+let admin = user
 
-admin.user = "Alyx"; //geupdated durch die 'Admin' referenz
+admin.user = "Alyx" //geupdated durch die 'Admin' referenz
 
-console.log(user.name); // "Alxy", durch die Veränderung von admin
+console.log(user.name) // "Alxy", durch die Veränderung von admin
 ```
 
 Da wir nur ein weiteres Papier mit der Adresse des Aktenschranks
@@ -259,13 +259,13 @@ weil es sich um das gleiche Object handelt.
 Um tatächlich ein Object zu kopieren nutzen wir den `spread operator {...}`:
 
 ```js
-let user = { name: "John" };
-let admin = { ...user }; // wir kopieren hier das OBJECT, nicht die referenz
+let user = { name: "John" }
+let admin = { ...user } // wir kopieren hier das OBJECT, nicht die referenz
 
-admin.user = "Alyx"; //geupdated durch die 'Admin' referenz
+admin.user = "Alyx" //geupdated durch die 'Admin' referenz
 
-console.log(user.name); // "John"
-console.log(admin.user); // "Alyx"
+console.log(user.name) // "John"
+console.log(admin.user) // "Alyx"
 ```
 
 :::danger Object reference
@@ -276,14 +276,14 @@ In allen anderen Fällen ist die comparison `false`, auch wenn die
 Objects die gleichen Properties besitzen.
 
 ```js
-let user = { name: "John" };
-let admin = user; // kopiert referenz
+let user = { name: "John" }
+let admin = user // kopiert referenz
 
-console.log(user === admin); //true
+console.log(user === admin) //true
 
-let copiedValues = { ...user }; // kopiere hier die werte
-console.log(copiedValues); // { name: "John"}
-console.log(copiedValues === user); //false
+let copiedValues = { ...user } // kopiere hier die werte
+console.log(copiedValues) // { name: "John"}
+console.log(copiedValues === user) //false
 ```
 
 :::

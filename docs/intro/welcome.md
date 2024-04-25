@@ -2,13 +2,9 @@
 sidebar_position: 1
 ---
 
-import ReactPlayer from "react-player";
-
-# Intro
+# Willkommen
 
 Dieser Kurs zielt darauf ab euch einen kurzen überblick über Programmieren allgemein und JavaScript als Programmiersprache im Speziellen zu geben.
-
-Grundsätzlich versuchen wir alle notwendigen Basics _innerhalb_ dieses kurses abzudecken und verwenden externe Links (falls nicht explizit anders beschrieben) nur, um Inhalte zu verlinken, welche ihr optional lesen könnt, um tiefer einusteigen oder nochmal detaillierte nachzuschauen.
 
 Wir verwenden immer wieder farbige Blöcke für bestimmte Hinweise:
 
@@ -38,7 +34,7 @@ Hierbei will man irgendein Ziel erreichen, überlegt sich, wie das mit einem Com
 Der wichtigste Schritt beim Programmieren ist also das Denken und übersetzen des Problems in der "echten Welt" in eine Struktur in der Computerwelt, nicht das eigentliche Aufschreiben in einer Programmiersprache.
 
 <div style={{ display: "flex", justifyContent: "center" }}>
-  <ReactPlayer controls url="https://www.youtube.com/watch?v=EGQh5SZctaE" />
+    <ReactPlayer controls url="https://www.youtube.com/watch?v=EGQh5SZctaE" />
 </div>
 
 Für unseren Kurs programmieren wir in der Sprache Javascript
@@ -55,15 +51,4 @@ Javascript Dateien sind einfache Textdateien die direkt ausgeführt werden könn
 Diese Dateien nennt man Skripte (Scripts) und Programmiersprachen in denen Textdateien direkt ausgeführt werden nennt man Skriptsprachen.
 :::
 
-Die ersten solcher Anweisungen lernen wir im nächsten Abschnitt.
-
-## Optionale Ressourcen
-
-Da innerhalb des Kurses sehr wahrscheinlich Fragen aufkommen werden stellen wir hier eine zusätzliche Liste an Infomaterial bereit,
-die es euch ermöglicht Antworten und weitere Informationen zu den Themen zu finden.
-
-Dies sind nur die generelllen Links zu den Seiten, da sie eine Vielzahl von Themen abdecken.
-
-- [MDN Web Docs](https://developer.mozilla.org/de/)
-- [JavaScript Referenzwerk](https://javascript.info/)
-- [w3Schools](https://www.w3schools.com/js/default.asp)
+Die ersten solcher Anweisungen lernen wir im ersten Abschnitt des Tutorials.

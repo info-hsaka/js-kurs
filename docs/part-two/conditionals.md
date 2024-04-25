@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Conditionals
@@ -55,8 +55,8 @@ als "Wenn A gilt, dann mach B".
 
 `if` Statements sind sehr wichtig - "echte" Programme müssen mit dynamischen Daten umgehen, welche von Nutzern eingegeben werden (das werden wir später auch noch tun). Dazu sind Fallunterscheidungen per `if` nötig. Um komplexere Bedingungen ausdrücken zu können, gibt es eine Reihe weiterer nützlicher Operatoren:
 
-- `&&` (gelesen "and" bzw "und") um aus zwei `boolean` Werten zusammenzubauen, ob sie **beide** `true` sind
-- `||` (gelesen "or" bzw "oder") um aus zwei `boolean` Werten zusammenzubauen, ob **mindestens einer** von ihnen `true` ist
+-   `&&` (gelesen "and" bzw "und") um aus zwei `boolean` Werten zusammenzubauen, ob sie **beide** `true` sind
+-   `||` (gelesen "or" bzw "oder") um aus zwei `boolean` Werten zusammenzubauen, ob **mindestens einer** von ihnen `true` ist
 
 ```js
 console.log(4 > 2 && "a" != "b")
@@ -78,7 +78,7 @@ aus.
 
 Es gibt noch einen weiteren `boolean` Operator. Dieser ist ein wenig anders als alle anderen Operatoren bisher. Alle bisherigen Operatoren verbinden zwei Werte und bauen aus ihnen einen neuen Wert zusammen. Es gibt allerdings auch Operatoren, die aus nur einem Wert einen neuen Wert erzeugen:
 
-- `!` (gelesen "not" bzw "nicht") um **einen** `boolean` Wert "umzukehren" (man sagt auch negieren) - aus `true` wird dabei `false` und aus `false` wird `true`
+-   `!` (gelesen "not" bzw "nicht") um **einen** `boolean` Wert "umzukehren" (man sagt auch negieren) - aus `true` wird dabei `false` und aus `false` wird `true`
 
 ```js
 const age = 27
@@ -97,13 +97,13 @@ Kein Teenager mehr
 
 aus, denn der Wert `!isTeenager` ist `true`, weil `isTeenager` `false` ist.
 
-### `else`
+## `else`
 
 Nach einemm `if` erlaubt Javsdcript optional ein `else` welches Code enthält, der ausgeführt werden soll, wenn die Beingung des `if`s `false` war. An einem Beispiel verdeutlicht sich das am einfachsten:
 
 ```js
 const year = 2025
-const isSchaltjahr = (year % 4) == 0
+const isSchaltjahr = year % 4 == 0
 
 if (isSchaltjahr) {
     console.log("Schaltjahr")
@@ -126,7 +126,7 @@ if (A) {
 
 als "Wenn A gilt, dann mach B, sonst mach C".
 
-## `else if`
+### `else if`
 
 Es ist erlaubt, auf ein `else` direkt wieder ein `if` folgen zu lassen, statt `{}`. Dieses Konstrukt nennt man `else if`. Auch das ist am besten an einem Beispiel gezeigt:
 
@@ -144,18 +144,17 @@ if (age < 17) {
 }
 ```
 
-
 ```js
 let year = prompt(
-  "In which year was the ECMAScript-2015 specification published?"
-);
+    "In which year was the ECMAScript-2015 specification published?",
+)
 
 if (year < 2015) {
-  console.log("Too early...");
+    console.log("Too early...")
 } else if (year > 2015) {
-  console.log("Too late");
+    console.log("Too late")
 } else {
-  console.log("Exactly!");
+    console.log("Exactly!")
 }
 
 //Wir checken ob die erste If Bedingung stimmt (year < 2015), wenn die falsch ist gehen wir zur nächsten condition
@@ -176,54 +175,26 @@ if (A) {
 
 als "Wenn A gilt, dann mach B, sonst wenn C gilt mach D, sonst mach E".
 
-## Coding
+## Übung
 
-Für die nächsten Teile werden wir fortlaufendes Script schreiben,
-dass die Inhalte der Kapitel aufgreift und umgesetzt.
+Wir fangen ab jetzt an, in den Übungen Stück für Stück weniger genau einzelne Schritte vorzugeben, sondern nur ein bestimmtes Ergebnis / Verhalten zu beschreiben, welches umzusetzen ist. Das Umsetzen von größeren Zielen in kleineren Programmierschritten ist die Kernfähigkeit, die wir entwickeln wollen. Es gibt generell für die meisten Probleme viele verschiedene legitime Lösungswege - probiert verschiedene aus!
 
-Für die Aufgaben empfehle ich euch [JsBin](https://jsbin.com/?js,console) zu nutzen
-und `//jshint esnext:true` in die erste Zeile zu kopieren, damit ihr keine
-[linter](<https://en.wikipedia.org/wiki/Lint_(software)>) Warnungen erhaltet.
+Schreibe folgendes Programm:
 
-### Teil 1:
+1. Lege eine Variable `birthYear` an, die dein Geburtsjahr als Zahl enthält
+2. Lege eine Variable `birthMonth` an, die deinen Geburtstmonat als Zahl enthält (1 = Januar, 12 = Dezember)
+3. Lege eine Variable `birthDay` an, die den Tag innerhalb des Monats deines Geburtstags als Zahl enthält (zB `17` für den 17. Oktober)
+4. Lege eine Variable `currentYear` an, die das aktuelle Jahr als Zahl enthält
+5. Lege eine Variable `currentMonth` an, die den aktuellen Monat als Zahl enthält
+6. Lege eine Variable `currentDat` an, die den aktuellen Tag innerhalb des aktuellen Monats als Zahl enthält
 
-Wir haben eine Inputvariable die den Wert `3` enthält und möchten den String `Buzz`
-in der Console ausgeben, falls der Wert der Inputvariable durch `5` teilbar ist,
-andernfalls geben wir den Wert der Inputvariable aus.
+Dein Programm soll nun die folgenden Informationen ausgeben, dynamisch von den oben genannten Variablen abhängig. Das heißt, dass das Programm weiterhin korrekte Angaben machen würde, wenn man _nur_ die o.g. Variablen ändert:
 
-Es gibt viele Wege diese Aufgaben umzusetzen, hier sind mögliche Lösungen:
+-   Dein aktuelles Alter als ganze Zahl
+-   In welchem Quartal du geboren bist (Q1 = Jan-Mär, Q2 = Apr-Jun, Q3 = Jul - Sep, Q4 = Okt - Dez)
+-   Ob dieses Jahr sowohl die Fußball Europameisterschaft (seit 1960 alle 4 Jahre) **als auch** die Europawahl (seit 1979 alle 5 Jahre) stattfindet
+-   Ob du heute Geschenke bekommst (wir definieren dafür, dass es an deinem Geburtstag und am 24. Dezember Geschenke gibt)
 
-<details>
-<summary>Mögliche Lösung Teil 1</summary>
-
-```js
-//jshint esnext:true
-
-const input = 3; //input variable
-
-const output = input % 5 === 0 ? "Buzz" : number; //condition und assignment
-console.log(output); // 3;
-```
-
-</details>
-
-### Teil 2:
-
-Nun möchten wir ebenfalls kontrollieren, ob der Wert der Inputvariable durch `3` teilbar ist
-und in dem Fall `Fizz` in der console ausgeben.
-
-<details>
-<summary>Mögliche Lösung Teil 2</summary>
-
-```js
-//jshint esnext:true
-
-const input = 3; //inputvariable
-let output; // wir nutzen hier `let` um den wert der variable updaten können
-
-output = input % 3 === 0 ? "Fizz" : number; //condition 1
-output = input % 5 === 0 ? "Buzz" : output; //condition 2
-console.log(output); // Fizz;
-```
-
-</details>
+:::tip
+Teile solche Probleme in Lösungswege mit kleinen Einzelschritten und speichere Zwischenergebnisse in Variablen mit Namen, die dir helfen.
+:::

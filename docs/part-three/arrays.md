@@ -2,15 +2,112 @@
 sidebar_position: 2
 ---
 
-# Arrays & built-in methods
+# Arrays
+
+Biser haben wir nur mit Werten von so genannten primitiven Datentypen (Strings, Numbers, Booleans) gearbeitet. Es gibt noch eine weitere Art Datentypen: composite Typen.
+
+Der erste comsposite Datentyp den wir uns anschauen ist Array.
+
+## Basics
+
+Ein Array ist ein Wert, der eine beliebig lange Liste von Werten enthält. Ein Array wird mit eckigen `[]` Klammern mit den Werten die er enthält innerhalb der Klammern mit Kommas getrennt geschrieben:
+
+```js
+const fruits = ["Apfel", "Orange", "Banane"]
+const ages = [22, 90, 18, 7, 45]
+const heroes = ["Hulk", "Thor"]
+
+console.log(fruits)
+console.log(cities)
+console.log(heroes)
+```
+
+gibt
+
+```
+['Apfel', 'Orange', 'Banane']
+[22, 90, 18, 7, 45]
+['Hulk', 'Thor']
+```
+
+aus.
+
+Der Array selbst ist nur ein normaler Javascript Wert - wir können ihn in einer Variable speichern, ihn als Parameter an Funktionen übergeben, aus Funktionen returnen etc.
+
+## Index Access
+
+Um auf einen Wert innerhalb eines Arrays zuzugreifen, schreiben wir eine Zahl - den sogenannten Index - nach dem Array in eckige Klammern `[]` und erhalten so das Element im Array an der Stelle des Index. Arrays fangen im Gegensatz zu Menschen **nicht** bei 1 an wenn sie zählen sondern bei 0:
+
+```js
+const colors = ["Blau", "Grün", "Orange", "Violett"]
+
+console.log(colors[2])
+console.log(colors[0])
+```
+
+gibt
+
+```
+Orange
+Blau
+```
+
+aus.
+
+Wenn man auf einen Index zugreift, der außerhalb des Arrrays liegt, erhält man `undefined`:
+
+```js
+const years = [2018, 2024, 1993]
+
+const firstYear = years[0]
+const tenthYear = years[9]
+
+console.log(firstYear)
+console.log(tenthYear)
+```
+
+gibt.
+
+```
+2018
+undefined
+```
+
+aus.
+
+Mit einem Loop könnten wir zum Beispiel alle Strings in einem Array in der Konsole ausgeben:
+
+```js
+const drinks = ["Orangensaft", "Tee", "Kaffee"]
+const drinksLength = 3
+
+let index = 0
+
+while (index < drinksLength) {
+    const currentDrink = drinks[index]
+    console.log(currentDrink)
+
+    index = index + 1
+}
+```
+
+gibt
+
+```
+Orangensaft
+Tee
+Kaffee
+```
+
+aus.
 
 ## Kernpunkte
 
-- Was sind Arrays?
-- Was sind built-in methods?
-- Was für methods existieren?
-- Wo finde ich eine Übersicht für methods?
-- Wie loope ich über ein Array?
+-   Was sind Arrays?
+-   Was sind built-in methods?
+-   Was für methods existieren?
+-   Wo finde ich eine Übersicht für methods?
+-   Wie loope ich über ein Array?
 
 ## Arrays
 
@@ -26,81 +123,6 @@ Anders als in `Objects` sind gespeicherte Datenwerte in Arrays
 nicht über `keys` aufrufbar, sondern über die ihre
 gespeicherte 'Position'.
 
-## Declaration
-
-Es gibt zwei Arten `Arrays` zu deklarieren:
-
-```js
-let arr = []; // array literal - go to method
-
-let arr = new Array(); // "Array constructor" - wenig genutzt
-```
-
-Bei der Deklaration können wir direkt Werte übergeben:
-
-```js
-let fruits = ["Apple", "Orange", "Plum"];
-```
-
-**Die Positionszahlen bei Arrays fangen bei `0` an.**
-
-Wollen wir auf Daten zugreifen nutzen wir folgenden Syntax:
-
-```js
-let fruits = ["Apple", "Orange", "Plum"];
-
-console.log(fruits[0]); // Apple
-console.log(fruits[1]); // Orange
-console.log(fruits[2]); // Plum
-```
-
-Falls wir Werte ersetzen wollen:
-
-```js
-fruits[2] = "Pear"; // replace Value on position 2
-console.log(fruits); // ["Apple", "Orange", "Pear"]
-```
-
-Wenn wir Werte hinzufügen wollen nutzen wir dafür [push](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/push):
-
-```js
-fruits.push("Lemon"); //Array:
-console.log(fruits); //["Apple", "Orange", "Pear", "Lemon"]
-```
-
-Wenn wir die Anzahl der gespeicherten Elemente(Werte)
-innerhalb eines Arrays wissen möchten, erfahren wir dies
-über die seine `lenght`:
-
-```js
-let fruits = ["Apple", "Orange", "Plum"];
-console.log(fruits.length); //3
-
-let emtpy = [];
-console.log(empty.length); //
-```
-
-Wie `Objects` können Arrays jeden Datentyp speichern,
-meist werden sie jedoch zum speichern für `primitive` types
-verwendet.
-
-Wenn wir den Wert des letzten Elements eines erfahren möchten,
-müssen wir beachten, dass Arrays anfangen bei `0` zu
-zählen:
-
-```js
-let fruits = ["Apple", "Orange", "Plum"];
-let lengthOfFruits = fruits.length; // 3
-//lengthOfFruit ist hier 3, dmait ist die Expression in den Klammern folgende:
-// [3 - 1]  was zu [2] ausgewertet wird und uns erlaubt auf das letzte
-// Element des arrays zuzugreifen
-console.log(fruits[lengthOfFruits - 1]); //Plum
-```
-
-Würden wir `-1` nicht abziehen würde uns das Array
-`undefined` zurückgeben, da sich an der Position `fruits[3]`
-kein Wert befindet.
-
 ## Built-in methods
 
 So wie wir `console.log`, `prompt` und andere `methods` bereits
@@ -112,46 +134,46 @@ euch gängige Operationen zur Variablenmanipulation.
 
 Wir werden hier über `pop, push, shift` und `unshift` reden - eine ausführlichere Liste findet [hier](./arrays.md#all-built-in-methods).
 
-- `push` fügt dem Array am Ende ein weitere Element hinzu (wie oben gesehen)
+-   `push` fügt dem Array am Ende ein weitere Element hinzu (wie oben gesehen)
 
 ```js
-let fruits = ["Apple", "Orange"];
+let fruits = ["Apple", "Orange"]
 
-fruits.push("Pear"); // fügt "Pear" am Ende hinzu
+fruits.push("Pear") // fügt "Pear" am Ende hinzu
 
-console.log(fruits); // Apple, Orange, Pear
+console.log(fruits) // Apple, Orange, Pear
 ```
 
-- `unshift` fügt dem Array am Anfang ein weiteres Element hinzu, alle
-  anderen Elemente rücken um eine Position nach hinten.
+-   `unshift` fügt dem Array am Anfang ein weiteres Element hinzu, alle
+    anderen Elemente rücken um eine Position nach hinten.
 
 ```js
-let fruits = ["Orange", "Pear"];
+let fruits = ["Orange", "Pear"]
 
-fruits.push("Apple"); // fügt "Apple" am Anfang hinzu
+fruits.push("Apple") // fügt "Apple" am Anfang hinzu
 
-alert(fruits); // Apple, Orange, Pear
+alert(fruits) // Apple, Orange, Pear
 ```
 
-- `shift` entfernt das 1. Element (Position 0) und lässt alle anderen
-  Elemente eine Position aufrücken.
+-   `shift` entfernt das 1. Element (Position 0) und lässt alle anderen
+    Elemente eine Position aufrücken.
 
 ```js
-let fruits = ["Apple", "Orange", "Pear"];
+let fruits = ["Apple", "Orange", "Pear"]
 
-fruits.shift(); // entfernt "Apple" am Anfang
+fruits.shift() // entfernt "Apple" am Anfang
 
-console.log(fruits); // Orange, Pear
+console.log(fruits) // Orange, Pear
 ```
 
-- `pop` entfernt das letzte Element eines Arrays.
+-   `pop` entfernt das letzte Element eines Arrays.
 
 ```js
-let fruits = ["Apple", "Orange", "Pear"];
+let fruits = ["Apple", "Orange", "Pear"]
 
-fruits.pop(); // entfernt "Pear" am Ende
+fruits.pop() // entfernt "Pear" am Ende
 
-console.log(fruits); // Apple, Orange
+console.log(fruits) // Apple, Orange
 ```
 
 :::danger Perfomance
@@ -191,30 +213,30 @@ Dies geht mit dem bereits bekannten syntax von dem
 Kapitel zu [loops](../part-two/loops.mdx#for-loop)
 
 ```js
-let arr = ["Apple", "Orange", "Pear"];
+let arr = ["Apple", "Orange", "Pear"]
 
 for (let i = 0; i < arr.length; i++) {
-  // da sich i mit jeder iteration erhöht,
-  // können wir den Wert nutzen um dynamisch
-  //über die Werte des Arrays zu iterieren.
-  console.log(arr[i]);
-  //1. iteration - 'Apple'
-  //2. iteration - 'Orange'
-  //3. iteration - 'Pear'
+    // da sich i mit jeder iteration erhöht,
+    // können wir den Wert nutzen um dynamisch
+    //über die Werte des Arrays zu iterieren.
+    console.log(arr[i])
+    //1. iteration - 'Apple'
+    //2. iteration - 'Orange'
+    //3. iteration - 'Pear'
 }
 ```
 
 Für Arrays gibt es jedoch eine Vereinfachung:
 
 ```js
-let fruits = ["Apple", "Orange", "Plum"];
+let fruits = ["Apple", "Orange", "Plum"]
 
 //fruit ist hier nur ein placeholder wort
 for (fruit of fruits) {
-  console.log(fruit);
-  //1. iteration - 'Apple'
-  //2. iteration - 'Orange'
-  //3. iteration - 'Pear'
+    console.log(fruit)
+    //1. iteration - 'Apple'
+    //2. iteration - 'Orange'
+    //3. iteration - 'Pear'
 }
 ```
 
@@ -223,10 +245,10 @@ möchten enthählt JS mehere loop methods.
 Eine davon ist `forEach`:
 
 ```js
-let fruits = ["Apple", "Orange", "Plum"];
+let fruits = ["Apple", "Orange", "Plum"]
 
 //fruit ist hier wieder ein placeholder Wort
-fruits.forEach((fruit) => console.log(fruit));
+fruits.forEach((fruit) => console.log(fruit))
 //1. iteration - 'Apple'
 //2. iteration - 'Orange'
 //3. iteration - 'Pear'

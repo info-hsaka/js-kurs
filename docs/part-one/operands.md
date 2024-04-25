@@ -17,7 +17,7 @@ const answer = 30 + 12
 `answer` ist jetzt eine Variable mit dem Wert 42.
 
 ```js
-const cappucinoPrice = 4.50
+const cappucinoPrice = 4.5
 const croissantPrice = 2
 const totalPrice = cappucinoPrice + croissantPrice
 ```
@@ -26,14 +26,14 @@ const totalPrice = cappucinoPrice + croissantPrice
 
 Es gibt viele verschiedene Opratoren. Wir schauen uns zunächst den Rest der klassischen arithmetischen Operatoren an, die ihr bereits aus der Mathematik kennt:
 
-- `-` um Differenzen zu bilden (minus)
-- `*` um Produkte zu bilden (multiplizieren)
-- `/` um Quotienten zu bilden (dividieren)
+-   `-` um Differenzen zu bilden (minus)
+-   `*` um Produkte zu bilden (multiplizieren)
+-   `/` um Quotienten zu bilden (dividieren)
 
 Es gibt noch zwei weitere arithmetische Operatoren die ihr so geschrieben eventuell noch nicht kennt:
 
-- `%` "Modulo", um den Rest einer Divison mit Rest zu erhalten
-- `**` um zu Potenzen zu bilden (`a ** b` ist `a` hoch `b`)
+-   `%` "Modulo", um den Rest einer Divison mit Rest zu erhalten
+-   `**` um zu Potenzen zu bilden (`a ** b` ist `a` hoch `b`)
 
 #### Beispiele
 
@@ -85,16 +85,17 @@ in der Konsole sehen - die Anzahl von Sekunden in einer Stunde und die Anzahl vo
 
 ## Vergleichsoperatoren
 
-Es gibt neben arithmetischen Operatoren auch sog. Vergleichsoperatoren, welche aus zwei Werten einen `boolean`(Wahrheits-)Wert zusammenbauen. Ihr kennt sie  wahrscheinlich auch bereits aus der Schule:
+Es gibt neben arithmetischen Operatoren auch sog. Vergleichsoperatoren, welche aus zwei Werten einen `boolean`(Wahrheits-)Wert zusammenbauen. Ihr kennt sie wahrscheinlich auch bereits aus der Schule:
 
-- `>` um aus zwei `numbers` zusammenbauen, ob der linke größer als der rechte ist
-- `>=` um aus zwei `numbers` zusammenbauen, ob der linke größer oder gleich als der rechte ist
-- `<` um aus zwei `numbers` zusammenbauen, ob der linke kleiner als der rechte ist
-- `<=` um aus zwei `numbers` zusammenbauen, ob der linke kleiner gleich als der rechte ist
-- `==` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie gleich sind
-- `!=` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie ungleich sind
+-   `>` um aus zwei `numbers` zusammenbauen, ob der linke größer als der rechte ist
+-   `>=` um aus zwei `numbers` zusammenbauen, ob der linke größer oder gleich als der rechte ist
+-   `<` um aus zwei `numbers` zusammenbauen, ob der linke kleiner als der rechte ist
+-   `<=` um aus zwei `numbers` zusammenbauen, ob der linke kleiner gleich als der rechte ist
+-   `==` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie gleich sind
+-   `!=` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie ungleich sind
 
 #### Beispiele
+
 Das Programm
 
 ```js
@@ -137,7 +138,7 @@ Mit diesen Operatoren können wir bereits einiges ausdrücken:
 
 ```js
 const year = 2024
-const isSchaltjahr = (2024 % 4) == 0
+const isSchaltjahr = 2024 % 4 == 0
 ```
 
 `isSchaltjahr` enthält nun den Wahrheitswer der angibt, ob das Jahr in der Variable `year` ein Schaltjahr ist. Wir haben in diesem Beispiel zum ersten mal Klammern benutzt - wie in der Mathematik klammern wir etwas ein um zu verdeutlichen, dass es zuerst "berechnet" werden soll.
