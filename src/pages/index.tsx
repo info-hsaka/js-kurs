@@ -35,9 +35,6 @@ export default function Home(): JSX.Element {
     return (
         <Layout>
             <HomepageHeader />
-            <main>
-                <BrowserOnly>{() => <HomepageFeatures />}</BrowserOnly>
-            </main>
         </Layout>
     )
 }

@@ -8,7 +8,7 @@ Wir haben im letzten Abschnitt häufig das Wort "Wert" für den Inhalt einer Var
 
 Es gibt in Javascript verschiedene Arten von Werten - man nennt diese Arten auch Datentypen. Innerhalb dieser Datentypen gibt es zusätzlich die Unterscheidung zwischen primitiven Datntypen und composite Typen. Wir betrachten zunächst die verschiedenen primitiven Typen:
 
-## `string`s
+## Strings
 
 Mit Strings haben wir bereits im letzten Abschnitt gearbeitet.
 
@@ -30,7 +30,7 @@ let currentYear = 2024
 
 Nun haben wir eine Variable `pi` die die Zahl 3,141 enthält und ein Variable `currentYear` die die Zahl 2024 enthält.
 
-## Wahrheitswerte (`boolean`)
+## Booleans
 
 Wahrheitswerte sind etwas komisch wenn man noch nicht programmiert hat. Man nennt Werte von diesem Typ `boolean`s und es gibt nur genau zwei Werte von diesem Typ:
 
@@ -61,12 +61,12 @@ Wir legen die `meaningOfExistence` Variable zwar an, aber weisen ihr keinen Wert
 
 # Übung
 
-Schreibt folgendes Programm in Javascript:
+Schreibt folgendes Programm in Javascript. Setze dabei jeden der unteren Schritte in einer eigenen Zeile um:
 
--   Legt eine Variable `age` an, welche euer Alter in ganzen Jahren enthält
--   Gib den Inhalt der `age` Variable in der Konsole aus
--   Legt eine Variable `hasPet` an, welche enthält, ob ihr ein Haustier habt, oder nicht
--   Gib den Inhalt der `hasPet` Variable in der Konsole aus
--   Legt eine Variable `sibling` an
--   **Falls** du Geschwister hast, befüll die Variable `sibling` mit dem Namen eines deiner Geschwister
--   Gib den Inhalt der `sigbling` Variable in der Konsole aus
+1.  Legt eine Variable `age` an, welche euer Alter in ganzen Jahren enthält
+2.  Gib den Inhalt der `age` Variable in der Konsole aus
+3.  Legt eine Variable `hasPet` an, welche enthält, ob ihr ein Haustier habt, oder nicht
+4.  Gib den Inhalt der `hasPet` Variable in der Konsole aus
+5.  Legt eine Variable `sibling` an
+6.  **Falls** du Geschwister hast, befüll die Variable `sibling` mit dem Namen eines deiner Geschwister
+7.  Gib den Inhalt der `sigbling` Variable in der Konsole aus

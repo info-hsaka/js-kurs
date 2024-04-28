@@ -33,10 +33,6 @@ Hierbei will man irgendein Ziel erreichen, überlegt sich, wie das mit einem Com
 
 Der wichtigste Schritt beim Programmieren ist also das Denken und übersetzen des Problems in der "echten Welt" in eine Struktur in der Computerwelt, nicht das eigentliche Aufschreiben in einer Programmiersprache.
 
-<div style={{ display: "flex", justifyContent: "center" }}>
-    <ReactPlayer controls url="https://www.youtube.com/watch?v=EGQh5SZctaE" />
-</div>
-
 Für unseren Kurs programmieren wir in der Sprache Javascript
 
 ## Warum Javascript?

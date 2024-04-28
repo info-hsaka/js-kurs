@@ -95,27 +95,112 @@ false
 
 aus.
 
-`.startsWith` ist eine builtin Methode auf Strings, welche einen anderen String annimmt und zurückgibt, ob der String auf dem man sie aufgerufen hat mit dem übergebenen String beginnt oder nicht. Es gibt auch ein `.endsWith` Gegenstück das prüft, ob ob er damit endet. `.includes` prüft, ob der String irgendwo enthalten ist. Ein paar Beispiele:
+### `.startsWith(string)` (returnt Boolean)
+
+`.startsWith` ist eine builtin Methode auf Strings, welche einen anderen String annimmt und zurückgibt, ob der String auf dem man sie aufgerufen hat mit dem übergebenen String beginnt oder nicht.
 
 ```js
-console.log("Thor".endsWith("or"))
-console.log("Loki".includes("ok"))
-console.log("Starlord".endsWith("lord"))
+console.log("Black Widow".startsWith("Black"))
+console.log("Spider Man".startsWith("Ven"))
 ```
 
 gibt
 
 ```
 true
-true
-true
+false
 ```
 
 aus.
 
+### `.endsWith(string)` (returnt Boolean)
+
+`.endsWith` ist das Gegenstück zu `startsWith`, nur, dass das Ende des Strings geprüft wird.
+
+```js
+console.log("Thor".endsWith("or"))
+console.log("Starlord".endsWith("Star"))
+```
+
+gibt
+
+```
+true
+false
+```
+
+### `.includes(string)` (returnt Boolean)
+
+`.includes` prüft, ob der übergebene String irgendwo im String auf dem aufgerufen wurde enthalten ist.
+
+```js
+console.log("Loki".includes("ok"))
+console.log("Groot".includes("or"))
+```
+
+gibt
+
+```
+true
+false
+
+```
+
+aus.
+
+### `.indexOf(string)` (returnt Number)
+
+`.indexOf` sucht ähnlich wie `.includes` nach dem übergebenen String. Falls es ihn findet, gibt es zurück, beim wievielten Zeichen er gefunden wurde (die Zählung beginnt dabei mit `0`). Wenn er nicht gefunden wird, wird `-1` zurückgegeben.
+
+```js
+console.log("Black Panther".indexOf("ack"))
+console.log("Jessica Jones".includes("Jess"))
+console.log("Captain Marvel".includes("asdf"))
+```
+
+gibt
+
+```
+2
+0
+-1
+```
+
+aus.
+
+### `.substring(number, number)` (returnt string)
+
+`.substring` erwartet eine Startstelle und eine Endstelle. Es schneidet dann den angegebenen Ausschnitt aus dem String auf dem es aufgerufen wird aus und gibt den ausgeschnittetnen String zurück. Die Stellen werden dabei als Zahl angegeben, die Zählung startet mit 0.
+
+```js
+console.log("Iron Man".substring(0, 4))
+console.log("Wolverine".substring(2, 7))
+console.log("Captain America".substring(6, 10))
+```
+
+gibt
+
+```
+Iron
+lveri
+n Am
+```
+
+aus.
+
+:::tip
+Die Stellenangaben die `.substring` erwartet sind verhalten sich jeweils leicht anders - die Startangabe ist inklusiv, das heißt das Zeichen an der Stelle ist das erste Zeichen im ausgeschnittenen Wert. Das Zeichen an der Endangabe ist **nicht** das letzte Zeichen, sondern das erste, das fehlt.
+
+In anderen Worten: `.substring(1, 4)` heißt `nimm die Zeichen von inklusive Stelle 1 bis exklusive Stelle 4` oder `nimm die Zeichen an Stelle 1, 2 und 3`
+:::
+
 ## Builtin String Properties
 
-Zusätzlich zu builtin Methods gibt es auch noch sogenannte builtin Properties. Diese funktionieren genauso, sind aber keine Funktionen sondern direkt feste Werte. Auf Strings gibt es die `.length` Property, welche die Länge des Strings als Zahl enthält:
+Zusätzlich zu builtin Methods gibt es auch noch sogenannte builtin Properties. Diese funktionieren genauso, sind aber keine Funktionen sondern direkt feste Werte.
+
+### `.length`
+
+Auf Strings gibt es die `.length` Property, welche die Länge des Strings als Zahl enthält:
 
 ```js
 console.log("Ant Man".length)
@@ -133,6 +218,20 @@ gibt
 
 aus.
 
-### String Methods
+## Übung
 
-### Math Methods
+### Anrede kürzen
+
+Schreibe eine Funktion welche aus einem vollen Namen die Anrede wegkürzt. Das heißt, dass deine Funktion einen String bekommt und falls dieser mit "Hr." oder "Fr." anfängt, ssoll diese Anrede weggekürzt werden, so dass nur der Name selbst übrig bleibt. Falls nicht, soll der String unberührt returnt werden. Deine Funktion sollte sich so verhalten:
+
+-   `"Fr. Black Widow"` wird zu `"Black Widow"`
+-   `"Hr. Hulk"` wird zu `"Hulk"`
+-   `"Thor"` wird zu `"Thor"`
+
+### Entfernen von beliebigem String
+
+Schreibe eine Funktion, welche zwei Strings erwartet. Sie soll im ersten übergebenen String alle Vorkommnisse des zweite übergebenen Strings entfernen und den resultierenden String zurückgeben. **Benutze dabei nur die auf dieser Seite beschriebenen builtins**. Deine Funktion sollte sich folgendermaßen verhalten:
+
+-   `("FooBarFoo", "Foo")` wird zu `"Bar"`
+-   `("Man darf auf der Akademie nicht Geschi sagen", "Geschi")` wird zu `"Man darf auf der Akademie nicht  sagen"`
+-   `("Info ist der beste Kurs", "Mathe")` wird zu `"Info ist der beste Kurs"`

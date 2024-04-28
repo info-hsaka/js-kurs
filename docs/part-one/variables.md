@@ -127,7 +127,7 @@ var message = "Hallo"
 
 # Übung
 
-Zeit für deine erste Übung. Setze das folgende Programm in Javascript um:
+Zeit für deine erste Übung. Setze das folgende Programm in Javascript um. Schreibe dabei in deiner Datei eine eigene Zeile pro Schritt:
 
 1. Erstelle eine konstante Variable `name` welche deinen Naen enthält
 2. Erstelle eine leere Variable `awesomePerson`
