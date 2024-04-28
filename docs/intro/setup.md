@@ -60,7 +60,7 @@ Suche und installiere die Extension `Git Graph` von mhutchie
 
 ### 2.3 Clone Git Repository
 
-Damit du endlich mit dem Tutorial loslegen kannst, musst du das vorhin geforkte Repo noch herunterladen. Drücke dazu erneut `Strg+Shift+P`/`Cmd+Shift+P`, und suche nach `Git: clone`.
+Damit du endlich mit dem Tutorial loslegen kannst, musst du das vorhin geforkte Repo noch herunterladen. Drücke dazu `Strg+Shift+P`/`Cmd+Shift+P`, und suche nach `Git: clone`.
 
 ![](./setup_pictures/GitClone.png)
 

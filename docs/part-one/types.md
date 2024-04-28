@@ -21,7 +21,7 @@ const greeting = "Hello dear Human"
 
 ## Numbers
 
-Ein weiterer möglicher Datentyp sind Zahlen. Diese werden in Javascript als normale Zahlenfolge ausgedrückt. Fuur Dezimalzahlen wird der Punkt (statt wie im Deutschen das Komma) als Trenner verwendet:
+Ein weiterer möglicher Datentyp sind Zahlen. Diese werden in Javascript als normale Zahlenfolge ausgedrückt. Für Dezimalzahlen wird der Punkt (statt wie im Deutschen das Komma) als Trenner verwendet:
 
 ```js
 const pi = 3.141

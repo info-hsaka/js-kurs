@@ -99,7 +99,7 @@ aus, denn der Wert `!isTeenager` ist `true`, weil `isTeenager` `false` ist.
 
 ## `else`
 
-Nach einemm `if` erlaubt Javsdcript optional ein `else` welches Code enthält, der ausgeführt werden soll, wenn die Beingung des `if`s `false` war. An einem Beispiel verdeutlicht sich das am einfachsten:
+Nach einemm `if` erlaubt JavaScript optional ein `else` welches Code enthält, der ausgeführt werden soll, wenn die Beingung des `if`s `false` war. An einem Beispiel verdeutlicht sich das am einfachsten:
 
 ```js
 const year = 2025
@@ -186,7 +186,7 @@ Schreibe folgendes Programm:
 3. Lege eine Variable `birthDay` an, die den Tag innerhalb des Monats deines Geburtstags als Zahl enthält (zB `17` für den 17. Oktober)
 4. Lege eine Variable `currentYear` an, die das aktuelle Jahr als Zahl enthält
 5. Lege eine Variable `currentMonth` an, die den aktuellen Monat als Zahl enthält
-6. Lege eine Variable `currentDat` an, die den aktuellen Tag innerhalb des aktuellen Monats als Zahl enthält
+6. Lege eine Variable `currentDay` an, die den aktuellen Tag innerhalb des aktuellen Monats als Zahl enthält
 
 Dein Programm soll nun die folgenden Informationen ausgeben, dynamisch von den oben genannten Variablen abhängig. Das heißt, dass das Programm weiterhin korrekte Angaben machen würde, wenn man _nur_ die o.g. Variablen ändert:
 

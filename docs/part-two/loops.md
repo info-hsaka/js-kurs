@@ -126,7 +126,7 @@ aus.
 In der Mathematik gibt es die sogenannte Collatz-Folge. Um sie zu bilden, startet man mit einer beliebigen positiven ganzen Zahl. Dann wiederholt man die folgenden Schritte immer wieder:
 
 -   Wenn die Zahl gerade ist, wird sie halbiert
--   Wenn die Zahl ungeraade ist, wird sie verdreifacht und dann 1 addiert
+-   Wenn die Zahl ungerade ist, wird sie verdreifacht und dann 1 addiert
 
 Wen man zum Beispiel mit der Zahl 5 anfängt ergibt sich:
 

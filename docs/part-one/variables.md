@@ -111,9 +111,9 @@ einer `const` Variable nicht mehr änderbar. Man nennt eine solche Variable auch
 Der Versuch den Inhalt einer `const` Variable zu ändern führt zu einem Fehler:
 
 ```js
-  const myBirthday: '18.04.2006'
+const myBirthday = "18.04.2006"
 
-  myBirthday = '01.01.2010' // error, can't reassign the constant!
+myBirthday = "01.01.2010" // error, can't reassign the constant!
 ```
 
 :::caution `var`
@@ -129,7 +129,7 @@ var message = "Hallo"
 
 Zeit für deine erste Übung. Setze das folgende Programm in Javascript um. Schreibe dabei in deiner Datei eine eigene Zeile pro Schritt:
 
-1. Erstelle eine konstante Variable `name` welche deinen Naen enthält
+1. Erstelle eine konstante Variable `name` welche deinen Namen enthält
 2. Erstelle eine leere Variable `awesomePerson`
 3. Befülle die `awesomePerson` Variable mit dem Wert der `name` Variable
 4. Gib den Inhalt von `awesomePerson` in der Konsole aus

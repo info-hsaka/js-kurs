@@ -39,7 +39,7 @@ Für unseren Kurs programmieren wir in der Sprache Javascript
 
 Javascript ist die aktuell größte Programmiersprache der Welt. Das liegt daran, dass es die einzige Sprache ist, die direkt von Webbrowsern, mit denen man Internetseiten benutzen kann, ausgeführt wird. Auch wir werden im Laufe des HSAKA Kurses diese Eigenschaft nutzen.
 
-## Wir funktioniert JavaScript
+## Wie funktioniert JavaScript
 
 Javascript Dateien sind einfache Textdateien die direkt ausgeführt werden können. Hierbei wird die Datei Zeile für Zeile gelessen und die Anweisungen in den Zeilen nacheinander ausgeführt, wie ein Ablaufplan oder ein Kochrezept.
 
