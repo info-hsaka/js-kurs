@@ -144,23 +144,6 @@ if (age < 17) {
 }
 ```
 
-```js
-let year = prompt(
-    "In which year was the ECMAScript-2015 specification published?",
-)
-
-if (year < 2015) {
-    console.log("Too early...")
-} else if (year > 2015) {
-    console.log("Too late")
-} else {
-    console.log("Exactly!")
-}
-
-//Wir checken ob die erste If Bedingung stimmt (year < 2015), wenn die falsch ist gehen wir zur nächsten condition
-//(year > 2015).
-```
-
 Man liest allgemein (das ist kein echter Code, er dient nur der Darstellung):
 
 ```js

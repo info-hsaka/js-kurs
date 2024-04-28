@@ -26,14 +26,14 @@ const totalPrice = cappucinoPrice + croissantPrice
 
 Es gibt viele verschiedene Opratoren. Wir schauen uns zunächst den Rest der klassischen arithmetischen Operatoren an, die ihr bereits aus der Mathematik kennt:
 
--   `-` um Differenzen zu bilden (minus)
--   `*` um Produkte zu bilden (multiplizieren)
--   `/` um Quotienten zu bilden (dividieren)
+-   `-` Subtraktion
+-   `*` Multiplikation
+-   `/` Division
 
 Es gibt noch zwei weitere arithmetische Operatoren die ihr so geschrieben eventuell noch nicht kennt:
 
--   `%` "Modulo", um den Rest einer Divison mit Rest zu erhalten
--   `**` um zu Potenzen zu bilden (`a ** b` ist `a` hoch `b`)
+-   `%` "Modulo", um den Rest einer Divison zu erhalten
+-   `**` um Potenzen zu bilden (`a ** b` ist `a` hoch `b`)
 
 #### Beispiele
 
@@ -87,12 +87,12 @@ in der Konsole sehen - die Anzahl von Sekunden in einer Stunde und die Anzahl vo
 
 Es gibt neben arithmetischen Operatoren auch sog. Vergleichsoperatoren, welche aus zwei Werten einen `boolean`(Wahrheits-)Wert zusammenbauen. Ihr kennt sie wahrscheinlich auch bereits aus der Schule:
 
--   `>` um aus zwei `numbers` zusammenbauen, ob der linke größer als der rechte ist
--   `>=` um aus zwei `numbers` zusammenbauen, ob der linke größer oder gleich als der rechte ist
--   `<` um aus zwei `numbers` zusammenbauen, ob der linke kleiner als der rechte ist
--   `<=` um aus zwei `numbers` zusammenbauen, ob der linke kleiner gleich als der rechte ist
--   `==` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie gleich sind
--   `!=` um aus zwei **beliebigen** Werten zusammenzubauen, ob sie ungleich sind
+-   `>` überprüft ob die linke `number` **größer** als die rechte `number` ist
+-   `>=` überprüft ob die linke `number` **größer oder gleich** als die rechte `number` ist
+-   `<` überprüft ob die linke `number` **kleiner** als die rechte `number` ist
+-   `<=` überprüft ob die linke `number` **kleiner oder gleich** als die rechte `number` ist
+-   `==` überprüft ob zwei _beliebige_ Werte **gleich** sind
+-   `!=` überprüft ob zwei _beliebige_ Werte **ungleich** sind
 
 #### Beispiele
 
