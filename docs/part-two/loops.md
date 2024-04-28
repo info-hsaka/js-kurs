@@ -91,7 +91,7 @@ aus.
 Das `continue` Statement ist ähnlich. Allerdings bricht es nur die aktuelle Schleifenwiederholung ab, nicht die gessamte Schleife. Es "springt" sozusagen direkt zur nächsten Schleifenwiederholung:
 
 ```js
-let number = 1
+let number = 0
 
 while (number < 10) {
     number = number + 1
@@ -111,10 +111,19 @@ Dieses Programm gibt
 
 ```
 1
+ist ungerade
+2
 3
+ist ungerade
+4
 5
+ist ungerade
+6
 7
+ist ungerade
+8
 9
+ist ungerade
 ```
 
 aus.

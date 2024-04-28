@@ -133,27 +133,27 @@ aus.
 Allgemein kann man bei der Deklaration (und dann auch dem Aufruf) einer Funktion beliebig viele Parameter angeben. Diese werden dabei in den runden Klammern `()` mit Kommas `,` getrennt aufgelistet:
 
 ```js
-function sayOlderParent(momAge, dadAge) {
-    if (dadAge == momAge) {
-        console.log("Eltern sind gleichalt")
-    } else if (momAge > dadAge) {
-        console.log("Mutter ist älter")
-    } else {
-        console.log("Vater ist älter")
-    }
+function saySum(x, y) {
+    const sum = x + y
+
+    console.log("x + y = ")
+    console.log(sum)
 }
 
-sayOlderParent(40, 40)
-sayOlderParent(32, 33)
-sayOlderParent(52, 50)
+saySum(10, 15)
+saySum(2, 18)
+saySum(499, 1)
 ```
 
 gibt
 
 ```
-Eltern sind gleichalt
-Vater ist älter
-Mutter ist älter
+x + y =
+25
+x + y =
+20
+x + y =
+500
 ```
 
 aus.
