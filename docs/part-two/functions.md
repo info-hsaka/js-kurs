@@ -379,16 +379,41 @@ Wenn wir Code gut in Funktionen aufteilen entsteht der sogenannte Black Box Effe
 
 Damit eine Funktion eine gute Black Box ist, braucht sie nicht nur eine gut abgesteckte Aufgabe, die sie erfüllt, sondern auch einen guten Namen (und gute Namen für die Parameter). Der Name einer Funktion und ihrer Parameter ist essentiell um beim "drüberlesen" von Code schnell zu verstehen, was sie tut, ohne den Körper der Funktion lesen zu müssen.
 
+## `import` & `export`
+
+Wir haben oben erklärt, dass große Softwareprojekte Code in viele kleine Funktionen aufteilen. Wir haben allerdings ausgelassen, wo diese ganzen Funktionen leben. Große Softwareprojekte haben hunderttausende von Zeilen - diese können natürlich nicht sinnvoll in einer einzigen Datei leben, sondern müssen auf viele, viele Dateien in einer verständlichen Ordnerstruktur verteilt werden.
+
+Der Mechanismus, mit dem wir in Javascript Funktionen auf Dateien verteilen, ist `import` und `export`.
+
+-   Mit `export` markiert man in einer Datei Funktionen, die von anderen Dateien benutzt werden sollen. Man sagt, sie werden "exportiert", sie können "von außen" benutzt werden.
+-   Mit `import` "importiert" man Funktionen aus anderen Dateien um sie zu benutzen
+
+Ein Beispiel:
+
+```js title="foo.js"
+// Hier exportieren wir die Funktion nach außen damit andere Dateien sie importieren können
+export function sayHello() {
+    console.log("hello")
+}
+```
+
+```js title="bar.js"
+// Hier holen wir uns die Funktion aus foo.js
+import { sayHello } from "foo.js"
+
+sayHello()
+```
+
+Warum sprechen wir jetzt darüber? Ab jetzt werden wir euch in den Übungsaufgaben auffordern, eine Funktion mit einem bestimmten Namen zu exportieren. Wenn ihr die Übung dann über den Play Button ausführt, testen wir eure Funktion automatisch mit ein paar Parametern aus und sagen euch, ob sie funktioniert, wie sie soll.
+
 ## Übung
 
 Wir schauen uns jetzt eine etwas größere Aufgabe an um zu üben, Dinge in Funktionen zu unterteilen. Wir beziehen uns dabei auf vorherige Übungsaufgaben und bauen aus ihnen eine größere chaotische Aufgabe zusammen.
 
--   Schreibe eine Funktion welche ein Startjahr (Zahl) und das Alter einer Person in diesem Startjahr (Zahl) als Parameter erwartet. Diese Funktion soll folgendes tun:
-    -   Gehe alle Jahre ab dem Startjahr bis 100 Jahre nach dem Startjahr durch
-        -   Stelle pro Jahr fest, ob in diesem Jahr sowohl die Fußbal EM als auch die Europawahl stattfindet. Falls ja:
-            -   Gib "Europajahr!" und das Jahr in der Konsole aus
-            -   Stelle fest, wie alt die Person in diesem Jahr wäre
-                -   Starte mit diesem Alter eine [Collatz Folge](loops#collatz-folge) und gib die dritte Zahl dieser Folge in der Konsole aus (Beispiel: 24 als Start wird zu 24, 12, 6 - 6 ist die dritte Zahl)
+-   Schreibe eine Funktion `getMagicNumber(startYear, age)` und exportiere sie. Die Funktion erwartet ein Startjahr (Zahl) und das Alter einer Person in diesem Startjahr (Zahl) als Parameter. Sie soll folgendes tun:
+-   Suche ab dem Startjahr nach dem nächsten Jahr, in dem sowohl die Fußbal EM als auch die Europawahl stattfindet
+-   Stelle fest, wie alt die Person in diesem Jahr wäre Starte mit diesem Alter eine [Collatz Folge](loops#collatz-folge) und return die dritte Zahl dieser Folge (Beispiel: 24 als Start wird zu 24, 12, 6 - 6 ist die dritte Zahl)
+
 -   Rufe diese Funktion dreimal mit folgenden Parametern auf:
     -   2024, 30
     -   2018, 18
