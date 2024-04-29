@@ -1,0 +1,6 @@
+- setup
+    - play button
+    - node installieren
+    - git klonen (ging bei Malene nicht)
+- last complex / IoC section
+- last sweep
