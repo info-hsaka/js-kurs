@@ -127,7 +127,11 @@ aus.
 
 ## Array Builtins
 
-Arrays haben ähnlich wie Strings auch viele builtin Methoden und Properties. Einigee davon heißen und funktionieren sogar genauso wie bei Strings:
+Arrays haben ähnlich wie Strings auch viele builtin Methoden und Properties.
+
+### String-likes
+
+Einige davon heißen und funktionieren sogar genauso wie bei Strings:
 
 -   `.length` ist eine Property und enthält die Anzahl der Elemente des Arrays
 -   `.includes` ist eine Funktion die einen beliebigen Wert erwartet und zurückgibt, ob dieser im Array enthalten ist
@@ -183,9 +187,9 @@ Arrays können beliebige Werte enthalten. Das bedeutet, dass Arrays auch andere 
 
 ```js
 const ticTacToe = [
-    ["X", "O", ""],
-    ["", "X", "O"],
-    ["", "O", ""],
+    ["X", "O", " "],
+    [" ", "X", "O"],
+    [" ", "O", " "],
 ]
 
 const middle = ticTacToe[1][1]
@@ -201,4 +205,35 @@ X
 
 aus.
 
-`ticTacToe[1][1]` sieht hier etwas magisch aus. Aber wenn wir uns Klammern vorstellen `(ticTacToe[1])[1]` ist klarer, was hier passiert - der erste Zugriff auf `ticTacToe[1] ` ist wieder ein Array (nämlich die zweiter Zeile des Spielfeldes), also können wir wieder auf ein Element zugreifen - in dem Fall wieder mit `[1]` auf das zweite (mittlere) Element.
+`ticTacToe[1][1]` sieht hier etwas magisch aus. Aber wenn wir uns Klammern vorstellen `(ticTacToe[1])[1]` ist klarer, was hier passiert - der erste Zugriff auf `ticTacToe[1] ` ist wieder ein Array (nämlich die zweite Zeile des Spielfeldes), also können wir wieder auf ein Element zugreifen - in dem Fall wieder mit `[1]` auf das zweite (mittlere) Element.
+
+## Zwischenübung
+
+Schreibe eine Funktion, die einen Array aus Strings erwartet und einen neuen Array aus Strings zurückgibt. Dieser neue Array aus Strings soll alle Strings des übergebenen Arrays enthalten, die mindestens 5 Zeichen lang sind **oder** mit einem "S" starten - und zwar in umgedrehter Reihenfolge.
+
+Beispiel: `["Kugelschreiber", "Salz", "Maus"]` wird zu `["Salz", "Kugelschreiber"]`
+
+## `for of` Loops
+
+Da man beim Programmieren sehr häufig einen Loop schreiben muss, um irgendetwas mit jedem Element eines Arrays zu tun, gibt es hierfür eine spezielle Kurzform - den `for of` Loop:
+
+```js
+const devices = ["Laptop", "Keyboard", "Mouse", "Headphones"]
+
+for (const dev of devices) {
+    console.log(dev)
+}
+```
+
+gibt
+
+```
+Laptop
+Keyboard
+Mouse
+Headphones
+```
+
+aus.
+
+Ein `for of` Loop wird allgmein `for (const <name> of <array>) { <body> }` geschrieben, wobei `<name>` der Name der neuen lokalen Variable ist, die automatisch pro Durchlauf das aktuelle Element des Arrays `<array>` enthält.

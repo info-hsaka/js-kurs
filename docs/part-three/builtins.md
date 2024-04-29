@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Advanced Strings & Builtins
 
 ## Template Strings
@@ -6,7 +10,7 @@ Bisher haben wir Strings immer nur fest aufgeschrieben und ausgegeben. Häufig w
 
 Um Strings dynamisch zusammenzubauen, gibt es sogenannte Template Strings. Template Strings werden wie normale Strings geschrieben, mit zwei Änderungen:
 
--   `Statt "" werden sie mit` geschrieben``
+-   Statt `""` werden sie mit `` geschrieben
 -   Mitten in dem String können andere Werte eingesetzt werden, indem man sie mit `${}` umschließt
 
 Ein Beispiel:
@@ -217,6 +221,10 @@ gibt
 ```
 
 aus.
+
+## Builtin `console` Methods
+
+Wir haben bisher häufig `console.log` benutzt. Jetzt wissen wir ein wenig mehr darüber, was das ist - `console` ist ein immer global vorhandener Wert der die Konsole repräsentiert, in der das Programm läuft. `console` hat mehrere builtin Methods, under andere. `.log`, welche wir für unsere Programme nutzen um Ausgaben zu erzeugen. Es gibt auch noch einige andere builtins auf `console`, welche aber für unseren Kurs erstmal noch nicht relevant sind.
 
 ## Übung
 
