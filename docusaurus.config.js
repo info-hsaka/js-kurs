@@ -1,4 +1,5 @@
 // @ts-check
+import { themes as prismThemes } from "prism-react-renderer"
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -54,6 +55,9 @@ const config = {
             footer: {
                 style: "dark",
                 copyright: `Copyright © ${new Date().getFullYear()} HSAKA JS-Kurs`,
+            },
+            prism: {
+                theme: prismThemes.okaidia,
             },
         }),
 }
