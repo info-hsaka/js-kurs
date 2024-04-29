@@ -167,23 +167,17 @@ Alle Apps und Seiten die ihr jeden Tag verwendet verpacken ihre Daten in große 
 
 ## Übung
 
-Schreibe eine Funkion, welche einen Array aus Objekten, welche Schulfächer mit Noten auf einem Zeugnis repräsentiert, entgegennimmt und ein Objekt mit einer Zusammenfassung des Zeugnisses zurückgibt.
+Schreibe eine exportierte Funkion `analyzeGrades(report)`, welche einen Array aus Objekten, welche Schulfächer mit Noten auf einem Zeugnis repräsentiert, entgegennimmt und ein Objekt mit einer Zusammenfassung des Zeugnisses zurückgibt.
 
-Nimm an, dass der Array den die Funktion annimmt, folgendes Format hat:
+Nimm an, dass die Objekte im Array den die Funktion annimmt, folgendes Format haben:
 
 ```js
-;[
-    {
-        // String der das Fach angibt
-        subject: "Deutsch",
-        // Zahl die die Note angibt (2.3 = 2- , 1.7 = 2+ , 2.0 = 2)
-        grade: 2.3,
-    },
-    {
-        subject: "Geschichte",
-        grade: 3.0,
-    },
-]
+{
+    // String der das Fach angibt
+    subject: "Deutsch",
+    // Zahl die die Note angibt (2.3 = 2- , 1.7 = 2+ , 2.0 = 2)
+    grade: 2.3,
+}
 ```
 
 Gib ein Objekt im folgenden Format zurück:

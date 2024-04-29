@@ -209,7 +209,7 @@ aus.
 
 ## Zwischenübung
 
-Schreibe eine Funktion, die einen Array aus Strings erwartet und einen neuen Array aus Strings zurückgibt. Dieser neue Array aus Strings soll alle Strings des übergebenen Arrays enthalten, die mindestens 5 Zeichen lang sind **oder** mit einem "S" starten - und zwar in umgedrehter Reihenfolge.
+Schreibe eine exportierte Funktion `filterStrings(arr)`, die einen Array aus Strings erwartet und einen neuen Array aus Strings zurückgibt. Dieser neue Array aus Strings soll alle Strings des übergebenen Arrays enthalten, die mindestens 5 Zeichen lang sind **oder** mit einem "S" starten - und zwar in umgedrehter Reihenfolge.
 
 Beispiel: `["Kugelschreiber", "Salz", "Maus"]` wird zu `["Salz", "Kugelschreiber"]`
 
