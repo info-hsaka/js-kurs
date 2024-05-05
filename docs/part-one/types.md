@@ -59,7 +59,7 @@ console.log(meaningOfExistence)
 
 Wir legen die `meaningOfExistence` Variable zwar an, aber weisen ihr keinen Wert zu. Wenn wir sie in der Konsole ausgeben, erhalten wir `undefined` - die Variable ist leer.
 
-# Übung
+## Übung
 
 Schreibt folgendes Programm in Javascript. Setze dabei jeden der unteren Schritte in einer eigenen Zeile um:
 

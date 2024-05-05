@@ -138,7 +138,7 @@ Mit diesen Operatoren können wir bereits einiges ausdrücken:
 
 ```js
 const year = 2024
-const isSchaltjahr = (2024 % 4) == 0
+const isSchaltjahr = 2024 % 4 == 0
 ```
 
 `isSchaltjahr` enthält nun den Wahrheitswer der angibt, ob das Jahr in der Variable `year` ein Schaltjahr ist. Wir haben in diesem Beispiel zum ersten mal Klammern benutzt - wie in der Mathematik klammern wir etwas ein um zu verdeutlichen, dass es zuerst "berechnet" werden soll.

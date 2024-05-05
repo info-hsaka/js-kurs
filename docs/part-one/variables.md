@@ -129,7 +129,7 @@ einer `const` Variable nicht mehr änderbar. Man nennt eine solche Variable auch
 
 Der Versuch den Inhalt einer `const` Variable zu ändern führt zu einem Fehler.
 
-# Übung
+## Übung
 
 Zeit für deine erste Übung. Setze das folgende Programm in Javascript um. Schreibe dabei in deiner Datei eine eigene Zeile für jeden der folgenden Schritte und versuche nicht, das Programm kürzer zu machen. Es sollten genau drei Zeilen sein:
 
