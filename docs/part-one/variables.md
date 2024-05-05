@@ -73,7 +73,7 @@ Ich schreibe Javascript
 
 in der Konsole aus.
 
-### Konsole???
+:::info Info Konsole???
 
 Die Programme die wir in diesem Kurs schreiben sind sehr simpel - sie geben haupstächlich Text in die Konsole eures Editors (VSCode) aus. Eine Konsole ist ein einfaches Interface, welches nur Text ausgeben und entgegennehmen kann.
 :::
@@ -96,8 +96,6 @@ aus.
 Hier haben wir den Inhalt einer Variable angegeben, statt den String direkt in `console.log` zu schreiben.
 
 Den Inhalt einer Variable anzugeben nennt man auch die Variable "lesen" oder accessen.
-
-:::info Info
 
 ### Assignment + Access
 
