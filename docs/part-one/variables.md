@@ -4,98 +4,119 @@ sidebar_position: 1
 
 # Variablen
 
-Bevor wir die erste Anweisung lernen, müssen wir mit einer sprachlichen Konsistenz brechen: Im Programmierkontext sind praktisch alle Begriffe englisch. Deutsche Versionen der meitsten Begriffe existieren, werden aber praktisch nicht benutzt und sind schwer zu googlen. Deswegen fangen wir ab jetzt an, die englischen Begriffe einzuführen und zu benutzen. Dabei kommt es unweigerlich zu Denglisch - das ist in dem Bereich völlig normal.
+Beim Programmieren sind Variablen eins der wichtigsten Kernelemente.
 
-Anweisungen nennt man dementsprechend Statements - und wir lernen jetzt unser erstes Statement:
+Eine Variable kann man sich vorstellen wie eine Box mit einem Namen drauf in die man etwas tun kann. Jede Box hat einen eigenen Namen, damit man sie auseinanderhalten kann und versteht, was darin ist. Variablen sind nützlich um alle möglichen Dinge abzulegen, um sie später wiederzuverwenden.
 
 ## Variable Declaration
 
-Eine Variable kann man sich vorstellen wie eine Box mit einem Namen drauf. Jede Box hat einen eigenen Namen, damit man sie auseinanderhalten kann und wenn man über sie spricht weiß, um welche Box es geht. Variablen sind nützlich um alle möglichen Dinge irgendwo abzulegen, um sie später wiederzuverwenden. Außerdem hilft alleine das Verpacken in eine solche Box mit einem Namen bereits, um alles besser zu organisieren.
+Als erstes schauen wir uns an, wie man eine neue Variable erstellt (man nennt das auch "deklarieren" / declare). Eine nue Variable anzulegen ist, um in unserem Sinnbild von oben zu bleiben, wie einen neuen Umzugskarton zusammenzubauen, mit Edding einen Namen auf die Außenseite zu schreiben und etwas hineinzutun.
 
-Beim Programmieren sind Variablen eine der wichtigsten Kernelemente. In Javascript legt man eine Variable mit `let` an (man sagt auch, man "deklariert" / declaret sie):
-
-```js
-let message
-```
-
-legt eine neue Variable mit dem Namen "messsage" an, welche noch leer ist, also in unserem Bild eine leere Box mit der Aufschrift "message".
-
-Die Namen von Variablen sind üblicherweise englisch, kleingeschrieben und verwenden `dieseKomischeSchreibweise` falls sie mehrere Worte lang sind.
-
-## Assignments
-
-Um `message` mit einen Wert zu befüllen brauchen wir `=` (man nennt das auch einen Wert "zuweisen" bzw assignen):
-
-```js
-message = "Hallo"
-```
-
-befüllt die Variable `message` mit dem Wort "Hallo". `"Hallo"` ist ein sogenannter `string`, eine beliebige Zeichenkette die irgendwelchen Text enthalten kann.
-
-Wir hätten _alternativ_ der `message` Variable auch bei Erstellung bereits einen Wert zuweisen können:
+In Javascript legt man eine Variable mit `let` an, gefolgt vom Namen der Variable, einem `=` und dem Inhalt der Variable:
 
 ```js
 let message = "Hallo"
 ```
 
-`message` enthält nun das Wort "Hallo" und wir können auf diese Information später wieder zugreifen. Variablen können beliebige (auch kompliziertere) Werte enthalten - wir gehen später noch auf verschiedene Arten von Werten ein.
+Diese Zeile deklariert eine neue Variable mit dem Namen `message` und befüllt sie mit `"Hallo"`
 
-Der Inhalt einer mit `let` angelegten Variable kann später durch eine neuen Wert ausgetauscht werden:
+`"Hallo"` ist ein sogenannter String. Ein String ist einfach eine beliebige Anzahl an Zeichen. `"Asddf 1234"` ist genau so ein String wie `"A"` oder `",.-1231"`.
+
+Dem Computer ist egal, was in diesen Strings steht - sie sind für ihn einfach irgendein Wert der aus Zeichen besteht. Die Anführungszeichen `""` markieren sozusagen, dass in ihnen keine Anweisungen, sondern ein Wert steht.
+
+:::info Variablennamen
+Die Namen von Variablen sind üblicherweise englisch, kleingeschrieben und verwenden `dieseKomischeSchreibweise` falls sie mehrere Worte lang sind.
+
+Variablennamen sind einzigartig. Das heißt, dass ihr den selben Namen nicht zweimal mit `let` erstellen könnt - am Ende hättet ihr sonst zwei Boxen mit derselben Aufschrift und dann wüsste der cComputer im Zweifel nicht, welche ihr meint.
+:::
+
+## Assignments
+
+Nun wissen wir, wie wir eine neue Variable deklarieren.
+
+Wir können aber auch einer Variable, welche wir bereits deklariert haben, einen neuen Wert geben. Sozusagen die Box leeren und etwas neues hineintun.
+
+Um eine Variable zu deklarieren schreiben wir ihren Namen gefolgt von einem `=` und dem neuen Wert - also genau wie bei der Deklaration nur ohne das `let`.
 
 ```js
-let foo = "Hi"
-foo = "Welt"
+let message = "Hallo"
+message = "Guten Morgen"
 ```
 
-Die Variable `foo` enthält nun den Wert "Welt". Wenn wir den Wert einer Variable ändern, wird der alte Wert verworfen.
+Dieses Programm erstellt erst eine Variable mit dem Namen `message` und befüllt sie initial mit dem Wert `"Hallo"` (wie oben). Danach tauscht es den Inhalt der Variable durch `"Guten Morgen"` aus. Am Ende enthält die Variable also den Wert `"Guten Morgen"`
 
-:::danger Zweifache Deklaration
-Variablennamen sind einzigartig, falls ihr eine neue Variable mit dem selben Namen deklarieren wollt, bekommt ihr einen Fehler.
+:::info
+Ja das macht so nicht besonders viel Sinn, wir hätten ja direkt
+
+```js
+let message = "Guten Morgen"
+```
+
+schreiben können. Es geht erstmal nur darum, Zeile für Zeile das Prinzip zu verstehen.
 :::
 
 ## Access
 
-Unsere `message` Variable enthält immer noch das Wort "Hallo", auf welches wir zu einem späteren Zeitpunkt wieder zugreifen können. Man nennt den Zugriff auf den Wert einer Variable "access" und in schönem Denglisch sagt man dan "accessen". Wenn der Wert einer Variable accesst wird, bleibt ihr Wert trotzdem bestehen, man kann den selben Wert also beliebig oft aus ihr herauslesen.
+Jetzt wissen wir, wie wir Variablen deklarieren und ihren Wert ändern. Aber wofür machen wir das eigentlich?
 
-Das testen wir einmal. Dazu brauchen wir die `console.log` Funktion. wir beschäftigen uns jetzt noch nicht damit, was das genau ist - aktuell akzeptieren wir einfach, dass man in Javascript mit
+Wir legen Werte in Variablen ab um sie später wiederzuverwenden. Um den Wert einer Variable irgendwo zu benutzen, schreiben wir einfach ihren Namen an die Stelle, wo ihr Wert stehen soll. Um das auszuprobieren, führen wir aber erstmal eine neue Anweisung ein:
 
 ```js
-console.log(message)
+console.log("Ich schreibe Javascript")
 ```
 
-den Inhalt der `message` Variable in die Konsole ausgeben lassen kann.
+`console.log()` erwartet einen String zwischen den `()` und gibt diesen dann in der Konsole aus. Dieses Programm gibt
 
-:::info Info
+```
+Ich schreibe Javascript
+```
+
+in der Konsole aus.
 
 ### Konsole???
 
 Die Programme die wir in diesem Kurs schreiben sind sehr simpel - sie geben haupstächlich Text in die Konsole eures Editors (VSCode) aus. Eine Konsole ist ein einfaches Interface, welches nur Text ausgeben und entgegennehmen kann.
 :::
 
-## Das erste mal Code ausführen
-
-Schreibe folgenden Code in deinen Editor (VSCode):
+Jetzt benutzen wir statt einem direkten String stattdessen eine Variable, die einen String enthält:
 
 ```js
-let message = "Hallo"
-console.log(message)
+let foo = "Hello World"
+console.log(foo)
 ```
 
-Führe den Code anschließend mit einem Klick auf den Play Button oben rechts aus. Es sollte sich eine Konsole öffnen welche "Hallo" anzeigt.
+dieses Programm gibt
 
-Glückwunsch! Du hast deinen ersten Code geschrieben und ausgeführt.
+```
+Hello World
+```
 
-Spiel jetzt ruhig ein wenig mit den oben erklärten Codeschnipseln herum, ändere deinen Code und führe ihn immer wieder aus. Keine Angst, du kannst nichts kaputt machen.
+aus.
+
+Hier haben wir den Inhalt einer Variable angegeben, statt den String direkt in `console.log` zu schreiben.
+
+Den Inhalt einer Variable anzugeben nennt man auch die Variable "lesen" oder accessen.
+
+:::info Info
 
 ### Assignment + Access
 
 Nun da wir wissen wie wir einer Variable einen Wert zuweisen und wie wir auf Werte von Variablen zugreifen, können wir einer Variable den Wert einer anderen Variable zuweisen:
 
 ```js
-foo = message
+let animal = "Cat"
+let foo = animal
+
+console.log(foo)
 ```
 
-`foo` enthält nun "Hallo" - den Wert der Variable `message`. `message` enthält weiterhin ebenfalls "Hallo".
+dieses Programm gibt
+
+```
+Cat
+```
+
+aus. Wir haben erst eine Variable `animal` angelegt und sie mit dem Wert `"Cat"` befüllt. Anschließend haben wri eine Variable mti dem Namen `foo` angelegt und sie mit dem Wert der Variable `animal` befüllt. `foo` enthält nun also ebenfalls `"Cat"`.
 
 ## Konstanten
 
@@ -105,33 +126,17 @@ Eine weitere Option zur Dekklaration von Variablen ist `const` statt `let`:
 const message = "Hallo"
 ```
 
-`const` erstellt eine neue 'konstante' Variable. Im Unterschied zu `let` ist der Variablenwert
+`const` erstellt eine neue sogenannte konstante Variable. Im Unterschied zu `let` ist der Variablenwert
 einer `const` Variable nicht mehr änderbar. Man nennt eine solche Variable auch Konstante (constant).
 
-Der Versuch den Inhalt einer `const` Variable zu ändern führt zu einem Fehler:
-
-```js
-const myBirthday = "18.04.2006"
-
-myBirthday = "01.01.2010" // error, can't reassign the constant!
-```
-
-:::caution `var`
-Falls ihr irgendwo im Internet älteren Javascriptcode findet, wird dieser vielleicht `var` anstelle von `let` oder `const` verwenden. `var` ist veraltet und wird heute nicht mehr benutzt.
-
-```js
-var message = "Hallo"
-```
-
-:::
+Der Versuch den Inhalt einer `const` Variable zu ändern führt zu einem Fehler.
 
 # Übung
 
-Zeit für deine erste Übung. Setze das folgende Programm in Javascript um. Schreibe dabei in deiner Datei eine eigene Zeile pro Schritt:
+Zeit für deine erste Übung. Setze das folgende Programm in Javascript um. Schreibe dabei in deiner Datei eine eigene Zeile für jeden der folgenden Schritte und versuche nicht, das Programm kürzer zu machen. Es sollten genau drei Zeilen sein:
 
 1. Erstelle eine konstante Variable `name` welche deinen Namen enthält
-2. Erstelle eine leere Variable `awesomePerson`
-3. Befülle die `awesomePerson` Variable mit dem Wert der `name` Variable
-4. Gib den Inhalt von `awesomePerson` in der Konsole aus
+2. Erstelle eine leere Variable `awesomePerson` und befülle sie mit dem Wert der `name` Variable
+3. Gib den Inhalt von `awesomePerson` in der Konsole aus
 
 Tippe dazu Code in deine Datei, führe sie aus und wiederhole den Prozess solange, bis du die Aufgabe gelöst hast.

@@ -1,8 +1,2 @@
-- setup
-    - play button
-    - node installieren
-    - git klonen (ging bei Malene nicht)
 - last complex / IoC section
 - last sweep
-    - have skipped the prompt so far - with the tests the reduced variant feels fine 
-- maybe move their files into own folder "uebungen" or smth

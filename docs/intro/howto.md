@@ -16,6 +16,12 @@ Wir geben üblicherweise an, was das Programm in der Konsole eures Editors ausgi
 Ich bin ein Codebeispiel
 ```
 
-Bitte glaubt uns das nicht einfach - probiert es aus! Kopiert den Code in euren Editor in die "playground.js" Datei und führt ihn über den Play-Button und "Playground" aus. Ändert ihn, probiert aus wie er sich verhält, wenn ihr Sachen anpasst, macht ihn kaputt und flickt ihn wieder zusammen - ihr könnt nichts kaputtmachen und am Ende ist das Ziel, dass ihr euch mit Code in eurem Editor wohlfühlt.
+## Code ausführen
 
-Wir geben euch in diesem Tutorial außerdem immer wieder Übungsaufgaben, welche ihr in eurem Editor (Visual Studio Code) durchführen sollt. Dafür ist bereits für jede Übung eine Datei angelegt, in der ihr die Übung lösen sollt. Ihr könnt sie über den Play-Button und einen Klick auf die entsprechende Übung ausführen. Bitte behaltet eure Übungslösungen und löscht sie nicht, wenn ihr mit ihnen fertig seid - euer Betreuer wird sie später sehen wollen.
+Um Code auszuführen haben wir in dem bereitgestellten Projekt bereits einiges vorbereitet. Es gibt eine `playground.js` Datei welche als Ort zum freien herumprobieren gedacht ist und im Ordner `uebungen` pro Übung je eine Datei in welcher am Ende eure Lösung der Übung stehen soll.
+
+Um eine Datei auszuführen, klickt in VSCode in der Leiste links am Bildschirm auf den Play-Button mit dem Käfer (der dritte von unten). Nun habt ihr oben links einen grünen Play-Button mit einer Auswahl daneben. Mit dieser Auswahl könnt ihr wählen, welche Datei ausgeführt werden soll - es sollte hier eine Option für den Playground (`playground.js`) und eine Option pro Übung geben. Um eine Datei auszuführen, wählt sie in der Auswahl aus und klickt dann auf den grünen Play-Button.
+
+Wenn wir auf den folgenden Seiten Codebeispiele benutzen, bitte glaubt uns nicht einfach, dass sie tun, was wir sagen - probiert es aus! Kopiert den Code in die "playground.js" Datei und führt ihn aus. Ändert ihn, probiert aus wie er sich verhält, wenn ihr Sachen anpasst, macht ihn kaputt und flickt ihn wieder zusammen - ihr könnt nichts kaputtmachen und am Ende ist das Ziel, dass ihr euch mit Code in eurem Editor wohlfühlt.
+
+Wenn ihr Übungsaufgaben macht, löst diese bitte in der entsprechenden Datei im `uebungen` Ordner. Bitte löscht eure Lösungen nicht, wenn ihr mit ihnen fertig seid - euer Betreuer wird sie später sehen wollen.

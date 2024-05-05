@@ -58,7 +58,11 @@ Suche und installiere die Extension `Git Graph` von mhutchie
 
 ![](./setup_pictures/VSCodeGitGraph.png)
 
-### 2.3 Clone Git Repository
+### 2.3 Git
+
+**TODO: Install Git**
+
+### 2.4 Clone Git Repository
 
 Damit du endlich mit dem Tutorial loslegen kannst, musst du das vorhin geforkte Repo noch herunterladen. Drücke dazu `Strg+Shift+P`/`Cmd+Shift+P`, und suche nach `Git: clone`.
 
@@ -75,5 +79,9 @@ Noch einmal Enter, und du musst nur noch einen Ordner auf deinem Rechner angeben
 Eventuell musst du noch bestätigen, dass du den Erstellern des Repositories vertraust. Das tust du natürlich 😉
 
 ![](./setup_pictures/GitCloneTrust.png)
+
+## 3 Node
+
+Node ist das Programm, welches für uns Javascript ausführt. Den Installer für dein Betriebssystem findest du [hier](https://nodejs.org/en/download). Lade ihn herunter und installiere Node.
 
 Jetzt bist du bereit loszulegen!
