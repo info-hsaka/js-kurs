@@ -30,17 +30,33 @@ Merke dir die URL deines Repositories, da wir die später noch brauchen. Die URL
 
 https://github.com/DEIN-USERNAME/javascript-template
 
-## 2 VSCODE
+## 2 Node
+
+Node ist das Programm, welches für uns Javascript ausführt. Den Installer für dein Betriebssystem findest du [hier](https://nodejs.org/en/download). Lade ihn herunter und installiere Node. Ihr könnt alle Einstellungen auf den Standardwerten lassen und einfach immer "Weiter" drücken. Danach solltet ihr euren PC neu starten.
+
+## 3 VSCode (Visual Studio Code)
 
 VSCode ist unser Code Editor - ähnlich wie Word für Fließtext, nur für Code. Wir werden die meiste Zeit in VSCode verbringen.
 
-### 2.1 VSCode installieren
+### 3.1 VSCode installieren
 
 Den Installer für VSCode kannst du [hier](https://code.visualstudio.com/Download) herunterladen. Sobald du VSCode installiert hast, solltest du folgenden Screen sehen: ![](./setup_pictures/VSCodeStartScreen.png)
 
-### 2.2 Extensions
+### 3.2 Git installieren
 
-Drücke zuerst auf den markierten "Extension" Button auf der linken Seite, um den Extension-Marktplatz zu öffnen. Hier kannst du nach Erweiterungen suchen um VSCode zu modifizieren.
+VSCode sollte euch unten rechts auf das fehlende Programm "git" hinweisen: ![](./setup_pictures/vscode-git.jpg)
+
+Klickt auf "Download Git" und ladet den entsprechenden Installer für euer Betriebssystem herunter: ![](./setup_pictures/git-download.jpg)
+
+Während der Installation von Git werdet ihr nach den Editor Einstellungen gefragt: ![](./setup_pictures/git-editor.jpg)
+
+Wählt hier "Visual Studio Code" aus und drückt auf "Weiter": ![](./setup_pictures/git-editor-code.jpg)
+
+Die restlichen Einstellungen könnt ihr auf den Standardwerten lassen und einfach immer "Weiter" drücken. Es sind sehr viele Einstellungen, das ist normal. Wenn die Installation abgeschlossen ist, startet VSCode neu. Die Fehlermeldung sollte jetzt verschwunden sein.
+
+### 3.3 Extensions
+
+Drücke nun auf den markierten "Extension" Button auf der linken Seite, um den Extension-Marktplatz zu öffnen. Hier kannst du nach Erweiterungen suchen um VSCode zu modifizieren.
 
 #### Prettier
 
@@ -58,11 +74,7 @@ Suche und installiere die Extension `Git Graph` von mhutchie
 
 ![](./setup_pictures/VSCodeGitGraph.png)
 
-### 2.3 Git
-
-**TODO: Install Git**
-
-### 2.4 Clone Git Repository
+### 3.4 Clone Git Repository
 
 Damit du endlich mit dem Tutorial loslegen kannst, musst du das vorhin geforkte Repo noch herunterladen. Drücke dazu `Strg+Shift+P`/`Cmd+Shift+P`, und suche nach `Git: clone`.
 
@@ -79,9 +91,25 @@ Noch einmal Enter, und du musst nur noch einen Ordner auf deinem Rechner angeben
 Eventuell musst du noch bestätigen, dass du den Erstellern des Repositories vertraust. Das tust du natürlich 😉
 
 ![](./setup_pictures/GitCloneTrust.png)
+### 3.5 Weitere Programme installieren
 
-## 3 Node
+Das Tutorial benutzt ein paar weitere Programme die wir nun automatisch installieren werden. Dazu klickt ihr in VSCode oben auf "Terminal" und dann auf "New Terminal":
 
-Node ist das Programm, welches für uns Javascript ausführt. Den Installer für dein Betriebssystem findest du [hier](https://nodejs.org/en/download). Lade ihn herunter und installiere Node.
+![](./setup_pictures/vscode-terminal.png)
 
-Jetzt bist du bereit loszulegen!
+Das sollte das Terminal Fenster öffnen:
+
+![](./setup_pictures/vscode-open-terminal.png)
+
+Dort gebt ihr nun als erstes "cmd" ein und drückt dann auf Enter. Das Ergebnis sollte dann so aussehen ungefähr:
+
+![](./setup_pictures/vscode-cmd.png)
+
+Als nächstes gebt ihr den Befehl `npm install` ein und drückt wieder auf Enter. Das installiert alle Programme die wir für das Tutorial brauchen:
+
+![](./setup_pictures/vscode-npm-install.png)
+
+Danach könnt ihr das Terminal wieder schließen und VSCode ein letztes Mal neu starten. Ihr solltet nun bereit sein, mit dem Tutorial loszulegen!
+
+Solltet ihr Probleme mit dem Setup haben, bitte zögert nicht euren Betreuer anzusprechen. Wir helfen euch gerne weiter :)
+
