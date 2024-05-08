@@ -412,7 +412,7 @@ Wir schauen uns jetzt eine etwas größere Aufgabe an um zu üben, Dinge in Funk
 
 -   Schreibe eine Funktion `getMagicNumber(startYear, age)` und exportiere sie. Die Funktion erwartet ein Startjahr (Zahl) und das Alter einer Person in diesem Startjahr (Zahl) als Parameter. Sie soll folgendes tun:
 -   Suche ab dem Startjahr nach dem nächsten Jahr, in dem sowohl die Fußbal EM als auch die Europawahl stattfindet
--   Stelle fest, wie alt die Person in diesem Jahr wäre Starte mit diesem Alter eine [Collatz Folge](loops#collatz-folge) und return die dritte Zahl dieser Folge (Beispiel: 24 als Start wird zu 24, 12, 6 - 6 ist die dritte Zahl)
+-   Stelle fest, wie alt die Person in diesem Jahr wäre Starte mit diesem Alter eine [Collatz Folge](../loops#collatz-folge) und return die dritte Zahl dieser Folge (Beispiel: 24 als Start wird zu 24, 12, 6 - 6 ist die dritte Zahl)
 
 -   Rufe diese Funktion dreimal mit folgenden Parametern auf:
     -   2024, 30
