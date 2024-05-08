@@ -6,7 +6,7 @@ const config = {
   title: "HSAKA JavaScript Kurs",
   tagline: "Click here for intro",
   url: "https://js.oc.is",
-  baseUrl: "/js-kurs/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   trailingSlash: true,
   onBrokenMarkdownLinks: "warn",
