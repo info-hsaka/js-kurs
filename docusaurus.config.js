@@ -3,7 +3,7 @@ import { themes as prismThemes } from "prism-react-renderer"
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "HSAKA JavaScript Kurs 2022",
+  title: "HSAKA JavaScript Kurs",
   tagline: "Click here for intro",
   url: "https://js.oc.is",
   baseUrl: "/js-kurs/",
