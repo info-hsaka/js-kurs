@@ -101,6 +101,10 @@ Das sollte das Terminal Fenster öffnen:
 
 ![](./setup_pictures/vscode-open-terminal.png)
 
+Wie es weiter geht hängt von eurem Betriebsstem ab:
+
+#### Windows
+
 Dort gebt ihr nun als erstes "cmd" ein und drückt dann auf Enter. Das Ergebnis sollte dann so aussehen ungefähr:
 
 ![](./setup_pictures/vscode-cmd.png)
@@ -109,7 +113,12 @@ Als nächstes gebt ihr den Befehl `npm install` ein und drückt wieder auf Enter
 
 ![](./setup_pictures/vscode-npm-install.png)
 
+#### macOS & Linux
+
+Auf macOS  oder Linux gebt ihr einfach den Befehl `npm install` ein und drückt Enter. Das installiert alle Programme die wir für das Tutorial brauchen.
+
+### 3.6 Fertig
+
 Danach könnt ihr das Terminal wieder schließen und VSCode ein letztes Mal neu starten. Ihr solltet nun bereit sein, mit dem Tutorial loszulegen!
 
-Solltet ihr Probleme mit dem Setup haben, bitte zögert nicht euren Betreuer anzusprechen. Wir helfen euch gerne weiter :)
-
+Solltet ihr Probleme mit dem Setup haben, zögert bitte nicht euren Betreuer anzusprechen. Wir helfen euch gerne weiter :)
