@@ -142,12 +142,12 @@ Arrays haben noch eine lange Liste weiterer builtin Methods. Ein paar davon woll
 
 ### `.pop` / `.shift`
 
-`.pop` entfernt das letzte Element des Arrays. `.unshift` ist das Gegenstück, welches das erste Element des Arrays entfernt.
+`.pop` entfernt das letzte Element des Arrays. `.shift` ist das Gegenstück, welches das erste Element des Arrays entfernt.
 
 ```js
 const languages = ["Spanish", "Chinese", "Russian"]
 languages.pop()
-languages.unshift()
+languages.shift()
 
 console.log(languages)
 ```
