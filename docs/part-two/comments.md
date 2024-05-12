@@ -35,7 +35,7 @@ if (month < 4) {
 console.log(quarter)
 ```
 
-dieser Code tut exakt das gleiche, wenn man alle Zeieln die mit `//` beginnen entfernt, aber er ist deutlich besser lesbar und erklärt.
+dieser Code tut exakt das gleiche, wenn man alle Zeilen die mit `//` beginnen entfernt, aber er ist deutlich besser lesbar und erklärt.
 
 ## Kommentare in Beispielen
 
