@@ -133,8 +133,8 @@ Der Versuch den Inhalt einer `const` Variable zu ändern führt zu einem Fehler.
 
 Zeit für deine erste Übung. Setze das folgende Programm in Javascript um. Schreibe dabei in deiner Datei eine eigene Zeile für jeden der folgenden Schritte und versuche nicht, das Programm kürzer zu machen. Es sollten genau drei Zeilen sein:
 
-1. Erstelle eine konstante Variable `name` welche deinen Namen enthält
-2. Erstelle eine leere Variable `awesomePerson` und befülle sie mit dem Wert der `name` Variable
+1. Erstelle eine konstante Variable `firstName` welche deinen Vornamen enthält
+2. Erstelle eine leere Variable `awesomePerson` und befülle sie mit dem Wert der `firstName` Variable
 3. Gib den Inhalt von `awesomePerson` in der Konsole aus
 
 Tippe dazu Code in deine Datei, führe sie aus und wiederhole den Prozess solange, bis du die Aufgabe gelöst hast.
