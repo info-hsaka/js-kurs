@@ -133,7 +133,7 @@ const course = {
     teachers: [
         { name: "Hilmar", age: 30 },
         { name: "Bene", age: 29 },
-        { name: "Hilmar", age: 28 },
+        { name: "Hannes", age: 29 },
         { name: "Toby", age: 24 },
     ],
     headTeachers: [
