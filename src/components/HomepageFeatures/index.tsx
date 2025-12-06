@@ -1,14 +1,14 @@
-import React from "react"
-import clsx from "clsx"
-import styles from "./styles.module.css"
+import type {ReactNode} from 'react';
+import clsx from 'clsx';
 import Link from "@docusaurus/Link"
+import styles from './styles.module.css';
 
 type FeatureItem = {
-    title: string
-    Svg: React.ComponentType<React.ComponentProps<"svg">>
-    description: JSX.Element
-    route: string
-}
+  title: string;
+  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  description: ReactNode;
+  route: string
+};
 
 const FeatureList: FeatureItem[] = [
     {
@@ -71,7 +71,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
     )
 }
 
-export default function HomepageFeatures(): JSX.Element {
+export default function HomepageFeatures(): ReactNode {
     if (window?.location?.href?.split("/")?.slice(-1)?.[0] === "intro") {
         window?.localStorage?.setItem("intro", "seen")
     }
