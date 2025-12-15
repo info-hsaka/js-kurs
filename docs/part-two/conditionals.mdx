@@ -14,29 +14,25 @@ Mit `if` könne wir Code nur dann ausführenm wenn eine bestimmte Aussage wahr i
 
 Dafür schreiben wir nach dem `if` einen `boolean` Wert in runden `()` Klammern (man nennt ihn die "Bedingung" oder "condition") und danach in geschwungennen `{}` Klammern den Code, der ausgeführt werden soll, wenn die Bedingung wahr (`true`) ist.
 
-```js
-const myAge = 30
-
+<MonacoEditor
+  language="javascript"
+  value={
+`const myAge = 30
+if (myAge > 13) {
+    console.log("Ich bin kein Tweenager mehr")
+}
 if (myAge > 19) {
-    console.log("Ich bin kein Teenager mehr")
+    console.log("Ich bin auch kein Teenager mehr")
 }
 
-if (myAge > 29) {
-    console.log("Ich bin auch kein Tweenager mehr")
-}
-```
-
-Dieser Code wird
-
-```
-"Ich bin kein Teenager mehr"
-"Ich bin auch kein Tweenager mehr"
-```
+`}
+ transitionText="Dieser Code wird"
+/>
 
 in der Konsole ausgeben. Wenn wir allerdings die Zahl in der ersten Zeile zu `22` ändern und den Code erneut ausführen, wird nur noch
 
 ```
-"Ich bin kein Teenager mehr"
+Ich bin kein Tweenager mehr
 ```
 
 ausgeggeben.
@@ -58,21 +54,17 @@ als "Wenn A gilt, dann mach B".
 -   `&&` (gelesen "and" bzw "und") um aus zwei `boolean` Werten zusammenzubauen, ob sie **beide** `true` sind
 -   `||` (gelesen "or" bzw "oder") um aus zwei `boolean` Werten zusammenzubauen, ob **mindestens einer** von ihnen `true` ist
 
-```js
-console.log(4 > 2 && "a" != "b")
+
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log(4 > 2 && "a" != "b")
 console.log(1 != 1 && 4 >= 4)
 console.log(3 < 1 || 10 == 10)
-console.log(4 == 5 || 5 == 6)
-```
-
-gibt
-
-```
-true
-false
-true
-false
-```
+console.log(4 == 5 || 5 == 6)`
+}
+ transitionText="gibt"
+/>
 
 aus.
 
@@ -80,20 +72,18 @@ Es gibt noch einen weiteren `boolean` Operator. Dieser ist ein wenig anders als 
 
 -   `!` (gelesen "not" bzw "nicht") um **einen** `boolean` Wert "umzukehren" (man sagt auch negieren) - aus `true` wird dabei `false` und aus `false` wird `true`
 
-```js
-const age = 27
+
+<MonacoEditor
+  language="javascript"
+  value={
+`const age = 27
 const isTeenager = age < 20
 
 if (!isTeenager) {
-    console.log("Kein Teenager mehr")
-}
-```
-
-gibt
-
-```
-Kein Teenager mehr
-```
+   console.log("Kein Teenager mehr")
+}`}
+ transitionText="gibt"
+/>
 
 aus, denn der Wert `!isTeenager` ist `true`, weil `isTeenager` `false` ist.
 
@@ -101,16 +91,20 @@ aus, denn der Wert `!isTeenager` ist `true`, weil `isTeenager` `false` ist.
 
 Nach einemm `if` erlaubt JavaScript optional ein `else` welches Code enthält, der ausgeführt werden soll, wenn die Beingung des `if`s `false` war. An einem Beispiel verdeutlicht sich das am einfachsten:
 
-```js
-const year = 2025
+<MonacoEditor
+  language="javascript"
+  value={
+`const year = 2025
 const isSchaltjahr = year % 4 == 0
 
 if (isSchaltjahr) {
     console.log("Schaltjahr")
 } else {
     console.log("Kein Schaltjahr")
-}
-```
+}`
+ }
+ showOutput={false}
+/>
 
 Dieses Programm wird "Kein Schaltjahr" ausgeben. Wenn wir `year` zu `2024` ändern, wird "Schaltjahr" ausgegeben.
 
@@ -130,8 +124,11 @@ als "Wenn A gilt, dann mach B, sonst mach C".
 
 Es ist erlaubt, auf ein `else` direkt wieder ein `if` folgen zu lassen, statt `{}`. Dieses Konstrukt nennt man `else if`. Auch das ist am besten an einem Beispiel gezeigt:
 
-```js
-const age = 19
+
+<MonacoEditor
+  language="javascript"
+  value={
+    `const age = 19
 
 if (age < 17) {
     console.log("Darf gar kein Auto fahren")
@@ -141,8 +138,11 @@ if (age < 17) {
     console.log("Darf alleine das eigene Auto fahren")
 } else {
     console.log("Darf Mietwagen fahren")
-}
-```
+}`
+ }
+ showOutput={false}
+/>
+
 
 Man liest allgemein (das ist kein echter Code, er dient nur der Darstellung):
 
@@ -181,3 +181,17 @@ Dein Programm soll nun die folgenden Informationen ausgeben, dynamisch von den o
 :::tip
 Teile solche Probleme in Lösungswege mit kleinen Einzelschritten und speichere Zwischenergebnisse in Variablen mit Namen, die dir helfen.
 :::
+
+<MonacoEditor
+  language="javascript"
+  value={`
+  
+  
+  
+  
+  
+  `}
+ transitionText="Dieser Code wird"
+/>
+
+ausgeben

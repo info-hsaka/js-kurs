@@ -1,22 +1,24 @@
 ---
 sidebar_position: 4
 ---
+import JsLogo from "@site/static/img/threadRunning.svg"
 
 # How to Code
 
 Wir geben in diesem Tutorial immer wieder Codebeispiele, welche zum Beispiel so aussehen können:
 
-```js
-console.log("Ich bin ein Codebeispiel")
-```
 
-Wir geben üblicherweise an, was das Programm in der Konsole eures Editors ausgibt, wenn ihr es ausführt. Das sieht dann so aus:
 
-```
-Ich bin ein Codebeispiel
-```
+<MonacoEditor
+  language="javascript"
+  value={
+    `console.log("Ich bin ein Codebeispiel")`
+ }
+ transitionText='Wir geben üblicherweise an, was das Programm in der Konsole eures Editors ausgibt, wenn ihr es ausführt. Das sieht dann so aus:'
+/>
 
-## Code ausführen
+Ihr könnt den Code in diesen Fenstern ändern und ihn dann neu ausführen, indem ihr auf den   <button style={{padding: "2px 10px", borderRadius: "4px",border: "none",background: "#4caf50"}}><JsLogo width={12} height={12} /></button> Button oben rechts im Fenster klickt. Probiert es aus!
+{/* ## Code ausführen
 
 Um Code auszuführen haben wir in dem bereitgestellten Projekt bereits einiges vorbereitet. Es gibt eine `playground.js` Datei welche als Ort zum freien herumprobieren gedacht ist und im Ordner `uebungen` pro Übung je eine Datei in welcher am Ende eure Lösung der Übung stehen soll.
 
@@ -24,4 +26,4 @@ Um eine Datei auszuführen, klickt in VSCode in der Leiste links am Bildschirm a
 
 Wenn wir auf den folgenden Seiten Codebeispiele benutzen, bitte glaubt uns nicht einfach, dass sie tun, was wir sagen - probiert es aus! Kopiert den Code in die "playground.js" Datei und führt ihn aus. Ändert ihn, probiert aus wie er sich verhält, wenn ihr Sachen anpasst, macht ihn kaputt und flickt ihn wieder zusammen - ihr könnt nichts kaputtmachen und am Ende ist das Ziel, dass ihr euch mit Code in eurem Editor wohlfühlt.
 
-Wenn ihr Übungsaufgaben macht, löst diese bitte in der entsprechenden Datei im `uebungen` Ordner. Bitte löscht eure Lösungen nicht, wenn ihr mit ihnen fertig seid - euer Betreuer wird sie später sehen wollen.
+Wenn ihr Übungsaufgaben macht, löst diese bitte in der entsprechenden Datei im `uebungen` Ordner. Bitte löscht eure Lösungen nicht, wenn ihr mit ihnen fertig seid - euer Betreuer wird sie später sehen wollen. */}

@@ -22,8 +22,10 @@ while (true) {
 
 Ein Scope ist ein Bereich des Codes, in dem neu angelegte Variablen leben. Das bedeutet, dass wenn innerhalb eines Scopes eine Variable angelegt wird, sie am Ende des Scopes wieder verworfen wird. Ein simples Beispiel:
 
-```js
-const a = 10
+<MonacoEditor
+  language="javascript"
+  value={
+    `const a = 10
 
 if (a > 8) {
     // b wird im lokalen if Scope angelegt und ist nur hier exitent
@@ -31,9 +33,15 @@ if (a > 8) {
     console.log(b)
     // b hört hier auf zu existieren
 }
+//Erzeugt hier einen Fehler, da b hier nicht mehr existiert
+ console.log(b) `
 
-// console.log(b) würde hier einen Fehler erzeugen, da b hier nicht mehr existiert
-```
+ }
+ showOutput={true}
+ showRunButton={true}
+ transitionText=''
+/>
+
 
 Dasselbe gilt auch innerhalb von `else` oder `while` Blöcken - eben immer innerhalb von `{}`.
 
@@ -51,7 +59,11 @@ Zur Erinnerung: Eine Primzahl ist eine Zahl, die nur durch 1 und durch sich selb
 Diesen Ansatz setzen wir hier um.
 :::
 
-```js
+<MonacoEditor
+  language="javascript"
+  value={
+    `
+let num = 1
 const target = 20
 
 // Aktueller Kandidat, der prim sein könnte
@@ -88,8 +100,13 @@ while (num <= target) {
     num = num + 1
 
     // Hier ist der Scope zu Ende - isPrim und maybeTeiler werden weggeworfen und im nächsten while-Durchlauf neu angelegt
-}
-```
+}`
+
+ }
+ showOutput={true}
+ showRunButton={true}
+ transitionText=''
+/>
 
 :::caution
 Falls du nicht sofort verstehst, warum oder wie dieses Programm genau funktioniert, ist das nicht schlimm. Nimm dir Zeit, lies die Kommentare, kopiere es in deinen Editor und führe es aus. Wir verwenden hier zum ersten mal ineinander verschachtelte Loops, es kann einen Moment dauern, bis man sich diese vorstellen kann. Im Zweifel hilft es, den Code im Kopf oder auf einem Blatt Papier Zeile für Zeile "auszuführen" wie der Computer.

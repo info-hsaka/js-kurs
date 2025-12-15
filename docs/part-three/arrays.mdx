@@ -12,23 +12,19 @@ Der erste comsposite Datentyp den wir uns anschauen ist Array.
 
 Ein Array ist ein Wert, der eine beliebig lange Liste von Werten enthält. Ein Array wird mit eckigen `[]` Klammern mit den Werten die er enthält innerhalb der Klammern mit Kommas getrennt geschrieben:
 
-```js
-const fruits = ["Apfel", "Orange", "Banane"]
+<MonacoEditor
+  language="javascript"
+  value={
+`const fruits = ["Apfel", "Orange", "Banane"]
 const ages = [22, 90, 18, 7, 45]
 const heroes = ["Hulk", "Thor"]
 
 console.log(fruits)
-console.log(cities)
-console.log(heroes)
-```
-
-gibt
-
-```
-['Apfel', 'Orange', 'Banane']
-[22, 90, 18, 7, 45]
-['Hulk', 'Thor']
-```
+console.log(ages)
+console.log(heroes)`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -38,47 +34,42 @@ Der Array selbst ist nur ein normaler Javascript Wert - wir können ihn in einer
 
 Um auf einen Wert innerhalb eines Arrays zuzugreifen, schreiben wir eine Zahl - den sogenannten Index - nach dem Array in eckige Klammern `[]` und erhalten so das Element im Array an der Stelle des Index. Arrays fangen im Gegensatz zu Menschen **nicht** bei 1 an wenn sie zählen sondern bei 0:
 
-```js
-const colors = ["Blau", "Grün", "Orange", "Violett"]
+<MonacoEditor
+  language="javascript"
+  value={
+`const colors = ["Blau", "Grün", "Orange", "Violett"]
 
 console.log(colors[2])
-console.log(colors[0])
-```
-
-gibt
-
-```
-Orange
-Blau
-```
+console.log(colors[0])`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
 Wenn man auf einen Index zugreift, der außerhalb des Arrrays liegt, erhält man `undefined`:
 
-```js
-const years = [2018, 2024, 1993]
+<MonacoEditor
+  language="javascript"
+  value={
+`const years = [2018, 2024, 1993]
 
 const firstYear = years[0]
 const tenthYear = years[9]
 
 console.log(firstYear)
-console.log(tenthYear)
-```
-
-gibt.
-
-```
-2018
-undefined
-```
-
+console.log(tenthYear)`
+ }
+ transitionText='gibt'
+/>
 aus.
 
 Mit einem Loop könnten wir zum Beispiel alle Strings in einem Array in der Konsole ausgeben:
 
-```js
-const drinks = ["Orangensaft", "Tee", "Kaffee"]
+<MonacoEditor
+  language="javascript"
+  value={
+`const drinks = ["Orangensaft", "Tee", "Kaffee"]
 const drinksLength = 3
 
 let index = 0
@@ -88,16 +79,10 @@ while (index < drinksLength) {
     console.log(currentDrink)
 
     index = index + 1
-}
-```
-
-gibt
-
-```
-Orangensaft
-Tee
-Kaffee
-```
+}`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -105,24 +90,20 @@ aus.
 
 Die einzelnen Elemente eines Arrays können nicht nur gelesen, sondern auch geschrieben werden:
 
-```js
-let courses = ["Geschichte", "Germanistik", "Physik", "Mathematik"]
+<MonacoEditor
+  language="javascript"
+  value={
+`let courses = ["Geschichte", "Germanistik", "Physik", "Mathematik"]
 
 console.log(courses[1])
 
 // Mit der selben Notation mit der auf ein Element zugegriffen wird, kann es mit = auch beschrieben werden
 courses[1] = "Informatik"
 
-console.log(courses[1])
-```
-
-gibt
-
-```
-Germanistik
-Informatik
-```
-
+console.log(courses[1])`
+ }
+ transitionText='gibt'
+/>
 aus.
 
 ## Array Builtins
@@ -144,19 +125,18 @@ Arrays haben noch eine lange Liste weiterer builtin Methods. Ein paar davon woll
 
 `.pop` entfernt das letzte Element des Arrays. `.shift` ist das Gegenstück, welches das erste Element des Arrays entfernt.
 
-```js
-const languages = ["Spanish", "Chinese", "Russian"]
+<MonacoEditor
+  language="javascript"
+  value={
+`const languages = ["Spanish", "Chinese", "Russian"]
 languages.pop()
 languages.shift()
 
-console.log(languages)
-```
+console.log(languages)`
+ }
+ transitionText='gibt'
+/>
 
-gibt
-
-```
-["Chinese"]
-```
 
 aus.
 
@@ -164,20 +144,18 @@ aus.
 
 `.push` erwartet einen beliebigen Wert und fügt ihn an das Ende des Arrays an. `.unshift` tut das gleiche, aber fügt den Wert an den Anfang des Arrays ein:
 
-```js
-const names = ["Leo"]
+<MonacoEditor
+  language="javascript"
+  value={
+`const names = ["Leo"]
 
 names.push("Ryu")
 names.unshift("Neela")
 
-console.log(names)
-```
-
-gibt
-
-```
-["Neela", "Leon", "Ryu"]
-```
+console.log(names)`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -185,8 +163,10 @@ aus.
 
 Arrays können beliebige Werte enthalten. Das bedeutet, dass Arrays auch andere Arrays enthalten können. Ein Tic-Tac-Toe Spielfeld könnte man zum Beispiel als Array mit drei Elementen von dem jedes wiederum selbst ein Array mit drei Elementen ist, welche die einzelnen Felder repräsentieren:
 
-```js
-const ticTacToe = [
+<MonacoEditor
+  language="javascript"
+  value={
+`const ticTacToe = [
     ["X", "O", " "],
     [" ", "X", "O"],
     [" ", "O", " "],
@@ -194,14 +174,10 @@ const ticTacToe = [
 
 const middle = ticTacToe[1][1]
 
-console.log(middle)
-```
-
-gibt
-
-```
-X
-```
+console.log(middle)`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -217,22 +193,18 @@ Beispiel: `["Kugelschreiber", "Salz", "Maus"]` wird zu `["Salz", "Kugelschreiber
 
 Da man beim Programmieren sehr häufig einen Loop schreiben muss, um irgendetwas mit jedem Element eines Arrays zu tun, gibt es hierfür eine spezielle Kurzform - den `for of` Loop:
 
-```js
-const devices = ["Laptop", "Keyboard", "Mouse", "Headphones"]
+
+<MonacoEditor
+  language="javascript"
+  value={
+`const devices = ["Laptop", "Keyboard", "Mouse", "Headphones"]
 
 for (const dev of devices) {
     console.log(dev)
-}
-```
-
-gibt
-
-```
-Laptop
-Keyboard
-Mouse
-Headphones
-```
+}`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 

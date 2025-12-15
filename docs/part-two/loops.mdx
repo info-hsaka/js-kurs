@@ -13,15 +13,22 @@ Bisher sind unsere Programme geradlinig von oben nach unten durchgelaufen. Manch
 
 Mit einem `while` Loop können wir ein Stück Code ausführen wenn eine Bedingung gilt - genau wie mit einem `if`. Allerdings führt `while` den Code immer und immer wieder aus - solange, bis die Bedingung nicht mehr `true` ist. Ein Beispiel:
 
-```js
-let number = 1
+<MonacoEditor
+  language="javascript"
+  value={
+    `let number = 1
 
 while (number <= 100) {
     console.log(number)
 
     number = number + 1
-}
-```
+}`
+ }
+ showOutput={false}
+ showRunButton={true}
+ transitionText=''
+/>
+
 
 dieses Programm gibt die Zahlen von 0 bis 100 aufsteigend in die Konsole aus.
 
@@ -32,14 +39,20 @@ Das bedeutet, dass `while` **nie aufhört** Code zu wiederholen, wenn der wieder
 
 Wenn wir zum Beispiel in unserem Beispiel oben das `number = number + 1` vergessen hätten, hätten wir eine unendliche Schleife geschrieben:
 
-```js
-let number = 1
+<MonacoEditor
+  language="javascript"
+  value={
+    `let number = 1
 
 // Diese Schleife wird für immer immer wieder 1 in die Konsole schreiben
 while (number <= 100) {
     console.log(number)
-}
-```
+}`
+ }
+ showOutput={false}
+ showRunButton={false}
+ transitionText=''
+/>
 
 :::
 
@@ -59,8 +72,10 @@ Im Bezug auf Loops gibt es zwei weitere nützliche Statements, welche innerhalb 
 
 `break` bricht die komplette Schleife sofort ab - das heißt dass die aktuelle Wiederholung abgebrochen wird und danach auch keine weitere Wiederholung folgt. Der Code nach der Schleife wird regulär weiter ausgeführt:
 
-```js
-let number = 0
+<MonacoEditor
+  language="javascript"
+  value={
+    `let number = 0
 
 while (number < 100) {
     number = number + 1
@@ -74,24 +89,21 @@ while (number < 100) {
 }
 // ...hierher
 
-console.log("Fertig!")
-```
-
-Dieses Programm gibt
-
-```
-1
-2
-3
-Fertig!
-```
+console.log("Fertig!")`
+ }
+ showOutput={true}
+ showRunButton={true}
+ transitionText='Dieses Programm gibt'
+/>
 
 aus.
 
 Das `continue` Statement ist ähnlich. Allerdings bricht es nur die aktuelle Schleifenwiederholung ab, nicht die gessamte Schleife. Es "springt" sozusagen direkt zur nächsten Schleifenwiederholung:
 
-```js
-let number = 0
+<MonacoEditor
+  language="javascript"
+  value={
+    `let number = 0
 
 while (number < 10) {
     number = number + 1
@@ -104,27 +116,12 @@ while (number < 10) {
     }
 
     console.log("ist ungerade")
-}
-```
-
-Dieses Programm gibt
-
-```
-1
-ist ungerade
-2
-3
-ist ungerade
-4
-5
-ist ungerade
-6
-7
-ist ungerade
-8
-9
-ist ungerade
-```
+}`
+ }
+ showOutput={true}
+ showRunButton={true}
+ transitionText='Dieses Programm gibt'
+/>
 
 aus.
 

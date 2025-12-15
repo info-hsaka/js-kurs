@@ -8,8 +8,10 @@ Nach Scopes lernen wir nun das wahrscheinlich wichtigste Konstrukt in der Progra
 
 Eine Funktion ist ein Stück Code mit einem Namen, welches wiederverwendet werden kann. Nehmen wir beispielsweise den folgenden Code:
 
-```js
-const animal = "Katze"
+<MonacoEditor
+  language="javascript"
+  value={
+    `const animal = "Katze"
 
 if (animal == "Katze") {
     console.log("Achtung!")
@@ -22,22 +24,30 @@ if (animal == "Katze") {
     console.log("Raubtier entdeckt")
 } else {
     console.log("Kein Raubier")
-}
-```
+}`
+ }
+ showOutput={false}
+/>
 
 Der Code
 
-```js
-console.log("Achtung!")
-console.log("Raubtier entdeckt")
-```
+<MonacoEditor
+  language="javascript"
+  value={
+    `console.log("Achtung!")
+console.log("Raubtier entdeckt")`
+ }
+ showOutput={false}
+/>
 
 wird hierbei mehrmals wiederholt. Wenn wir ändern wollen, was bei einem Raubtier ausgegeben wird, müssen wir alle drei Stellen von Hand anfassen. Das wird schlimmer, wenn wir mehr verschiedene Tiere einbauen.
 
 Hierbei hilft eine Funktion. Eine Funktion gibt einem Stück Code zwischen zwei `{}` einen Namen und ermöglicht es, diesen Namen zu benutzen statt den Code erneut zu schreiben. Man nennt das auch die Funktion aufzurufen (zu callen):
 
-```js
-function warn() {
+<MonacoEditor
+  language="javascript"
+  value={
+    `function warn() {
     console.log("Achtung!")
     console.log("Raubtier entdeckt")
 }
@@ -52,8 +62,10 @@ if (animal == "Katze") {
     warn()
 } else {
     console.log("Kein Raubier")
-}
-```
+}`
+ }
+ showOutput={false}
+/>
 
 Dieses Programm tut genau dasselbe wie oben - aber wir wiederholen uns weniger.
 
@@ -63,27 +75,21 @@ Eine Funktion anzulegen nennt man auch deklarieren - ähnlich wie bei Variablen.
 
 Eine Funktion wird mit ihrem Namen gefolgt von `()` aufgerufen. Das Programm springt dann in die Funktion, führt ihren Körper aus und springt wieder zurück.
 
-```js
-function sayHello() {
+<MonacoEditor
+  language="javascript"
+  value={
+    `function sayHello() {
     console.log("Hallo")
     console.log("Ich bin in einer Funktion")
 }
 
 sayHello()
 sayHello()
-sayHello()
-```
+sayHello()`
+ }
+ showOutput={true}
+/>
 
-gibt
-
-```
-Hallo
-Ich bin in einer Funktion
-Hallo
-Ich bin in einer Funktion
-Hallo
-Ich bin in einer Funktion
-```
 
 aus.
 
@@ -93,8 +99,10 @@ In den Beispielen oben tun unsere Funktionen immer das gleiche wenn sie aufgeruf
 
 Ihr habt eventuell schon die runden Klammern `()` bemerkt, die sowohl bei der Deklaration als auch beim Aufruf einer Funktion benutzt werden. Diese Klammern enthalten die Parameter einer Funktion. Unsere bisherigen Funktionen hatten keine Parameter, deswegen waren diese Klammern sowohl bei der Deklaration als auch beim Aufruf leer. Das ändern wir jetzt mit diesem Beispiel:
 
-```js
-function sayIfAdult(age) {
+<MonacoEditor
+  language="javascript"
+  value={
+    `function sayIfAdult(age) {
     console.log(age)
 
     if (age < 18) {
@@ -108,23 +116,11 @@ sayIfAdult(12)
 sayIfAdult(27)
 sayIfAdult(48)
 sayIfAdult(8)
-sayIfAdult(18)
-```
-
-Dieses Programm gibt
-
-```
-12
-^ in diesem Alter ist man noch minderjährig
-27
-^ in diesem Alter ist man bereits volljährig
-48
-^ in diesem Alter ist man bereits volljährig
-8
-^ in diesem Alter ist man noch minderjährig
-18
-^ in diesem Alter ist man bereits volljährig
-```
+sayIfAdult(18)`
+ }
+ showOutput={true}
+ transitionText='Dieses Programm gibt'
+/>
 
 aus.
 
@@ -132,8 +128,10 @@ aus.
 
 Allgemein kann man bei der Deklaration (und dann auch dem Aufruf) einer Funktion beliebig viele Parameter angeben. Diese werden dabei in den runden Klammern `()` mit Kommas `,` getrennt aufgelistet:
 
-```js
-function saySum(x, y) {
+<MonacoEditor
+  language="javascript"
+  value={
+    `function saySum(x, y) {
     const sum = x + y
 
     console.log("x + y = ")
@@ -142,19 +140,11 @@ function saySum(x, y) {
 
 saySum(10, 15)
 saySum(2, 18)
-saySum(499, 1)
-```
-
-gibt
-
-```
-x + y =
-25
-x + y =
-20
-x + y =
-500
-```
+saySum(499, 1)`
+ }
+ showOutput={true}
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -164,8 +154,10 @@ Funktionen haben innerhalb ihres Körpers `{}` genauso wie `if` und `while` eine
 
 Dasselbe gilt auch für Parameter. Bei einem Funktionsaufruf springt das Programm in die Funktion und legt als erstes die Parameter als lokale Variablen an:
 
-```js
-function saySquare(number) {
+<MonacoEditor
+  language="javascript"
+  value={
+    `function saySquare(number) {
     // number wird beim Funktionsaufruf gesetzt und verhält sich wie eine lokale Variable
 
     // squared ist eine lokale Variable
@@ -178,17 +170,11 @@ function saySquare(number) {
 }
 
 saySquare(2)
-saySquare(7)
-```
-
-gibt
-
-```
-Das Quadrat dieser Zahl ist
-4
-Das Quadrat dieser Zahl ist
-49
-```
+saySquare(7)`
+ }
+ showOutput={true}
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -196,8 +182,10 @@ aus.
 
 Bisher geben unsere Funktionen immer irgendetwas in der Konsole aus. Aber was, wenn wir Code, der nichts in der Konsole ausgibt sondern zB. etwas berechnet in eine Funktion auslagern wollen, um uns in unserem Code nicht ständig zu wiederholen? Nehmen wir beispielsweise folgendes Programm an:
 
-```js
-const janeAge = 19
+<MonacoEditor
+  language="javascript"
+  value={
+    `const janeAge = 19
 const daveAge = 17
 
 const janeIsTeenager = janeAge >= 12 && janeAge < 20
@@ -205,13 +193,18 @@ const daveIsTeenager = daveAge >= 12 && daveAge < 20
 
 if (janeIsTeenager && daveIsTeenager) {
     console.log("Jane und Dave sind beide Teenager")
-}
-```
+}`
+ }
+ showOutput={false}
+/>
+
 
 Die Logik wie wir feststellen, ob jemand Teenager ist, wird hierbei zweimal wiederholt und ist auch etwas schwer lesbar. Auch hier können wir eine Funktion einsetzen, um die wiederholte Logik an eine Stelle zu bündeln. Dafür müssen wir allerdings `return`s einführen. Das Beispiel sieht danach so aus:
 
-```js
-function isTeenager(age) {
+<MonacoEditor
+  language="javascript"
+  value={
+    `function isTeenager(age) {
     const oldEnough = age > 12
     const youngEnough = age < 20
 
@@ -223,8 +216,10 @@ const daveAge = 17
 
 if (isTeenager(janeAge) && isTeenager(daveAge)) {
     console.log("Jane und Dave sind beide Teenager")
-}
-```
+}`
+ }
+ showOutput={false}
+/>
 
 Hier sehen wir ein neues Statement: `return`. `return` kann nur innerhalb einer Funktion benutzt werden. Es bricht die Funktion dabei sofort ab und gibt den Wert nach `return` zurück ("returnt" den Wert). Aber was heißt das?
 
@@ -234,8 +229,10 @@ Eine Funktion ist also wiederverwendbarer Code, der beliebig viele Parameter zu 
 
 Ein paar weitere Beispiele für Funktionen:
 
-```js
-function getStufe(schoolYear) {
+<MonacoEditor
+  language="javascript"
+  value={
+    `function getStufe(schoolYear) {
     if (schoolYear <= 7) {
         return "Unterstufe"
     }
@@ -249,21 +246,20 @@ function getStufe(schoolYear) {
 
 console.log(getStufe(9))
 console.log(getStufe(5))
-console.log(getStufe(12))
-```
-
-gibt
-
-```
-Mittelstufe
-Unterstufe
-Oberstufe
-```
+console.log(getStufe(12))`
+ }
+ showOutput={true}
+ transitionText='gibt'
+/>
 
 aus.
 
-```js
-// Berechnet den Betrag einer Zahl
+
+
+<MonacoEditor
+  language="javascript"
+  value={
+    `// Berechnet den Betrag einer Zahl
 function absolute(number) {
     if (number < 0) {
         return number * -1
@@ -274,16 +270,11 @@ function absolute(number) {
 
 console.log(absolute(-8))
 console.log(absolute(23))
-console.log(absolute(-42))
-```
-
-gibt
-
-```
-8
-23
-42
-```
+console.log(absolute(-42))`
+ }
+ showOutput={true}
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -291,8 +282,10 @@ aus.
 
 Wie alle anderen Konstrukte, die wir bereits kennengeelernt haben, lassen sich auch Funktionen mit sich selbst verschachtelt kombinieren. Mit anderen Worten: auch innerhalb von Funktionen könnt ihr wieder Funktionen aufrufen. Damit lässt sich Code, welcher sehr lang oder tief geschachtelt und deswegen schwer verständlich ist in beliebig kleine "flache" Teile einteilen und damit übersichtlich machen. Als Beispiel hierfür nehmen wir noch einmal unser Primzahlenprogramm aus der Loops-Übung:
 
-```js
-const target = 20
+<MonacoEditor
+  language="javascript"
+  value={
+    `const target = 20
 
 // Aktueller Kandidat, der prim sein könnte
 let maybePrim = 2
@@ -328,13 +321,19 @@ while (num <= target) {
     num = num + 1
 
     // Hier ist der Scope zu Ende - isPrim und maybeTeiler werden weggeworfen und im nächsten while-Durchlauf neu angelegt
-}
-```
+}`
+ }
+ showOutput={false}
+ transitionText='Gibt:'
+/>
 
 Dieses Programm funktioniert zwar, aber ist durch die Schachtelung schwer zu verstehen. Mit Funktionen lässt sich das leichter verständlich strukturieren:
 
-```js
-// Funktion die für eine Zahl (number) rausfindet, ob sie prim ist (returnt einen boolean, true = prim, false = nicht prim)
+
+<MonacoEditor
+  language="javascript"
+  value={
+    `// Funktion die für eine Zahl (number) rausfindet, ob sie prim ist (returnt einen boolean, true = prim, false = nicht prim)
 function isPrime(number) {
     let maybeTeiler = 2
 
@@ -364,8 +363,11 @@ function findPrimesBelow(target) {
     }
 }
 
-findPrimesBelow(20)
-```
+findPrimesBelow(20)`
+ }
+ showOutput={false}
+ transitionText='Gibt:'
+/>
 
 Diese Version der gleichen Lösung tut dasselbe, ist aber übersichtlicher und leichter verständlich.
 
@@ -390,19 +392,33 @@ Der Mechanismus, mit dem wir in Javascript Funktionen auf Dateien verteilen, ist
 
 Ein Beispiel:
 
-```js title="foo.js"
-// Hier exportieren wir die Funktion nach außen damit andere Dateien sie importieren können
+`foo.js`
+<MonacoEditor
+  language="javascript"
+  value={
+    `// Hier exportieren wir die Funktion nach außen damit andere Dateien sie importieren können
 export function sayHello() {
     console.log("hello")
-}
-```
+}`
+ }
+ showOutput={false}
+ showRunButton={false}
+ transitionText='Gibt:'
+/>
 
-```js title="bar.js"
-// Hier holen wir uns die Funktion aus foo.js
+`bar.js`
+<MonacoEditor
+  language="javascript"
+  value={
+    `// Hier holen wir uns die Funktion aus foo.js
 import { sayHello } from "foo.js"
 
-sayHello()
-```
+sayHello()`
+ }
+ showOutput={false}
+ showRunButton={false}
+ transitionText='Gibt:'
+/>
 
 Warum sprechen wir jetzt darüber? Ab jetzt werden wir euch in den Übungsaufgaben auffordern, eine Funktion mit einem bestimmten Namen zu exportieren. Wenn ihr die Übung dann über den Play Button ausführt, testen wir eure Funktion automatisch mit ein paar Parametern aus und sagen euch, ob sie funktioniert, wie sie soll.
 
