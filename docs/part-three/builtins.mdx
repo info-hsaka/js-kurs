@@ -15,38 +15,35 @@ Um Strings dynamisch zusammenzubauen, gibt es sogenannte Template Strings. Templ
 
 Ein Beispiel:
 
-```js
-const name = "Jane"
-const goodMorning = `Guten Morgen ${name}, ich hoffe, du hast gut geschlafen`
+<MonacoEditor
+  language="javascript"
+  value={
+`const name = "Jane"
+const goodMorning = \`Guten Morgen \${name}, ich hoffe, du hast gut geschlafen\`
 
-console.log(goodMorning)
-```
-
-gibt
-
-```
-Guten Morgen Jane, ich hoffe, du hast gut geschlafen
-```
+console.log(goodMorning)`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
 Es können dabei beliebig viele `${}` vorkommen und in ihnen können beliebige Werte stehen:
 
-```js
-const name = "Mischa"
+
+<MonacoEditor
+  language="javascript"
+  value={
+`const name = "Mischa"
 const birthYear = 1993
-const currentYear = 2024
+const currentYear = 2026
 
 console.log(
-    `${name} ist im Jahr ${birthYear} geboren und ist damit im Jahr ${currentYear} ${currentYear - birthYear} Jahre alt`,
-)
-```
-
-gibt
-
-```
-Mischa ist im Jahr 1993 geboren und ist damit im Jahr 2024 31 Jahre alt,
-```
+    \`\${name} ist im Jahr \${birthYear} geboren und ist damit im Jahr \${currentYear} \${currentYear - birthYear} Jahre alt\`,
+)`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
@@ -60,42 +57,35 @@ Es gibt ein paar besondere Zeichen, die ihr in eure Strings einbauen könnt:
 -   `\"` für ein `"`
 -   `\\` für ein `\`
 
-```js
-console.log('Was ist grün und kreist um die Erde?\nEin "Salatelit".')
-```
-
-gibt
-
-```
-Was ist grün und kreist um die Erde?
-Ein "Salatelit".
-```
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log('Was ist grün und kreist um die Erde?\\nEin "Salatelit".')`
+ }
+ transitionText='gibt'
+/>
 
 aus.
 
 ## Builtin String Methods
 
-In Javascript gibt es eine ganze Menge sogenannter builtin Methods. Einee Method ist eine spezielle Art einer Funktion, die auf einem Wert liegt und auf diesen zugreift. Das klingt sehr abstrakt, heißt aber nur, dass man auf manchen Werten mit einem `.` getrennt auf bestimmte nützliche Dinge zugreifen kann:
+In Javascript gibt es eine ganze Menge sogenannter builtin Methods. Eine builtin Method ist eine spezielle Art einer Funktion, die auf einem Wert liegt und auf diesen zugreift. Das klingt sehr abstrakt, heißt aber nur, dass man auf manchen Werten mit einem `.` getrennt auf bestimmte nützliche Dinge zugreifen kann:
 
-```js
-// Funktion die zurückgibt, ob beide übergebenen Heldennamen mit "Green" anfangen
+<MonacoEditor
+  language="javascript"
+  value={
+`// Funktion die zurückgibt, ob beide übergebenen Heldennamen mit "Green" anfangen
 function bothHeroesAreGreen(firstHero, secondHero) {
     const firstGreen = firstHero.startsWith("Green")
     const secondGreen = secondHero.startsWith("Green")
 
-    return firstGreen & secondGreen
+    return firstGreen && secondGreen
 }
 
-console.log(bothHeroesAreGreen("Green Lantern", "Green Hulk")
-console.log(bothHeroesAreGreen("Thor", "Green Hulk")
-```
-
-gibt
-
-```
-true
-false
-```
+console.log(bothHeroesAreGreen("Green Lantern", "Green Hulk"))
+console.log(bothHeroesAreGreen("Thor", "Green Hulk"))`}
+transitionText='gibt'
+/>
 
 aus.
 
@@ -103,17 +93,13 @@ aus.
 
 `.startsWith` ist eine builtin Methode auf Strings, welche einen anderen String annimmt und zurückgibt, ob der String auf dem man sie aufgerufen hat mit dem übergebenen String beginnt oder nicht.
 
-```js
-console.log("Black Widow".startsWith("Black"))
-console.log("Spider Man".startsWith("Ven"))
-```
-
-gibt
-
-```
-true
-false
-```
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log("Black Widow".startsWith("Black"))
+console.log("Spider Man".startsWith("Ven"))`}
+transitionText='gibt'
+/>
 
 aus.
 
@@ -121,34 +107,25 @@ aus.
 
 `.endsWith` ist das Gegenstück zu `startsWith`, nur, dass das Ende des Strings geprüft wird.
 
-```js
-console.log("Thor".endsWith("or"))
-console.log("Starlord".endsWith("Star"))
-```
-
-gibt
-
-```
-true
-false
-```
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log("Thor".endsWith("or"))
+console.log("Starlord".endsWith("Star"))`}
+transitionText='gibt'
+/>
 
 ### `.includes(string)` (returnt Boolean)
 
 `.includes` prüft, ob der übergebene String irgendwo im String auf dem aufgerufen wurde enthalten ist.
 
-```js
-console.log("Loki".includes("ok"))
-console.log("Groot".includes("or"))
-```
-
-gibt
-
-```
-true
-false
-
-```
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log("Loki".includes("ok"))
+console.log("Groot".includes("or"))`}
+transitionText='gibt'
+/>
 
 aus.
 
@@ -156,19 +133,14 @@ aus.
 
 `.indexOf` sucht ähnlich wie `.includes` nach dem übergebenen String. Falls es ihn findet, gibt es zurück, beim wievielten Zeichen er gefunden wurde (die Zählung beginnt dabei mit `0`). Wenn er nicht gefunden wird, wird `-1` zurückgegeben.
 
-```js
-console.log("Black Panther".indexOf("ack"))
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log("Black Panther".indexOf("ack"))
 console.log("Jessica Jones".includes("Jess"))
-console.log("Captain Marvel".includes("asdf"))
-```
-
-gibt
-
-```
-2
-0
--1
-```
+console.log("Captain Marvel".includes("asdf"))`}
+transitionText='gibt'
+/>
 
 aus.
 
@@ -176,20 +148,14 @@ aus.
 
 `.substring` erwartet eine Startstelle und eine Endstelle. Es schneidet dann den angegebenen Ausschnitt aus dem String auf dem es aufgerufen wird aus und gibt den ausgeschnittetnen String zurück. Die Stellen werden dabei als Zahl angegeben, die Zählung startet mit 0.
 
-```js
-console.log("Iron Man".substring(0, 4))
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log("Iron Man".substring(0, 4))
 console.log("Wolverine".substring(2, 7))
-console.log("Captain America".substring(6, 10))
-```
-
-gibt
-
-```
-Iron
-lveri
-n Am
-```
-
+console.log("Captain America".substring(6, 10))`}
+transitionText='gibt'
+/>
 aus.
 
 :::tip
@@ -206,19 +172,14 @@ Zusätzlich zu builtin Methods gibt es auch noch sogenannte builtin Properties. 
 
 Auf Strings gibt es die `.length` Property, welche die Länge des Strings als Zahl enthält:
 
-```js
-console.log("Ant Man".length)
+<MonacoEditor
+  language="javascript"
+  value={
+`console.log("Ant Man".length)
 console.log("".length)
-console.log("Hessische Schülerakademie".length)
-```
-
-gibt
-
-```
-7
-0
-15
-```
+console.log("Hessische Schülerakademie".length)`}
+transitionText='gibt'
+/>
 
 aus.
 

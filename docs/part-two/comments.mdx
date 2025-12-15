@@ -8,8 +8,10 @@ Langsam wird der Code den wir schreiben komplexer. Um auch längeren und kompliz
 
 Kommentare in Javascript fangen mit `//` an. Ein Beispiel:
 
-```js
-const month = 8
+<MonacoEditor
+  language="javascript"
+  value={
+    `const month = 8
 
 // Quartal als String
 let quarter
@@ -32,8 +34,13 @@ if (month < 4) {
 }
 
 // Gib das Quartal aus, wird undefined ausgeben wenn der Monat auf > 12 gesetzt war
-console.log(quarter)
-```
+console.log(quarter)`
+ }
+ showOutput={false}
+ transitionText=''
+ showRunButton={true}
+/>
+
 
 dieser Code tut exakt das gleiche, wenn man alle Zeilen die mit `//` beginnen entfernt, aber er ist deutlich besser lesbar und erklärt.
 

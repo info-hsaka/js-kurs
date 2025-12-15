@@ -14,9 +14,15 @@ Als erstes schauen wir uns an, wie man eine neue Variable erstellt (man nennt da
 
 In Javascript legt man eine Variable mit `let` an, gefolgt vom Namen der Variable, einem `=` und dem Inhalt der Variable:
 
-```js
-let message = "Hallo"
-```
+
+<MonacoEditor
+  language="javascript"
+  value={
+    `let message = "Hallo"`
+ }
+ showOutput={false}
+ showRunButton={false}
+/>
 
 Diese Zeile deklariert eine neue Variable mit dem Namen `message` und befüllt sie mit `"Hallo"`
 
@@ -38,19 +44,33 @@ Wir können aber auch einer Variable, welche wir bereits deklariert haben, einen
 
 Um eine Variable zu deklarieren schreiben wir ihren Namen gefolgt von einem `=` und dem neuen Wert - also genau wie bei der Deklaration nur ohne das `let`.
 
-```js
-let message = "Hallo"
-message = "Guten Morgen"
-```
+
+<MonacoEditor
+  language="javascript"
+  value={
+    `let message = "Hallo"
+message = "Guten Morgen"`
+ }
+ showOutput={false}
+ showRunButton={false}
+/>
 
 Dieses Programm erstellt erst eine Variable mit dem Namen `message` und befüllt sie initial mit dem Wert `"Hallo"` (wie oben). Danach tauscht es den Inhalt der Variable durch `"Guten Morgen"` aus. Am Ende enthält die Variable also den Wert `"Guten Morgen"`
 
 :::info
 Ja das macht so nicht besonders viel Sinn, wir hätten ja direkt
 
-```js
-let message = "Guten Morgen"
-```
+
+<MonacoEditor
+  language="javascript"
+  value={
+    `let message = "Guten Morgen"`
+ }
+ showOutput={false}
+ showRunButton={false}
+/>
+
+
 
 schreiben können. Es geht erstmal nur darum, Zeile für Zeile das Prinzip zu verstehen.
 :::
@@ -61,15 +81,17 @@ Jetzt wissen wir, wie wir Variablen deklarieren und ihren Wert ändern. Aber wof
 
 Wir legen Werte in Variablen ab um sie später wiederzuverwenden. Um den Wert einer Variable irgendwo zu benutzen, schreiben wir einfach ihren Namen an die Stelle, wo ihr Wert stehen soll. Um das auszuprobieren, führen wir aber erstmal eine neue Anweisung ein:
 
-```js
-console.log("Ich schreibe Javascript")
-```
 
-`console.log()` erwartet einen String zwischen den `()` und gibt diesen dann in der Konsole aus. Dieses Programm gibt
+<MonacoEditor
+  language="javascript"
+  value={
+    `console.log("Ich schreibe Javascript")`
+ }
+ showOutput={true}
+ transitionText='console.log() erwartet einen String zwischen den () und gibt diesen dann in der Konsole aus. Dieses Programm gibt'
+ showRunButton={true}
+/>
 
-```
-Ich schreibe Javascript
-```
 
 in der Konsole aus.
 
@@ -80,16 +102,18 @@ Die Programme die wir in diesem Kurs schreiben sind sehr simpel - sie geben haup
 
 Jetzt benutzen wir statt einem direkten String stattdessen eine Variable, die einen String enthält:
 
-```js
-let foo = "Hello World"
-console.log(foo)
-```
 
-dieses Programm gibt
+<MonacoEditor
+  language="javascript"
+  value={
+    `let foo = "Hello World"
+console.log(foo)`
+ }
+ showOutput={true}
+ transitionText='dieses Programm gibt'
+ showRunButton={true}
+/>
 
-```
-Hello World
-```
 
 aus.
 
@@ -101,18 +125,19 @@ Den Inhalt einer Variable anzugeben nennt man auch die Variable "lesen" oder acc
 
 Nun da wir wissen wie wir einer Variable einen Wert zuweisen und wie wir auf Werte von Variablen zugreifen, können wir einer Variable den Wert einer anderen Variable zuweisen:
 
-```js
-let animal = "Cat"
+<MonacoEditor
+  language="javascript"
+  value={
+    `let animal = "Cat"
 let foo = animal
 
-console.log(foo)
-```
+console.log(foo)`
+ }
+ showOutput={true}
+ transitionText='dieses Programm gibt'
+ showRunButton={true}
+/>
 
-dieses Programm gibt
-
-```
-Cat
-```
 
 aus. Wir haben erst eine Variable `animal` angelegt und sie mit dem Wert `"Cat"` befüllt. Anschließend haben wri eine Variable mti dem Namen `foo` angelegt und sie mit dem Wert der Variable `animal` befüllt. `foo` enthält nun also ebenfalls `"Cat"`.
 
@@ -120,9 +145,15 @@ aus. Wir haben erst eine Variable `animal` angelegt und sie mit dem Wert `"Cat"`
 
 Eine weitere Option zur Dekklaration von Variablen ist `const` statt `let`:
 
-```js
-const message = "Hallo"
-```
+
+<MonacoEditor
+  language="javascript"
+  value={
+    `const message = "Hallo"`
+ }
+ showOutput={false}
+ showRunButton={true}
+/>
 
 `const` erstellt eine neue sogenannte konstante Variable. Im Unterschied zu `let` ist der Variablenwert
 einer `const` Variable nicht mehr änderbar. Man nennt eine solche Variable auch Konstante (constant).
