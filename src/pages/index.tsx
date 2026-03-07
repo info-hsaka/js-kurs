@@ -4,16 +4,14 @@ import Layout from "@theme/Layout"
 import Link from "@docusaurus/Link"
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext"
 import styles from "./index.module.css"
-import HomepageFeatures from "@site/src/components/HomepageFeatures"
 import JsLogo from "../../static/img/js-logo.svg"
-import BrowserOnly from "@docusaurus/BrowserOnly"
 
 function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext()
     return (
         <header className={clsx("hero hero--primary", styles.heroBanner)}>
             <Link
-                to={"./docs/intro/welcome"}
+                to={"./docs/Intro/welcome"}
                 style={{
                     color: "black",
                     textDecoration: "none",
