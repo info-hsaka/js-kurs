@@ -59,7 +59,7 @@ const config = {
           },
                     {
             type: "doc",
-            docId: "canvas/intro/welcome",
+            docId: "canvas/intro",
             position: "left",
             label: "Canvas-Kurs",
           },
