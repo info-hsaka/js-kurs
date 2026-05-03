@@ -1,0 +1,48 @@
+<div style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <canvas id="canvas" width="300" height="300"></canvas>
+</div>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.style.border = "1px solid black";
+    canvas.style.padding = "75px";
+
+    //Border
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = "1px";
+    ctx.rect(0, 0, 300, 300);
+    ctx.stroke();
+
+
+    
+    ctx.lineWidth = 10;
+    ctx.strokeRect(75, 75, 150, 150);
+
+
+    // Text zeichnen
+    ctx.fillStyle = "black";
+    ctx.font = "20px Arial";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "bottom";
+    ctx.fillText("75,75", 75, 75);  // Mitte: 400+50, 500+50
+
+    ctx.textAlign = "left";
+    ctx.textBaseline = "bottom";
+    ctx.fillText("225,75", 225, 75); 
+
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText("75,225", 75, 225); 
+
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText("225,225", 225, 225); 
+
+    
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("Quadrat", 150, 150); 
+
+</script>

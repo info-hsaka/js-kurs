@@ -1,0 +1,31 @@
+<div style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <canvas id="canvas" width="300" height="300"></canvas>
+</div>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const data = [{ n: "A", x: 0, y: 0 }, { n: "B", x: 100, y: 0 }, { n: "C", x: 0, y: 100 }, { n: "D", x: 200, y: 150 }, { n: "E", x: 275, y: 280 }];
+    canvas.style.border = "1px solid black";
+    canvas.style.padding = "75px";
+
+    //Border
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = "1px";  
+    ctx.rect(0, 0, 300, 300);
+    ctx.stroke();
+
+
+    ctx.font = "30px Arial";
+    ctx.fillText("Fetter Text", 50, 60);
+
+    ctx.font = "bold 30px Arial";
+    ctx.fillText("Fetter Text", 50, 120);
+
+    ctx.font = "italic 30px Arial";
+    ctx.fillText("Kursiver Text", 50, 180);
+
+    ctx.font = "bold italic 30px Arial";
+    ctx.fillText("Fett und Kursiv", 50, 240);
+</script>

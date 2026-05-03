@@ -1,0 +1,29 @@
+<div style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <canvas id="canvas" width="300" height="300"></canvas>
+</div>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const data = [{ n: "A", x: 0, y: 0 }, { n: "B", x: 100, y: 0 }, { n: "C", x: 0, y: 100 }, { n: "D", x: 200, y: 150 }, { n: "E", x: 275, y: 280 }];
+    canvas.style.border = "1px solid black";
+    canvas.style.padding = "75px";
+
+    //Border
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = "1px";
+    ctx.rect(0, 0, 300, 300);
+    ctx.stroke();
+    
+    function drawBorderedRect(x, y, size, borderSize, fillColor, borderColor) {
+        ctx.fillStyle = borderColor;
+        ctx.fillRect(x-borderSize, y-borderSize, size+2*borderSize, size+2*borderSize);
+        ctx.fillStyle = fillColor;
+        ctx.fillRect(x, y, size, size);
+    }
+    drawBorderedRect(50, 50, 100, 10, "red", "black");
+    drawBorderedRect(160, 50, 100, 10, "green", "white");
+    drawBorderedRect(50, 160, 100, 5, "blue", "black");
+    drawBorderedRect(160, 160, 100, 0, "yellow", "black");
+</script>

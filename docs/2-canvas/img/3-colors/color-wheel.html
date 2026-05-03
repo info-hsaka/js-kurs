@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>RGB Color Spectrum</title>
+    <style>
+        body {
+            margin: 0;
+            /* background: black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        canvas {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="rgbCanvas" width="800" height="800"></canvas>
+
+    <script>
+        const canvas = document.getElementById("rgbCanvas");
+        const ctx = canvas.getContext("2d");
+        // Circle settings
+        const radius = 220;
+
+        const centers = {
+            red: { x: 400, y: 250 },
+            green: { x: 280, y: 480 },
+            blue: { x: 520, y: 480 }
+        };
+
+        // Helper to draw labeled circle
+        function drawCircle(x, y, color, label) {
+            
+            ctx.globalCompositeOperation = "lighter";
+            ctx.globalAlpha = 1;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = "white";
+            ctx.font = "bold 22px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText(label, x, y);
+        }
+
+        // Draw base circles
+        drawCircle(centers.red.x, centers.red.y, "#ff0000", "RED");
+        drawCircle(centers.green.x, centers.green.y, "#00ff00", "GREEN");
+        drawCircle(centers.blue.x, centers.blue.y, "#0000ff", "BLUE");
+
+        // Manually label overlaps (approximate positions)
+        ctx.font = "bold 20px Arial";
+        ctx.textAlign = "center";
+
+        // Yellow (red + green)
+        ctx.fillStyle = "black";
+        ctx.fillText("YELLOW", 340, 380);
+
+        // Magenta (red + blue)
+        ctx.fillText("MAGENTA", 460, 380);
+
+        // Cyan (green + blue)
+        ctx.fillText("CYAN", 400, 560);
+
+        // White (all overlap center)
+        ctx.fillText("WHITE", 400, 440);
+
+    </script>
+</body>
+
+</html>

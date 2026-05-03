@@ -1,0 +1,31 @@
+<div style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <canvas id="canvas" width="300" height="300"></canvas>
+</div>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const data = [{ n: "A", x: 0, y: 0 }, { n: "B", x: 100, y: 0 }, { n: "C", x: 0, y: 100 }, { n: "D", x: 200, y: 150 }, { n: "E", x: 275, y: 280 }];
+    canvas.style.border = "1px solid black";
+    canvas.style.padding = "75px";
+
+    //Border
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = "1px";  
+    ctx.rect(0, 0, 300, 300);
+    ctx.stroke();
+
+    for (point of data) {
+        ctx.beginPath();
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 5;
+        // x, y are the cords, 5 is the radius of the circle and the last 2 things specify full circle.
+        ctx.arc(point.x, point.y, 5, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        ctx.font = "14px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText(point.n, point.x + 12, point.y + 12);
+    }
+</script>

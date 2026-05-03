@@ -1,0 +1,51 @@
+<div style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <canvas id="canvas" width="300" height="300"></canvas>
+</div>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const data = [{ n: "A", x: 0, y: 0 }, { n: "B", x: 100, y: 0 }, { n: "C", x: 0, y: 100 }, { n: "D", x: 200, y: 150 }, { n: "E", x: 275, y: 280 }];
+    canvas.style.border = "1px solid black";
+    canvas.style.padding = "75px";
+
+    //Border
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = "1px";
+    ctx.rect(0, 0, 300, 300);
+    ctx.stroke();
+
+
+    const margin =25;
+    const squares=8;
+    const squareSize=(300-margin*2)/squares;
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = "1px";
+    ctx.rect(margin, margin, 300-margin*2, 300-margin*2);
+    ctx.stroke();
+
+
+    ctx.font = "20px Arial";
+    for (let i=0; i<squares; i++){
+        ctx.fillStyle = "black";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(String.fromCharCode(65+i), i*squareSize+squareSize/2 + margin , margin / 2 + squareSize*squares + margin);
+        for (let j=0; j<squares; j++){
+            if (j == 0) {
+                ctx.fillText(String(8-i), margin/2, i * squareSize + squareSize / 2 + margin);
+            }
+            if ((i+j)%2==0){
+                ctx.fillStyle = "white";
+            } else {
+                ctx.fillStyle = "brown";
+            }
+            ctx.fillRect(i*squareSize+margin, j*squareSize+margin, squareSize, squareSize);
+        }
+    }
+
+
+</script>
