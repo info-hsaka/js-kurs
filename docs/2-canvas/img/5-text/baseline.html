@@ -1,0 +1,41 @@
+<div style="margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <canvas id="canvas" width="300" height="300"></canvas>
+</div>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const data = [{ n: "A", x: 0, y: 0 }, { n: "B", x: 100, y: 0 }, { n: "C", x: 0, y: 100 }, { n: "D", x: 200, y: 150 }, { n: "E", x: 275, y: 280 }];
+    canvas.style.border = "1px solid black";
+    canvas.style.padding = "75px";
+
+    //Border
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = "1px";  
+    ctx.rect(0, 0, 300, 300);
+    ctx.stroke();
+
+
+    ctx.font = "30px Arial";
+
+    ctx.fillStyle = "black";
+    ctx.fillText("Text with Baseline", 25, 100, 250);
+    ctx.fillText("The quick brown fox", 25, 150, 250);
+    ctx.fillText("jumps over the lazy dog", 25, 200, 250);
+
+    ctx.beginPath();
+    ctx.moveTo(25, 100);
+    ctx.lineTo(275, 100);
+    ctx.stroke()
+
+    ctx.beginPath();
+    ctx.moveTo(25, 150);
+    ctx.lineTo(275, 150);
+    ctx.stroke()
+
+    ctx.beginPath();
+    ctx.moveTo(25, 200);
+    ctx.lineTo(275, 200);
+    ctx.stroke()
+</script>

@@ -15,7 +15,6 @@ Ein Pfad ist wie eine Linie, die du mit einem Stift zeichnest, ohne ihn abzusetz
 ctx.beginPath();        // 1. Neuen Pfad starten
 // ... Pfad zeichnen ...
 ctx.fill();            // 3a. Pfad ausfüllen
-// ODER
 ctx.stroke();          // 3b. Pfad als Umriss zeichnen
 ```
 
@@ -23,6 +22,10 @@ ctx.stroke();          // 3b. Pfad als Umriss zeichnen
 - `beginPath()` startet immer einen neuen Pfad
 - `fill()` füllt den Pfad aus
 - `stroke()` zeichnet nur den Umriss
+
+:::info
+Du kannst auch nur fill oder stroke verwenden, falls du das andere nicht benötigst
+:::
 
 ## Kreise zeichnen
 
@@ -46,47 +49,29 @@ Winkel werden in **Radiant** statt Grad angegeben:
 - `Math.PI` = 180° (links)
 - `2 * Math.PI` = 360° (voller Kreis)
 
-<!-- <BILD: Ein Kreis mit eingezeichneten Winkeln: 0 (rechts), Math.PI/2 (unten), Math.PI (links), 3*Math.PI/2 (oben), 2*Math.PI (wieder rechts). Pfeile zeigen die Richtung im Uhrzeigersinn> -->
+
+ ![Radiant Kreis](./img/4-shapes/radian.svg "Radiant")
 
 ### Einen vollen Kreis zeichnen
 
 ```javascript
-ctx.beginPath();
-ctx.arc(100, 100, 50, 0, 2 * Math.PI);
-ctx.fill();
-```
-
-Dies zeichnet einen ausgefüllten Kreis:
-- Mittelpunkt bei (100, 100)
-- Radius 50 Pixel
-- Von 0 bis 2π (voller Kreis)
-
-<!-- <BILD: Ein schwarzer ausgefüllter Kreis mit Mittelpunkt bei (100, 100) und eingezeichnetem Radius von 50px> -->
-
-### Kreis mit Umriss
-
-```javascript
-ctx.beginPath();
-ctx.arc(100, 100, 50, 0, 2 * Math.PI);
-ctx.stroke();
-```
-
-<!-- <BILD: Ein Kreis nur mit schwarzem Umriss (nicht ausgefüllt)> -->
-
-### Kreis mit Füllung UND Rand
-
-```javascript
 ctx.fillStyle = "red";
 ctx.strokeStyle = "green";
-ctx.lineWidth = 10;
+ctx.lineWidth = 40;
 
 ctx.beginPath();
-ctx.arc(300, 100, 50, 0, 2 * Math.PI);
+ctx.arc(150, 150, 100, 0, 2 * Math.PI);
 ctx.fill();    // Erst füllen
 ctx.stroke();  // Dann Rand zeichnen
 ```
 
-<!-- <BILD: Ein Kreis mit roter Füllung und grünem Rand (10px breit)> -->
+Dies zeichnet einen rot ausgefüllten Kreis:
+- Mittelpunkt bei (150, 150)
+- Radius 100 Pixel
+- Von 0 bis 2π (voller Kreis)
+- Grüner Rand mit 40 Pixel
+
+ ![Ein Kreis mit roter Füllung und grünem Rand (40px breit)](./img/4-shapes/circle.png "Circle")
 
 :::caution 
 Die Reihenfolge von `fill()` und `stroke()` kann das Ergebnis beeinflussen!
@@ -105,20 +90,19 @@ ctx.stroke();
 - `moveTo(x, y)`: Setzt den "Stift" an eine Position (ohne zu zeichnen)
 - `lineTo(x, y)`: Zieht eine Linie von der aktuellen Position zu (x, y)
 
-<!-- <BILD: Eine diagonale Linie von (50, 50) zu (200, 150)> -->
-
+ ![ Eine diagonale Linie von (50, 50) zu (200, 150)](./img/4-shapes/line-1.png "Line One")
 ### Mehrere verbundene Linien
 
 ```javascript
-ctx.beginPath();
-ctx.moveTo(50, 50);
-ctx.lineTo(200, 50);
-ctx.lineTo(200, 200);
-ctx.lineTo(50, 200);
-ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineTo(250, 50);
+    ctx.lineTo(250, 250);
+    ctx.lineTo(50, 250);
+    ctx.stroke();
 ```
 
-<!-- <BILD: Ein U-förmiger Linienzug> -->
+ ![Ein seitlicher U-förmiger Linienzug](./img/4-shapes/line-2.png "Line Two")
 
 ### Geschlossene Form (Dreieck)
 
@@ -133,111 +117,63 @@ ctx.fill();
 
 - `closePath()` schließt den Pfad automatisch zum Startpunkt
 
-<!-- <BILD: Ein ausgefülltes schwarzes Dreieck> -->
+ ![Ein ausgefülltes schwarzes Dreieck](./img/4-shapes/line-3.png "Line Three")
 
-## Kreissegmente (Pac-Man)
-
-Du kannst auch nur Teile eines Kreises zeichnen:
-
+## Linienbreite steuern
+ 
+Mit `lineWidth` kannst du die Dicke von Linien und Umrissen ändern:
+ 
 ```javascript
-ctx.beginPath();
-ctx.arc(100, 100, 50, 0.2 * Math.PI, 1.8 * Math.PI);
-ctx.lineTo(100, 100);  // Linie zum Mittelpunkt
-ctx.closePath();
-ctx.fillStyle = "yellow";
-ctx.fill();
+ctx.lineWidth = 5;  // 5 Pixel breit
 ```
-
-<!-- <BILD: Ein gelber Pac-Man (Kreis mit ausgeschnittenem Kuchenstück für den Mund)> -->
-
-## Übung 1: Roter Kreis mit grünem Rand
-
-**Aufgabe:** Male einen Kreis mit roter Füllung und grünem Rand:
-- Radius: 50
-- Mittelpunkt: (300, 100)
-- Randbreite: 10
-
-<details>
-<summary>💡 Lösung anzeigen</summary>
-
+ 
+**Standard:** Die Standardbreite ist `1` Pixel.
+ 
+### Beispiel: Unterschiedliche Linienbreiten
+ 
 ```javascript
-function draw(ctx) {
-  ctx.fillStyle = "red";
-  ctx.strokeStyle = "green";
-  ctx.lineWidth = 10;
-  
-  ctx.beginPath();
-  ctx.arc(300, 100, 50, 0, 2 * Math.PI);
-  ctx.fill();
-  ctx.stroke();
-}
+ctx.strokeStyle = "black";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineTo(250, 50);
+    ctx.stroke();
+
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(50, 100);
+    ctx.lineTo(250, 100);
+    ctx.stroke();
+
+    ctx.lineWidth = 15;
+    ctx.beginPath();
+    ctx.moveTo(50, 150);
+    ctx.lineTo(250, 150);
+    ctx.stroke();
+    
+    ctx.lineWidth = 20;
+    ctx.beginPath();
+    ctx.moveTo(50, 200);
+    ctx.lineTo(250, 200);
+    ctx.stroke();
+
+    ctx.lineWidth = 25;
+    ctx.beginPath();
+    ctx.moveTo(50, 250);
+    ctx.lineTo(250, 250);
+    ctx.stroke();
 ```
+  ![Fünf horizontale Linien übereinander mit unterschiedlichen Breiten (1px, 5px, 15px, 20px, 25px)](./img/4-shapes/linewidth.png "Line width")
 
-</details>
+:::info
+`lineWidth` bleibt aktiv wie `fillStyle` und `strokeStyle`. Setze es vor dem Zeichnen!
+:::
 
-## Übung 2: Dreieck
 
-**Aufgabe:** Zeichne ein ausgefülltes blaues Dreieck mit Ecken bei:
-- (200, 50)
-- (150, 150)
-- (250, 150)
+## Übung: Pacman
 
-<details>
-<summary>💡 Lösung anzeigen</summary>
+**Aufgabe:** Nutze die Informationen aus diesem Kapitel, um Pacman zu zeichnen.
 
-```javascript
-function draw(ctx) {
-  ctx.fillStyle = "blue";
-  
-  ctx.beginPath();
-  ctx.moveTo(200, 50);
-  ctx.lineTo(150, 150);
-  ctx.lineTo(250, 150);
-  ctx.closePath();
-  ctx.fill();
-}
-```
+**Tip**: Du kannst Arcs und Lines kombinieren.
 
-</details>
-
-## Übung 3: Kreative Formen
-
-**Aufgabe:** Kombiniere mehrere Formen! Zeichne zum Beispiel:
-- Ein Haus (Rechteck + Dreieck als Dach)
-- Eine Sonne (Kreis + Linien als Strahlen)
-- Ein Gesicht (Kreise für Kopf und Augen, Linien für Mund)
-
-Sei kreativ und experimentiere!
-
-## Weitere nützliche Pfad-Funktionen
-
-### Rechteck als Pfad
-
-```javascript
-ctx.beginPath();
-ctx.rect(50, 50, 100, 100);  // Wie fillRect, aber als Pfad
-ctx.stroke();
-```
-
-### Bogen (abgerundete Ecken)
-
-```javascript
-ctx.beginPath();
-ctx.arcTo(x1, y1, x2, y2, radius);
-```
-
-Dies ist fortgeschrittener - für abgerundete Ecken und Kurven.
-
-## Merke dir
-
-💡 **Immer `beginPath()` für neue Formen!** Sonst werden alte und neue Pfade verbunden.
-
-💡 **`fill()` für ausgefüllt, `stroke()` für Umriss** - oder beides!
-
-💡 **Kreise brauchen Radiant:** Voller Kreis = `0` bis `2 * Math.PI`
-
-💡 **`closePath()` schließt die Form** zurück zum Startpunkt.
-
----
-
-Im nächsten Kapitel lernst du, wie du Text auf dein Canvas zeichnest!
+ ![Gelber Pacman mit schwarzem Rand](./img/4-shapes/3-pacman.png "Pacman")
